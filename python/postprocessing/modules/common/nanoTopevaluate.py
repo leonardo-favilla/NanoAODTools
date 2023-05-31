@@ -116,11 +116,6 @@ class nanoTopevaluate(Module):
     def analyze(self, event):
         """process event, return True (go to next module) or False (fail, go to next event)"""
         
-        listOfBranches = event.getListOfBranches()
-        if "Jet_matched" in listOfBranches: 
-            file_signal = True
-        else:
-            file_signal = False
         jets = Collection(event,"Jet")
         njets = len(jets)
         fatjets = Collection(event,"FatJet")
@@ -134,9 +129,9 @@ class nanoTopevaluate(Module):
         toplowpt = Collection(event, "TopLowPt")
         
         # loop su high pt e low pt candidate per valutare lo score con i modelli corrispondenti
-        fj_dnn = np.zeros((int(len(tophighpt)), 12)) 
-        jets_dnn = np.zeros((int(len(tophighpt)), 3, 8))        
-        mass_dnn = np.zeros((len(tophighpt), 2))
+        fj_dnn      = np.zeros((int(len(tophighpt)), 12)) 
+        jets_dnn    = np.zeros((int(len(tophighpt)), 3, 8))        
+        mass_dnn    = np.zeros((len(tophighpt), 2))
         for i, top in enumerate(tophighpt):
             if top.idxJet2==-1:
                 j0, j1 = goodjets[top.idxJet0],goodjets[top.idxJet1]

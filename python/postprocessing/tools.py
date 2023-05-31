@@ -177,35 +177,48 @@ def get_pos_nums(num):
 
 def truth(j0=0, j1=0, j2=0, fj=0):
     top_truth = 0
+    # 2j1fj
     if not hasattr(j2, "pt"):
-        if ((j0.matched>0 and j1.matched>0 and fj.matched>0) and
-            (j0.topMother== j1.topMother and j0.topMother== fj.topMother)):
+        # print("j0: ", j0.matched, j0.pdgId, j0.topMother)
+        # print("j1: ", j1.matched, j1.pdgId, j1.topMother)
+        # print("fj: ", fj.matched, fj.pdgId, fj.topMother)
+        if ((j0.matched>0 and j1.matched>0 and fj.matched>0) and (j0.topMother == j1.topMother and j0.topMother == fj.topMother)):
             flavs_j0, flavs_j1, flavs_fj = j0.pdgId, j1.pdgId, fj.pdgId
             jetflavs_list = get_pos_nums(flavs_j0) + get_pos_nums(flavs_j1) 
             fatjetflavs_list = get_pos_nums(flavs_fj)
         else: 
             jetflavs_list = []
             fatjetflavs_list = []
+
     else:
+        # 3j1fj
         if hasattr(fj, "pt"):
-            if ((j0.matched>0 and j1.matched>0 and j2.matched>0 and fj.matched>0) and
-                (j0.topMother== j1.topMother and j1.topMother== j2.topMother and
-                   j2.topMother==fj.topMother)):
+            # print("j0: ", j0.matched, j0.pdgId, j0.topMother)
+            # print("j1: ", j1.matched, j1.pdgId, j1.topMother)
+            # print("j2: ", j2.matched, j2.pdgId, j2.topMother)
+            # print("fj: ", fj.matched, fj.pdgId, fj.topMother)
+            if ((j0.matched > 0 and j1.matched > 0 and j2.matched > 0 and fj.matched > 0) and (j0.topMother == j1.topMother and j1.topMother == j2.topMother and j2.topMother == fj.topMother)):
                 flavs_j0, flavs_j1, flavs_j2, flavs_fj = j0.pdgId, j1.pdgId, j2.pdgId, fj.pdgId
                 jetflavs_list = get_pos_nums(flavs_j0) + get_pos_nums(flavs_j1) + get_pos_nums(flavs_j2)
                 fatjetflavs_list = get_pos_nums(flavs_fj)
             else: 
                 jetflavs_list = []
                 fatjetflavs_list = []
+        # 3j0fj
         else:
-            if ((j0.matched>0 and j1.matched>0 and j2.matched>0) and
-                ( j0.topMother== j1.topMother and j1.topMother== j2.topMother)): 
+            # print("j0: ", j0.matched, j0.pdgId, j0.topMother)
+            # print("j1: ", j1.matched, j1.pdgId, j1.topMother)
+            # print("j2: ", j2.matched, j2.pdgId, j2.topMother)
+            if ((j0.matched>0 and j1.matched>0 and j2.matched>0) and (j0.topMother== j1.topMother and j1.topMother== j2.topMother)): 
                 flavs_j0, flavs_j1, flavs_j2 = j0.pdgId, j1.pdgId, j2.pdgId
                 jetflavs_list = get_pos_nums(flavs_j0) + get_pos_nums(flavs_j1) + get_pos_nums(flavs_j2)
                 fatjetflavs_list = []
             else: 
                 jetflavs_list = []
                 fatjetflavs_list = []
+
+    # print("jetflavs_list:       ", jetflavs_list)
+    # print("fatjetflavs_list:    ", fatjetflavs_list)
     if len(jetflavs_list)==3:
         top_truth = 1
     elif len(fatjetflavs_list)==3:
@@ -214,6 +227,7 @@ def truth(j0=0, j1=0, j2=0, fj=0):
         top_truth = 1
     else:
         top_truth = 0
+    # print("top_truth: ", top_truth)
     return top_truth
 
 def top_p4(category, top, jets, fatjets):
@@ -268,9 +282,9 @@ def top3j1fj(fj, j0, j1, j2, dr0=None, dr1=None, dr2=None):
 
 
 def get_jet(jets):
-    return list(filter(lambda x : x.jetId and x.pt>25 , jets))
+    return list(filter(lambda x : x.jetId and x.pt>25, jets))
 def get_fatjet(fatjets):
-    return list(filter(lambda x : x.jetId , fatjets))###
+    return list(filter(lambda x : x.jetId, fatjets))###
 def presel(jets, fatjets): #returns 2 collections of jets and fatjets
     goodjets = get_jet(jets)
     goodfatjets = get_fatjet(fatjets)

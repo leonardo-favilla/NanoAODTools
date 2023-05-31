@@ -1,0 +1,45 @@
+Error in <TTreeReaderValue::Get()>: Value reader not properly initialized, did you call TTreeReader::Set(Next)Entry() or TTreeReader::Next()?
+Starting datasets loop
+Starting event loop for dataset:	tDM_mPhi1000_mChi1
+len(goodjets):	4	len(goodfatjets):	1
+ntops:	14
+dataset:	tDM_mPhi1000_mChi1	event:	0
+len(best_top):	14
+len(goodjets):	4	len(goodfatjets):	0
+ntops:	3
+len(best_top):	3
+len(goodjets):	6	len(goodfatjets):	1
+ntops:	54
+len(best_top):	54
+len(goodjets):	5	len(goodfatjets):	1
+ntops:	30
+len(best_top):	30
+len(goodjets):	4	len(goodfatjets):	1
+ntops:	14
+len(best_top):	14
+len(goodjets):	5	len(goodfatjets):	1
+ntops:	29
+len(best_top):	29
+len(goodjets):	3	len(goodfatjets):	1
+ntops:	5
+len(best_top):	5
+len(goodjets):	3	len(goodfatjets):	1
+ntops:	5
+len(best_top):	5
+len(goodjets):	3	len(goodfatjets):	1
+ntops:	5
+len(best_top):	5
+len(goodjets):	4	len(goodfatjets):	1
+ntops:	14
+len(best_top):	14
+Starting event loop for dataset:	QCD_HT1000to1500
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/trainingSet_phase2.py", line 148, in <module>
+    jets        = Collection(event, "Jet")
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/framework/datamodel.py", line 112, in __init__
+    self._len = getattr(event,"n"+prefix)
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/framework/datamodel.py", line 16, in __getattr__
+    return self._tree.readBranch(name)
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/framework/treeReaderArrayTools.py", line 89, in readBranch
+    ret = _vr.Get()[0]
+ReferenceError: attempt to access a null-pointer

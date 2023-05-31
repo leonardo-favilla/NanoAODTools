@@ -1,0 +1,8 @@
+['trainingSet.py', '/eos/user/l/lfavilla/v2/Skim_Folder', 'QCD_HT1000to1500', 'QCD_HT1000to1500_2018_Skim.root', '5000', 'True']
+folderIn:       /eos/user/l/lfavilla/v2/Skim_Folder
+dataset:        QCD_HT1000to1500
+infile:         QCD_HT1000to1500_2018_Skim.root
+nev:            5000
+verbose:        True
+Opening file:                       /eos/user/l/lfavilla/v2/Skim_Folder/QCD_HT1000to1500_2018_Skim.root
+Starting event loop for dataset:    QCD_HT1000to1500

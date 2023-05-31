@@ -61,11 +61,11 @@ def eventLoop(
     for m in modules:
         m.beginFile(inputFile, outputFile, inputTree, wrappedOutputTree)
 
-    t0 = time.time()
-    tlast = t0
-    doneEvents = 0
-    acceptedEvents = 0
-    entries = inputTree.entries
+    t0              = time.time()
+    tlast           = t0
+    doneEvents      = 0
+    acceptedEvents  = 0
+    entries         = inputTree.entries
     if eventRange:
         entries = len(eventRange)
     if maxEvents > 0:

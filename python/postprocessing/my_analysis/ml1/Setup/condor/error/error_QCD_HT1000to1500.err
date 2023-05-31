@@ -1,0 +1,11 @@
+Error in <TTreeReaderValue::Get()>: Value reader not properly initialized, did you call TTreeReader::Set(Next)Entry() or TTreeReader::Next()?
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/my_analysis/ml1/Setup/trainingSet.py", line 89, in <module>
+    jets                                    = Collection(event, "Jet")
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/framework/datamodel.py", line 112, in __init__
+    self._len = getattr(event,"n"+prefix)
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/framework/datamodel.py", line 16, in __getattr__
+    return self._tree.readBranch(name)
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/framework/treeReaderArrayTools.py", line 89, in readBranch
+    ret = _vr.Get()[0]
+ReferenceError: attempt to access a null-pointer
