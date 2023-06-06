@@ -26,9 +26,6 @@ if not os.path.exists(ScorePath):
 ScoreVsPtPath       = f"/eos/user/l/lfavilla/ml1/ScoreVsPt/{dataset}"
 if not os.path.exists(ScoreVsPtPath):
     os.makedirs(ScoreVsPtPath)
-ScoreVsPtSlicesPath = f"/eos/user/l/lfavilla/ml1/ScoreVsPtSlices/{dataset}"
-if not os.path.exists(ScoreVsPtSlicesPath):
-    os.makedirs(ScoreVsPtSlicesPath)
 ScoreVsCategoryPath = f"/eos/user/l/lfavilla/ml1/ScoreVsCategory/{dataset}"
 if not os.path.exists(ScoreVsCategoryPath):
     os.makedirs(ScoreVsCategoryPath)
@@ -125,6 +122,12 @@ Plotting Score Distributions varying <pt_limit>, <pt_flag> and <truth>
 """
 import mplhep as hep
 hep.style.use(hep.style.CMS)
+# Create directory in .root file
+directory = PlotRFile.mkdir("Score")
+
+
+
+
 for pt_limit in np.arange(start=200, stop=550, step=50):
     for pt_flag in ["Low", "High"]:
         c            = ROOT.TCanvas("c", "Score Distribution", 1200, 800)
@@ -157,7 +160,10 @@ for pt_limit in np.arange(start=200, stop=550, step=50):
         legend.Draw()
         c.SetLogy()
         c.Draw()
-        c.Print(f"{ScorePath}/Score_ptlimit_{pt_limit}_ptflag_{pt_flag}_dataset_{dataset}.png")
+        if print_graphics:
+            c.Print(f"{ScorePath}/Score_ptlimit_{pt_limit}_ptflag_{pt_flag}_dataset_{dataset}.png")
+        if save_graphics:
+            
         c.Delete()
 
 
