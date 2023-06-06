@@ -12,6 +12,8 @@ from coffea.nanoevents import NanoEventsFactory, NanoAODSchema
 dataset             = "tDM_Mphi1000_2018"                           # Dataset
 path_to_file        = "/eos/user/l/lfavilla/ml1/Skim_Folder"        # Path where file is saved 
 filename            = f"{dataset}.root"
+print_graphics      = False
+save_graphics       = True
 ### TREE ###
 tree                = NanoEventsFactory.from_root(f"{path_to_file}/{filename}",
                                                   schemaclass=NanoAODSchema.v6
@@ -30,6 +32,14 @@ ScoreVsCategoryPath = f"/eos/user/l/lfavilla/ml1/ScoreVsCategory/{dataset}"
 if not os.path.exists(ScoreVsCategoryPath):
     os.makedirs(ScoreVsCategoryPath)
 
+
+"""
+Saving plots to .root file
+"""   
+PlotsPath = f"/eos/user/l/lfavilla/ml1/Plots"
+if not os.path.exists(PlotsPath):
+    os.makedirs(PlotsPath)
+PlotRFile = ROOT.TFile(f"{dataset}", "RECREATE")
 
 
 
