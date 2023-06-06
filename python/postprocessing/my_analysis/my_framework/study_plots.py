@@ -29,8 +29,6 @@ if not os.path.exists(ScoreVsPtPath):
 ScoreVsCategoryPath = f"/eos/user/l/lfavilla/ml1/ScoreVsCategory/{dataset}"
 if not os.path.exists(ScoreVsCategoryPath):
     os.makedirs(ScoreVsCategoryPath)
-
-
 """
 Saving plots to .root file
 """   
@@ -83,12 +81,15 @@ def candidates_slices(tree, pt_start=0, pt_stop=1000, n_slices=10):
     return CandInSlices, sls
 
 
+pt_limits = np.arange(start=200, stop=550, step=50)
+
+
 """
 Score Distributions varying <pt_limit>, <pt_flag> and <truth>
 """
 ScoreDistributions                                         = {}
 nbins                                                      = 20
-for pt_limit in np.arange(start=200, stop=550, step=50):
+for pt_limit in pt_limits:
     TopCandidatesDict, pt_limit                            = candidates_dict(tree, pt_limit=pt_limit)
     ScoreDistributions[pt_limit]                           = {}
     for pt_flag in ["Low", "High"]:
@@ -128,7 +129,7 @@ directory = PlotRFile.mkdir("Score")
 
 
 
-for pt_limit in np.arange(start=200, stop=550, step=50):
+for pt_limit in pt_limits:
     for pt_flag in ["Low", "High"]:
         c            = ROOT.TCanvas("c", "Score Distribution", 1200, 800)
         c.SetMargin(0.15, 0.9, 0.15, 0.9)
@@ -174,8 +175,6 @@ Integrals Ratio 1
 import numpy as np
 import matplotlib.pyplot as plt
 
-pt_limits = np.arange(start=200, stop=550, step=50)
-
 Ratios                               = {}
 for pt_limit in pt_limits:
     Ratios[pt_limit]                 = {}
@@ -207,8 +206,6 @@ Integrals Ratio 2
 """
 import numpy as np
 import matplotlib.pyplot as plt
-
-pt_limits = np.arange(start=200, stop=550, step=50)
 
 Ratios                               = {}
 for pt_limit in pt_limits:
@@ -245,7 +242,7 @@ import numpy as np
 import awkward as ak
 
 ScoreVsPtDistributions                                              = {}
-for pt_limit in np.arange(start=200, stop=550, step=50):
+for pt_limit in pt_limits:
     TopCandidatesDict, pt_limit                                     = candidates_dict(tree, pt_limit=pt_limit)
     ScoreVsPtDistributions[pt_limit]                                = {}
     for pt_flag in ["Low", "High"]:
@@ -280,7 +277,7 @@ Plotting Score vs Pt Distributions varying <pt_limit>, <pt_flag> and <truth>
 """
 import mplhep as hep
 hep.style.use(hep.style.CMS)
-for pt_limit in np.arange(start=200, stop=550, step=50):
+for pt_limit in pt_limits:
     for pt_flag in ["Low", "High"]:
         for truth in [True, False]:
             c = ROOT.TCanvas("c", "Score vs Pt Distribution", 1200, 800)
@@ -306,8 +303,6 @@ Correlation Factor
 import numpy as np
 import matplotlib.pyplot as plt
 
-pt_limits = np.arange(start=200, stop=550, step=50)
-
 for pt_flag in ["Low", "High"]:
     plt.figure()
     corr_fact_true   = [ScoreVsPtDistributions[pt_limit][f"{pt_flag}True"]["corr_fact"] for pt_limit in pt_limits]
@@ -328,7 +323,6 @@ for pt_flag in ["Low", "High"]:
 """
 Study vs category
 """
-pt_limits                   = np.arange(start=200, stop=550, step=50)
 top_categories              = {}
 top_categories["3j0fj"]     = {}
 top_categories["3j1fj"]     = {}
@@ -356,7 +350,7 @@ for cat in top_categories:
     ScoreVsTopCatDistributions[cat]                         = {} 
     for s in ["score2", "deepTag_TvsQCD", "deepTag_WvsQCD"]:
         ScoreVsTopCatDistributions[cat][s]                  = {}
-        for pt_limit in np.arange(start=200, stop=550, step=50):
+        for pt_limit in pt_limits:
             ScoreVsTopCatDistributions[cat][s][pt_limit]    = {}
             for pt_flag in ["High"]:
                 for truth in [True, False]:    
