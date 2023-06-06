@@ -31,11 +31,12 @@ if not os.path.exists(ScoreVsCategoryPath):
     os.makedirs(ScoreVsCategoryPath)
 """
 Saving plots to .root file
-"""   
-PlotsPath = f"/eos/user/l/lfavilla/ml1/Plots"
-if not os.path.exists(PlotsPath):
-    os.makedirs(PlotsPath)
-PlotRFile = ROOT.TFile(f"{dataset}", "RECREATE")
+"""
+if save_graphics:
+    PlotsPath = f"/eos/user/l/lfavilla/ml1/Plots"
+    if not os.path.exists(PlotsPath):
+        os.makedirs(PlotsPath)
+    PlotRFile = ROOT.TFile(f"{dataset}", "RECREATE")
 
 
 
@@ -135,7 +136,7 @@ for pt_limit in pt_limits:
         bigger_histo = False
         for truth in [True, False]:
             histo    = ScoreDistributions[pt_limit][f"{pt_flag}{truth}"]["hist"]
-            histo.SetTitle(f"Score Distribution (pt_limit={pt_limit}, dataset={dataset})")
+            # histo.SetTitle(f"Score Distribution (pt_limit={pt_limit}, dataset={dataset})")
             histo.SetStats(False)
             
             
@@ -143,7 +144,12 @@ for pt_limit in pt_limits:
             last_bin_content = histo.GetBinContent(histo.GetNbinsX())
             overflow_content = last_bin_content + histo.GetBinContent(histo.GetNbinsX() + 1)
             histo.SetBinContent(histo.GetNbinsX(), overflow_content)
-            
+
+            # Save histo to .root file 
+            if save_graphics:
+                histo.Write()
+
+            # plot the highest histo first
             max_bin_count    = histo.GetMaximum()
             if max_bin_count > max_count:
                 max_count    = max_bin_count
@@ -151,17 +157,15 @@ for pt_limit in pt_limits:
 #             histo.Draw("SAME")
             legend.AddEntry(histo,  f"{pt_flag} {truth}",  "l")  
         histo.SetMaximum(max_count * 1.1)
-        
         for truth in [bigger_histo, not bigger_histo]:
             histo    = ScoreDistributions[pt_limit][f"{pt_flag}{truth}"]["hist"]
             histo.Draw("SAME")
         legend.Draw()
+
         c.SetLogy()
         c.Draw()
         if print_graphics:
             c.Print(f"{ScorePath}/Score_ptlimit_{pt_limit}_ptflag_{pt_flag}_dataset_{dataset}.png")
-        if save_graphics:
-            histo.Write()
         c.Delete()
 
 
@@ -431,3 +435,5 @@ for cat in top_categories:
                 c.Draw()
                 c.Print(f"{ScoreVsCategoryPath}/{cat}/{s}/{s}_cat_{cat}_ptlimit_{pt_limit}_ptflag_{pt_flag}_dataset_{dataset}.png")
                 c.Delete()
+
+PlotRFile.Close()
