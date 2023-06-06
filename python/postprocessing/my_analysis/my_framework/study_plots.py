@@ -51,7 +51,7 @@ if save_graphics:
     PlotsPath = f"/eos/user/l/lfavilla/ml1/Plots"
     if not os.path.exists(PlotsPath):
         os.makedirs(PlotsPath)
-    PlotRFile = ROOT.TFile(f"{dataset}", "RECREATE")
+    PlotRFile = ROOT.TFile(f"{PlotsPath}/{dataset}.root", "RECREATE")
 
 
 
