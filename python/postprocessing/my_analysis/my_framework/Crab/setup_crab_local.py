@@ -8,7 +8,7 @@ import subprocess
 save_path       = "/eos/user/l/lfavilla/ml1/Skim_Folder"
 if not os.path.exists(save_path):
     os.mkdir(save_path)
-nev             = 100
+nev             = 1000
 single_skim     = True
 samples         = ["tDM_Mphi50_2018", "tDM_Mphi500_2018", "tDM_Mphi1000_2018"]
 

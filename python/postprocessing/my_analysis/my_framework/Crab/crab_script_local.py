@@ -40,11 +40,10 @@ if "store" in sample.file:
   path_to_file  = f"root://cms-xrd-global.cern.ch/{sample.file}"
 else:
   path_to_file  = f"{sample.file}"
-  
 if isMC:
-  p = PostProcessor(outputDir=".", inputFiles=[path_to_file], cut="", modules=[MCweight_writer(), PreSkimSetup(), InitSkim(), GenPart_MomFirstCp(flavour='-5,-4,-3,-2,-1,1,2,3,4,5,6,-6,24,-24'), nanoprepro(), nanoTopcand(isMC), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()], outputbranchsel=os.path.abspath("./keep_and_drop.txt"), provenance=True, maxEntries=nev, fwkJobReport=False)                                                             
+  p = PostProcessor(outputDir=".", inputFiles=[path_to_file], cut="", modules=[MCweight_writer(), PreSkimSetup(), InitSkim(), GenPart_MomFirstCp(flavour='-5,-4,-3,-2,-1,1,2,3,4,5,6,-6,24,-24'), nanoprepro(), nanoTopcand(isMC), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()], histFileName='hist.root', histDirName='plots', outputbranchsel=os.path.abspath("./keep_and_drop.txt"), provenance=True, maxEntries=nev, fwkJobReport=False)                                                             
 else:
-  p = PostProcessor(outputDir=".", inputFiles=[path_to_file], cut="", modules=[MCweight_writer(), PreSkimSetup(), InitSkim(), nanoTopcand(isMC), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()], outputbranchsel=os.path.abspath("./keep_and_drop.txt"), provenance=True, maxEntries=nev, fwkJobReport=False)                                                             
+  p = PostProcessor(outputDir=".", inputFiles=[path_to_file], cut="", modules=[MCweight_writer(), PreSkimSetup(), InitSkim(), nanoTopcand(isMC), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()], histFileName='hist.root', histDirName='plots', outputbranchsel=os.path.abspath("./keep_and_drop.txt"), provenance=True, maxEntries=nev, fwkJobReport=False)                                                             
 
 p.run()
 print("DONE")
@@ -56,7 +55,7 @@ import glob
 # Define input and output file paths
 input_file  = "{}".format(path_to_file.split("/")[-1]).replace(".root", "_Skim.root")
 input_hist  = "hist.root"
-output_file = "{}".format(sample.label)
+output_file = "{}".format(f"{sample.label}.root")
 
 
 print("input_file:      ", input_file)
@@ -70,7 +69,6 @@ print("os.path.exists(input_hist):    ", os.path.exists(input_hist))
 
 
 DoHadd    = True
-DoMove    = True
 DoRemove  = True
 
 
@@ -85,11 +83,6 @@ if True:
       print("MOVING FILE {} TO {}".format(output_file, os.path.join(save_path, output_file)))
       shutil.move(output_file, os.path.join(save_path, output_file))
 
-  if DoMove:
-    if (os.path.exists(input_file)):
-      print("MOVING FILE {} TO {}".format(input_file, os.path.join(save_path, output_file)))
-      # shutil.move(input_file, os.path.join(save_path, output_file))
-      shutil.copy(input_file, os.path.join(save_path, output_file))
   if DoRemove:
     # Remove input files
     print("REMOVING *root FILES")

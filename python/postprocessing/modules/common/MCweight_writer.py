@@ -31,10 +31,11 @@ class MCweight_writer(Module):
         
     def analyze(self, event):
         """process event, return True (go to next module) or False (fail, go to next event)"""
-        Generator = Object(event, "Generator")
-        LHEPdfWeight = Collection(event, 'LHEPdfWeight')
-        LHEScaleWeight = Collection(event, 'LHEScaleWeight')
-        PSWeight = Collection(event, 'PSWeight')
+        # print("----------------------- NEW EVENT -----------------------")
+        Generator        = Object(event, "Generator")
+        LHEPdfWeight     = Collection(event, 'LHEPdfWeight')
+        LHEScaleWeight   = Collection(event, 'LHEScaleWeight')
+        PSWeight         = Collection(event, 'PSWeight')
         if(self.addLHA):
             if len(self.LHAPDFs)>0:#For now only single-pdf implemented//
                 for l in range(0,len(self.LHAPDFs)):
