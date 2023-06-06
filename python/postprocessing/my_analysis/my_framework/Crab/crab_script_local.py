@@ -37,7 +37,7 @@ else:
 ############ DATASET PROCESSING ############
 # print("Before PostProcessor")
 if "store" in sample.file:
-  path_to_file  = f"{save_path}/{sample.file}"
+  path_to_file  = f"{sample.file}"
 else:
   path_to_file  = f"root://cms-xrd-global.cern.ch/{sample.file}"
 if isMC:
