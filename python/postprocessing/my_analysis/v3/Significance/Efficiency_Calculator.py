@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 ### My Scripts ###
 # Samples #
-from PhysicsTools.NanoAODTools.postprocessing.my_analysis.v2 import Samples
+from PhysicsTools.NanoAODTools.postprocessing.my_analysis.v3 import Samples
 datasets    = Samples.datasets_to_run_dict
 ########### Create arguments to insert from shell ###########
 from argparse import ArgumentParser
@@ -26,10 +26,10 @@ if not os.path.exists(heat_path):
 
 
 ############ DATASET PROCESSING ############
-save_eff      = True
-cms_labels    = False
+save_eff      = False
+cms_labels    = True
 lumi          = True
-graphics      = True
+graphics      = False
 save_graphics = True
 
 ####################
@@ -41,7 +41,10 @@ if filename in os.listdir(path_to_skim):
         fSkim       = ROOT.TFile.Open("{}/{}".format(path_to_skim, filename))
 treeSkim            = fSkim.Events
 nOldEntries         = fSkim.plots.h_genweight.GetBinContent(1)
+print(f"nOldEntries: {nOldEntries}")
 nNewEntries         = treeSkim.GetEntries()
+print(f"nNewEntries: {nNewEntries}")
+print(f"Efficiency: {nNewEntries/nOldEntries*100}")
 
 
 ############################
@@ -100,10 +103,13 @@ for category_string in ["isResolved", "isMerged", "isNone", "isR_0FWJ", "isR_geq
     ############## EFFICIENCIES ##############
     globals()[eff_name]                 = {}
     for top_tag, condition in category.items():
+        print(f"top_tag, condition: {top_tag} {condition}")
         ### Calculate number of events ###
         globals()[var_name][top_tag]    = treeSkim.GetEntries(condition)
         ### Calculate efficiency values ###
         globals()[eff_name][top_tag]    = 100 * globals()[var_name][top_tag] / nOldEntries
+        print(globals()[var_name][top_tag])
+        print(globals()[eff_name][top_tag])
 fSkim.Close()
 
 
@@ -180,11 +186,11 @@ if graphics:
         c.SetRightMargin(0.15)
         
         # Set axis labels and titles
-        h2d.GetXaxis().SetTitle("FWJ multiplicity")
-        h2d.GetYaxis().SetTitle("Event category")
+        h2d.GetXaxis().SetTitle("Event category")
+        h2d.GetYaxis().SetTitle("FWJ multiplicity")
         h2d.GetZaxis().SetTitle("Efficiency (%)")
         h2d.GetXaxis().SetTitleOffset(1.1)
-        h2d.GetYaxis().SetTitleOffset(1.1)
+        h2d.GetYaxis().SetTitleOffset(1.2)
         h2d.GetZaxis().SetTitleOffset(0.9)
         h2d.SetTitle(dataset + " Efficiency [" + top_tag + "]")
         

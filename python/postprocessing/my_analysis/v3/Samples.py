@@ -164,17 +164,17 @@ ZJetsToNuNu_2018.components             = [ZJetsToNuNu_HT100To200_2018,
 ################################ tDM ################################
 tDM_Mphi50_2018       = sample(ROOT.kRed, 1, 1001, "tDM_Mphi50_2018", "tDM_Mphi50_2018")
 tDM_Mphi50_2018.year  = 2018
-tDM_Mphi50_2018.sigma = 0.70
+tDM_Mphi50_2018.sigma = 0.70 #pb
 tDM_Mphi50_2018.file  = "/afs/cern.ch/user/a/acagnott/public/xJonLeo/" + "tDM_mPhi50_mChi1.root"
 
 tDM_Mphi500_2018       = sample(ROOT.kRed, 1, 1001, "tDM_Mphi500_2018", "tDM_Mphi500_2018")
 tDM_Mphi500_2018.year  = 2018
-tDM_Mphi500_2018.sigma = 0.0004385
+tDM_Mphi500_2018.sigma = 0.004385 #pb
 tDM_Mphi500_2018.file  = "/afs/cern.ch/user/a/acagnott/public/xJonLeo/" + "tDM_mPhi500_mChi1.root"
 
 tDM_Mphi1000_2018       = sample(ROOT.kRed, 1, 1001, "tDM_Mphi1000_2018", "tDM_Mphi1000_2018")
 tDM_Mphi1000_2018.year  = 2018
-tDM_Mphi1000_2018.sigma = 0.00002499
+tDM_Mphi1000_2018.sigma = 0.0002499 #pb
 tDM_Mphi1000_2018.file  = "/afs/cern.ch/user/a/acagnott/public/xJonLeo/" + "tDM_mPhi1000_mChi1.root"
 
 

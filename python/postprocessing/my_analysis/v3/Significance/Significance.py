@@ -5,7 +5,7 @@ import numpy as np
 # Samples #
 from PhysicsTools.NanoAODTools.postprocessing.my_analysis.v2 import Samples
 
-heat_path = "/eos/user/l/lfavilla/Skim_Folder/Efficiency"
+heat_path = "/eos/user/l/lfavilla/v2/Skim_Folder/Efficiency"
 eff_file  = os.path.join(heat_path, "efficiencies.txt")
 df        = pd.read_csv(eff_file, sep='\s+')
 
@@ -16,7 +16,7 @@ def multiply_efficiencies(row):
     dataset          = row["DATASET_NAME"]
     eff_columns      = list(df.filter(like="Eff").columns)
     sigma            = Samples.datasets_to_run_dict[dataset].sigma # pb
-    lumi             = 137                                         # pb-1
+    lumi             = 137000                                      # pb-1
     multiplier       = sigma * lumi
     row[eff_columns] = row[eff_columns] * multiplier
     return row
@@ -40,10 +40,10 @@ top_tags   = [deep, tau]
 
 for key, dataframe in frames.items():
     df = dataframe[NormN_columns].sum().to_frame().T
-    deep_exp[key] = pd.DataFrame(data   = np.array([(float(df.filter(like="isR_0FWJ_deep").iloc[0][0]), float(df.filter(like="isR_geq1FWJ_deep").iloc[0][0])),
+    deep_exp[key] = pd.DataFrame(data  = np.array([(float(df.filter(like="isR_0FWJ_deep").iloc[0][0]), float(df.filter(like="isR_geq1FWJ_deep").iloc[0][0])),
                                                     (float(df.filter(like="isM_0FWJ_deep").iloc[0][0]), float(df.filter(like="isM_geq1FWJ_deep").iloc[0][0]))]),
-                                 index  = ["0FWJ", ">=1FWJ"],
-                                 columns= ["Resolved", "Merged"])
+                                index  = ["0FWJ", ">=1FWJ"],
+                                columns= ["Resolved", "Merged"])
     
     tau_exp[key] = pd.DataFrame(data   = np.array([(float(df.filter(like="isR_0FWJ_tau").iloc[0][0]), float(df.filter(like="isR_geq1FWJ_tau").iloc[0][0])),
                                                    (float(df.filter(like="isM_0FWJ_tau").iloc[0][0]), float(df.filter(like="isM_geq1FWJ_tau").iloc[0][0]))]),
@@ -52,7 +52,7 @@ for key, dataframe in frames.items():
                                 
 ##################################################################################################################
 import ROOT
-def make_heatmap(df, title, z_title, cms_labels=False, lumi=True, save_graphics=True, save_path="."):
+def make_heatmap(df, title, z_title, cms_labels=True, lumi=True, save_graphics=True, save_path="."):
     # Convert pandas dataframe to numpy array
     arr = df.to_numpy()
     
@@ -79,8 +79,8 @@ def make_heatmap(df, title, z_title, cms_labels=False, lumi=True, save_graphics=
     c.SetRightMargin(0.15)
     
     # Set axis labels and titles
-    h2d.GetXaxis().SetTitle("FWJ multiplicity")
-    h2d.GetYaxis().SetTitle("Event category")
+    h2d.GetXaxis().SetTitle("Event category")
+    h2d.GetYaxis().SetTitle("FWJ multiplicity")
     h2d.GetZaxis().SetTitle(z_title)
     h2d.GetXaxis().SetTitleOffset(1.1)
     h2d.GetYaxis().SetTitleOffset(1.4)
@@ -121,14 +121,14 @@ def make_heatmap(df, title, z_title, cms_labels=False, lumi=True, save_graphics=
         
         
 ### EXECTED NUMBER OF EVENTS ###
-save_path_expected_events    = "/eos/user/l/lfavilla/Skim_Folder/Efficiency/expected_events"
+save_path_expected_events    = "/eos/user/l/lfavilla/v2/Skim_Folder/Efficiency/expected_events"
 for key, dataframe in deep_exp.items():
     make_heatmap(df=dataframe, title=key+"_exp_deep", z_title="deep Nexp", save_path=save_path_expected_events)
 for key, dataframe in tau_exp.items():
     make_heatmap(df=dataframe, title=key+"_exp_tau", z_title="tau Nexp", save_path=save_path_expected_events)        
         
 ### SIGNIFICANCE ###
-save_path_significance      = "/eos/user/l/lfavilla/Skim_Folder/Efficiency/significance_plots"
+save_path_significance      = "/eos/user/l/lfavilla/v2/Skim_Folder/Efficiency/significance_plots"
 for key, dataframe in deep_exp.items():
     if ("tDM" in key) or ("Tprime" in key):
         make_heatmap(df=dataframe.div(deep_exp["bkg"].apply(np.sqrt)), title=key+"_significance_deep", z_title="Significance deep", save_path=save_path_significance)

@@ -1,4 +1,4 @@
-from PhysicsTools.NanoAODTools.postprocessing.samples.samples import *
+from PhysicsTools.NanoAODTools.postprocessing.samples.Samples import *
 import os
 import optparse
 import sys
@@ -69,13 +69,14 @@ def crab_script_writer(sample, outpath, isMC, modules, presel):
     f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.MCweight_writer import *\n")
     #f.write("from PhysicsTools.NanoAODTools.postprocessing.examples.MET_HLT_Filter import *\n")
     #f.write("from PhysicsTools.NanoAODTools.postprocessing.examples.HLT_Filter import *\n")
-    f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.preselection import *\n")
+    # f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.preselection import *\n")
     #f.write("from PhysicsTools.NanoAODTools.postprocessing.examples.trigger_preselection import *\n")
     #f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.PrefireCorr import *\n")
     #f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.puWeightProducer import *\n")
     #f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.lepSFProducer import *\n")
     #f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.btv.btagSFProducer import *\n")
-    #f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.LHAPDFWeightProducer import *\n") 
+    #f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.LHAPDFWeightProducer import *\n")
+    f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.TagSkim import *\n")
     f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.GenPart_MomFirstCp import *\n")
     f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.nanoprepro_v2 import *\n")
     f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.nanoTopcandidate_v2 import *\n")
@@ -135,7 +136,7 @@ def crab_script_writer(sample, outpath, isMC, modules, presel):
     f_sh.close()
 
 if not(opt.dat in sample_dict.keys()):
-    print( sample_dict.keys())
+    print(sample_dict.keys())
 dataset = sample_dict[opt.dat]
 
 samples = []
@@ -188,16 +189,14 @@ for sample in samples:
             #    modules = MCweight_mod + ",  " + met_hlt_mod + ", preselection(), " + lep_mod + ", " + trg_mod + ", " + pu_mod + ", " + btag_mod + ", metCorrector(), fatJetCorrector(), metCorrector_tot(), fatJetCorrector_tot()" # Put here all the modules you want to be runned by crab
             #if("WP" in sample.label):
             #    modules=modules.replace("MCweight_writer()","LHAPDFWeight_NNPDF(),LHAPDFWeight_NNPDFLO(),LHAPDFWeight_PDF4LHC15(),MCweight_writer(LHAPDFs=['LHANNPDF','LHAPDF4LHC15','LHANNPDFLO'])")
-            if 'QCD' in sample.label:
-                modules = "MCweight_writer(), preselection(), nanoTopcand(), nanoTopevaluate(), topselection()"
-            else:
-                modules = "MCweight_writer(), preselection(), GenPart_MomFirstCp(flavour='-5,-4,-3,-2,-1,1,2,3,4,5,6,-6,24,-24'),nanoprepro(),nanoTopcand(), nanoTopevaluate(), topselection()"
+            # modules = "MCweight_writer(), preselection(), GenPart_MomFirstCp(flavour='-5,-4,-3,-2,-1,1,2,3,4,5,6,-6,24,-24'), nanoprepro(), nanoTopcand("+str(isMC)+"), nanoTopevaluate()"
+            modules = "MCweight_writer(), PreSkimSetup(), InitSkim(), GenPart_MomFirstCp(flavour='-5,-4,-3,-2,-1,1,2,3,4,5,6,-6,24,-24'), nanoprepro(), nanoTopcand("+str(isMC)+"), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()"
         else:
             #modules = "HLT(), preselection(), metCorrector(), fatJetCorrector(), metCorrector_tot(), fatJetCorrector_tot()" # Put here all the modules you want to be runned by crab
-            modules = "preselection(),nanoTopcand(), nanoTopevaluate(), topselection()"
-
+            # modules = "preselection(), nanoTopcand(isMC="+str(isMC)+"), nanoTopevaluate()"
+            modules = "MCweight_writer(), PreSkimSetup(), InitSkim(), nanoTopcand("+str(isMC)+"), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()"
         print("Producing crab script")
-        crab_script_writer(sample,'/eos/user/'+str(os.environ.get('USER')[0]) + '/'+str(os.environ.get('USER'))+'/Wprime/nosynch/', isMC, modules, presel)
+        crab_script_writer(sample,'/eos/user/'+str(os.environ.get('USER')[0]) + '/'+str(os.environ.get('USER'))+'/', isMC, modules, presel)
         os.system("chmod +x crab_script.sh")
         
         #Launching crab
