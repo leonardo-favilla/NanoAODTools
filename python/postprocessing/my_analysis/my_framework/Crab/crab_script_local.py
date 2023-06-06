@@ -25,8 +25,8 @@ parser.add_argument("-save_path",   dest="save_path",   required=True, type=str,
 parser.add_argument("-nev",         dest="nev",         required=True, type=int,  help="number of events to use")
 options     = parser.parse_args()
 ### Arguments ###
-sample      = options.sample             # Sample to run
-save_path   = options.save_path          # Where to save skim 
+sample      = sample_dict[options.sample]             # Sample to run
+save_path   = options.save_path                       # Where to save skim 
 nev         = options.nev
 
 if ("Data" in sample.label):
