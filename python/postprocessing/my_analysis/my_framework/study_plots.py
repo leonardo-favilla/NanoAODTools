@@ -8,6 +8,21 @@ import mplhep as hep
 hep.style.use(hep.style.CMS)
 import coffea
 from coffea.nanoevents import NanoEventsFactory, NanoAODSchema
+
+# ########### Create arguments to insert from shell ###########
+# from argparse import ArgumentParser
+# parser      = ArgumentParser()
+# parser.add_argument("-file",        dest="file",        required=True, type=str,  help="skim file to run")
+# parser.add_argument("-files_path",  dest="files_path",  required=True, type=str,  help="path where skim files are saved (after nanoTopCandidate)")
+# parser.add_argument("-save_path",   dest="save_path",   required=True, type=str,  help="path where to save files")
+# parser.add_argument("-nev",         dest="nev",         required=True, type=int,  help="number of events to use")
+# options     = parser.parse_args()
+
+
+
+
+
+
 ### ARGS ###
 dataset             = "tDM_Mphi1000_2018"                           # Dataset
 path_to_file        = "/eos/user/l/lfavilla/ml1/Skim_Folder"        # Path where file is saved 
