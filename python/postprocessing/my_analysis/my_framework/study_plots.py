@@ -18,6 +18,7 @@ save_graphics       = True
 tree                = NanoEventsFactory.from_root(f"{path_to_file}/{filename}",
                                                   schemaclass=NanoAODSchema.v6
                                                  ).events()
+
 ### STORAGE ###
 ScorePath           = f"/eos/user/l/lfavilla/ml1/Score/{dataset}"
 if not os.path.exists(ScorePath):
