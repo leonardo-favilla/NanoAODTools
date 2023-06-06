@@ -2,8 +2,16 @@
 import os
 from PhysicsTools.NanoAODTools.postprocessing.framework.postprocessor import *
 ### My Scripts ###
+# Skimming and Tagging #
+from PhysicsTools.NanoAODTools.postprocessing.modules.common.MCweight_writer import *
+from PhysicsTools.NanoAODTools.postprocessing.modules.commonTagSkim import PreSkimSetup, InitSkim, W_Top_Tagger, Re_Bo_Tagger, Merge_Tagger
+# Samples #
+from PhysicsTools.NanoAODTools.postprocessing.samples.Samples import *
 
 # ANTIMO's #
+from PhysicsTools.NanoAODTools.postprocessing.modules.common.GenPart_MomFirstCp import *
+from PhysicsTools.NanoAODTools.postprocessing.modules.common.nanoprepro_v2 import *
+from PhysicsTools.NanoAODTools.postprocessing.modules.common.nanoTopcandidate_v2 import *
 from PhysicsTools.NanoAODTools.postprocessing.modules.common.nanoTopevaluate import *
 
 
@@ -52,7 +60,7 @@ print("os.path.exists(input_hist):    ", os.path.exists(input_hist))
 print("os.path.exists('tree.root'):   ", os.path.exists("tree.root"))
 
 
-DoHadd    = False
+DoHadd    = True
 DoMove    = True
 DoRemove  = True
 

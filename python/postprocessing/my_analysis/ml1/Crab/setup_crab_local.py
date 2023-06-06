@@ -5,6 +5,7 @@ import subprocess
 #############
 # ARGUMENTS #
 #############
+# files_path      = "/eos/user/l/lfavilla/v2/Skim_Folder"
 files_path      = "/eos/user/l/lfavilla/v2/Skim_Folder"
 save_path       = "/eos/user/l/lfavilla/ml1/Skim_Folder"
 if not os.path.exists(save_path):
