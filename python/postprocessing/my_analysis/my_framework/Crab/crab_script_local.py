@@ -21,24 +21,22 @@ from PhysicsTools.NanoAODTools.postprocessing.modules.common.nanoTopevaluate imp
 from argparse import ArgumentParser
 parser      = ArgumentParser()
 parser.add_argument("-file",        dest="file",        required=True, type=str,  help="file to run")
-parser.add_argument("-files_path",  dest="files_path",  required=True, type=str,  help="path where skim files are saved")
 parser.add_argument("-save_path",   dest="save_path",   required=True, type=str,  help="path where to save files")
 parser.add_argument("-nev",         dest="nev",         required=True, type=int,  help="number of events to use")
 options     = parser.parse_args()
 ### Arguments ###
-file        = options.file                # Skim file to run
-files_path  = options.files_path          # Where skim files are saved (after nano TopCandidate) 
+file        = options.file                # File to run
 save_path   = options.save_path           # Where to save skim 
 nev         = options.nev
 
-############ DATASET PROCESSING ############
 if ('Data' in sample.label):
   isMC   = False
   # presel = "Flag_goodVertices && Flag_globalSuperTightHalo2016Filter && Flag_HBHENoiseFilter && Flag_HBHENoiseIsoFilter && Flag_EcalDeadCellTriggerPrimitiveFilter && Flag_BadPFMuonFilter && Flag_eeBadScFilter "
 else:
   isMC   = True
+############ DATASET PROCESSING ############
 # print("Before PostProcessor")
-path_to_file  = f"{files_path}/{file}"
+path_to_file  = f"{save_path}/{file}"
 if isMC:
   modules = "MCweight_writer(), PreSkimSetup(), InitSkim(), GenPart_MomFirstCp(flavour='-5,-4,-3,-2,-1,1,2,3,4,5,6,-6,24,-24'), nanoprepro(), nanoTopcand("+str(isMC)+"), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()"
 else:
