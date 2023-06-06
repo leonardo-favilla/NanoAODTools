@@ -54,19 +54,19 @@ print("DONE")
 import shutil
 import glob
 # Define input and output file paths
-input_tree  = "{}".format(file).replace(".root", "_Skim.root")
+input_file  = "{}".format(path_to_file.split("/")[-1]).replace(".root", "_Skim.root")
 input_hist  = "hist.root"
-output_file = "{}".format(file).replace("_Skim","")
+output_file = "{}".format(input_file).replace("_Skim","")
 
 
-print("input_tree:      ", input_tree)
+print("input_file:      ", input_file)
 print("input_hist:      ", input_hist)
 print("output_file:     ", output_file)
 
 # Check if input files exist
-print("os.path.exists(input_tree):    ", os.path.exists(input_tree))
+print("os.path.exists(input_file):    ", os.path.exists(input_file))
 print("os.path.exists(input_hist):    ", os.path.exists(input_hist))
-print("os.path.exists('tree.root'):   ", os.path.exists("tree.root"))
+# print("os.path.exists('tree.root'):   ", os.path.exists("tree.root"))
 
 
 DoHadd    = True
@@ -76,20 +76,20 @@ DoRemove  = True
 
 if True:
   if DoHadd:
-    if (os.path.exists(input_tree) and os.path.exists(input_hist)):
+    if (os.path.exists(input_file) and os.path.exists(input_hist)):
       # Merge files using hadd
       print("HADDING FILES")
-      os.system("hadd -f {} {} {}".format(output_file, input_tree, input_hist))
+      os.system("hadd -f {} {} {}".format(output_file, input_file, input_hist))
     # Move output file to desired location
-    if (os.path.exists(input_tree) and os.path.exists(output_file)):
+    if (os.path.exists(input_file) and os.path.exists(output_file)):
       print("MOVING FILE {} TO {}".format(output_file, os.path.join(save_path, output_file)))
       shutil.move(output_file, os.path.join(save_path, output_file))
 
   if DoMove:
-    if (os.path.exists(input_tree)):
-      print("MOVING FILE {} TO {}".format(input_tree, os.path.join(save_path, output_file)))
-      # shutil.move(input_tree, os.path.join(save_path, output_file))
-      shutil.copy(input_tree, os.path.join(save_path, output_file))
+    if (os.path.exists(input_file)):
+      print("MOVING FILE {} TO {}".format(input_file, os.path.join(save_path, output_file)))
+      # shutil.move(input_file, os.path.join(save_path, output_file))
+      shutil.copy(input_file, os.path.join(save_path, output_file))
   if DoRemove:
     # Remove input files
     print("REMOVING *root FILES")
