@@ -22,7 +22,7 @@ from coffea.nanoevents import NanoEventsFactory, NanoAODSchema
 
 
 
-
+ROOT.gROOT.SetBatch()
 ### ARGS ###
 dataset             = "tDM_Mphi1000_2018"                           # Dataset
 path_to_file        = "/eos/user/l/lfavilla/ml1/Skim_Folder"        # Path where file is saved 
