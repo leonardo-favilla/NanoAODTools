@@ -95,7 +95,9 @@ for pt_limit in pt_limits:
     for pt_flag in ["Low", "High"]:
         for truth in [True, False]:    
             ScoreDistributions[pt_limit][f"{pt_flag}{truth}"] = {}
-            histo                                             = ROOT.TH1F(f"{pt_flag}_{truth}_{pt_limit}", f"{pt_flag}{truth} (pt_limit={pt_limit} GeV)", nbins, 0, 1)
+            histoName                                         = f"Top{pt_flag}PtScore_{truth}_{pt_limit}"
+            histoTitle                                        = f"Top{pt_flag}PtScore (truth={truth}, pt_limit={pt_limit})"
+            histo                                             = ROOT.TH1F(histoName, histoTitle, nbins, 0, 1)
             if pt_flag=="Low":
                 scores                                        = ak.flatten(TopCandidatesDict[f"{pt_flag}{truth}"].scoreDNN)
             elif pt_flag=="High":
@@ -123,11 +125,6 @@ Plotting Score Distributions varying <pt_limit>, <pt_flag> and <truth>
 """
 import mplhep as hep
 hep.style.use(hep.style.CMS)
-# Create directory in .root file
-directory = PlotRFile.mkdir("Score")
-
-
-
 
 for pt_limit in pt_limits:
     for pt_flag in ["Low", "High"]:
@@ -164,7 +161,7 @@ for pt_limit in pt_limits:
         if print_graphics:
             c.Print(f"{ScorePath}/Score_ptlimit_{pt_limit}_ptflag_{pt_flag}_dataset_{dataset}.png")
         if save_graphics:
-            
+            histo.Write()
         c.Delete()
 
 
