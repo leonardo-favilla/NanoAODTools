@@ -92,7 +92,7 @@ QCD_HT2000toInf_2018.file      = "/store/mc/" + tag2018_1 + "/QCD_HT2000toInf_Tu
 
 QCD_2018                        = sample(ROOT.kGreen, 1, 1001, "QCD_2018", "QCD_2018")
 QCD_2018.year                   = 2018
-QCD_2018.components             = [QCD_HT100to200_2018, 
+QCD_2018.components             = [
                                    QCD_HT200to300_2018, 
                                    QCD_HT300to500_2018, 
                                    QCD_HT500to700_2018, 
