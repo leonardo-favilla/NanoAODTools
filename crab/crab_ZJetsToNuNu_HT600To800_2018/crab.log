@@ -1769,3 +1769,1206 @@ Summary of run jobs:
  * Waste: 4:45:44 (11% of total)
 
 INFO 2023-06-07 10:03:18.173 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_ZJetsToNuNu_HT600To800_2018/crab.log
+DEBUG 2023-06-07 10:43:38.100 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:43:38.100 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:43:38.100 UTC: 	 Executing command: 'getoutput'
+DEBUG 2023-06-07 10:43:38.100 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+DEBUG 2023-06-07 10:43:38.121 UTC: 	 Using VO group '' and VO role 'NULL' as written in the request cache file for this task.
+DEBUG 2023-06-07 10:43:38.154 UTC: 	 Checking credentials
+DEBUG 2023-06-07 10:43:38.154 UTC: 	 Found proxy file /tmp/x509up_u159320
+DEBUG 2023-06-07 10:43:38.154 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-06-07 10:43:38.154 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u159320
+DEBUG 2023-06-07 10:43:38.836 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-06-07 10:43:38.836 UTC: 	 Getting proxy life time left
+DEBUG 2023-06-07 10:43:38.836 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u159320
+DEBUG 2023-06-07 10:43:39.390 UTC: 	 output : 42691
+42690
+
+ error: 
+ retcode : 0
+DEBUG 2023-06-07 10:43:39.390 UTC: 	 Proxy valid for 11:51:30 hours
+DEBUG 2023-06-07 10:43:39.408 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2023-06-07 10:43:39.409 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.230417" -H "Accept: */*" --data @/tmp/crab_curlDatab8xxkhsg --cert "/tmp/x509up_u159320" --key "/tmp/x509up_u159320" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/info?subresource=delegatedn" | tee /dev/stderr 
+DEBUG 2023-06-07 10:43:39.476 UTC: 	 output : {"result": [
+ {"services": ["/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch"]}
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.185.101.116:8443...
+* Connected to cmsweb.cern.ch (188.185.101.116) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+*  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6240 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13122 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6378 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 28 02:56:51 2023 GMT
+*  expire date: Apr  3 02:56:51 2024 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/info?subresource=delegatedn HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.230417
+> Accept: */*
+> Content-Length: 22
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [22 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Wed, 07 Jun 2023 10:43:39 GMT
+< Server: Apache
+< Content-Type: application/json
+< Content-Length: 216
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "531fb58a933656ea08a7f418b273fdae3c95932a"
+< X-Rest-Time: 2028.942 us
+< CMS-Server-Time: D=36089 t=1686134619437291
+< 
+{ [5 bytes data]
+100   238  100   216  100    22   4238    431 --:--:-- --:--:-- --:--:--  4760
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ {"services": ["/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch"]}
+]}
+
+ retcode : 0
+DEBUG 2023-06-07 10:43:39.477 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2023-06-07 10:43:39.477 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u159320
+DEBUG 2023-06-07 10:43:40.436 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+
+ error: 
+ retcode : 0
+DEBUG 2023-06-07 10:43:40.436 UTC: 	 Getting myproxy life time left for 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-06-07 10:43:40.436 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-06-07 10:43:40.666 UTC: 	 output : username: 70284ad9de3a40585c76dbf527363be004fcbd17
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 556:00:52  (23.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2023-06-07 10:43:40.666 UTC: 	 Myproxy is valid: 2001600
+DEBUG 2023-06-07 10:43:40.666 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: 70284ad9de3a40585c76dbf527363be004fcbd17  - validity: 23 days, 4:00:00
+DEBUG 2023-06-07 10:43:40.675 UTC: 	 Command use: getoutput
+DEBUG 2023-06-07 10:43:40.675 UTC: 	 Options use: ['-d', 'crab_ZJetsToNuNu_HT600To800_2018', '--xrootd']
+DEBUG 2023-06-07 10:43:40.675 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2023-06-07 10:43:40.676 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.230417" -H "Accept: */*" --data @/tmp/crab_curlDatawrujkxmo --cert "/tmp/x509up_u159320" --key "/tmp/x509up_u159320" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/info?subresource=version" | tee /dev/stderr 
+DEBUG 2023-06-07 10:43:40.776 UTC: 	 output : {"result": [
+ ["3.3.19", "3.3.20", "v3", "development", "v3.230504"]
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.185.101.116:8443...
+* Connected to cmsweb.cern.ch (188.185.101.116) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+*  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6240 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13122 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6378 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 28 02:56:51 2023 GMT
+*  expire date: Apr  3 02:56:51 2024 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/info?subresource=version HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.230417
+> Accept: */*
+> Content-Length: 19
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [19 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Wed, 07 Jun 2023 10:43:40 GMT
+< Server: Apache
+< Content-Type: application/json
+< Content-Length: 72
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "63f3e3aba51685849350eabf1b77b9be151d379c"
+< X-Rest-Time: 2056.122 us
+< CMS-Server-Time: D=34797 t=1686134620719010
+< 
+{ [5 bytes data]
+100    91  100    72  100    19   1232    325 --:--:-- --:--:-- --:--:--  1568
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ ["3.3.19", "3.3.20", "v3", "development", "v3.230504"]
+]}
+
+ retcode : 0
+DEBUG 2023-06-07 10:43:40.777 UTC: 	 CRABClient version: v3.230417
+DEBUG 2023-06-07 10:43:40.777 UTC: 	 Instance is prod
+DEBUG 2023-06-07 10:43:40.777 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2023-06-07 10:43:40.777 UTC: 	 Command api workflow
+DEBUG 2023-06-07 10:43:40.777 UTC: 	 Encoded data for curl request: subresource=search&workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018
+DEBUG 2023-06-07 10:43:40.777 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.230417" -H "Accept: */*" --data @/tmp/crab_curlDatafgm50xhv --cert "/tmp/x509up_u159320" --key "/tmp/x509up_u159320" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/task?subresource=search&workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018" | tee /dev/stderr 
+DEBUG 2023-06-07 10:43:40.948 UTC: 	 output : {"desc": {"columns": ["tm_taskname", "tm_activity", "panda_jobset_id", "tm_task_status", "tm_task_command", "tm_start_time", "tm_start_injection", "tm_end_injection", "tm_task_failure", "tm_job_sw", "tm_job_arch", "tm_input_dataset", "tm_nonvalid_input_dataset", "tm_use_parent", "tm_site_whitelist", "tm_site_blacklist", "tm_split_algo", "tm_split_args", "tm_user_sandbox", "tm_cache_url", "tm_username", "tm_user_dn", "tm_user_vo", "tm_user_role", "tm_user_group", "tm_publish_name", "tm_publish_groupname", "tm_asyncdest", "tm_dbs_url", "tm_publish_dbs_url", "tm_publication", "tm_outfiles", "tm_tfile_outfiles", "tm_edm_outfiles", "tm_job_type", "tm_generator", "tm_events_per_lumi", "tm_arguments", "panda_resubmitted_jobs", "tm_save_logs", "tw_name", "tm_user_infiles", "tm_maxjobruntime", "tm_numcores", "tm_maxmemory", "tm_priority", "tm_output_dataset", "tm_task_warnings", "tm_user_webdir", "tm_scriptexe", "tm_scriptargs", "tm_extrajdl", "tm_asourl", "tm_collector", "tm_schedd", "tm_dry_run", "tm_user_files", "tm_transfer_outputs", "tm_output_lfn", "tm_ignore_locality", "tm_fail_limit", "tm_one_event_mode", "tm_secondary_input_dataset", "tm_primary_dataset", "tm_last_publication", "tm_debug_files", "clusterid", "tm_asodb", "tm_ignore_global_blacklist", "tm_submitter_ip_addr", "tm_totalunits", "tm_ddm_reqid", "tm_user_config"]}, "result": [
+ "230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018"
+,"None"
+,"None"
+,"SUBMITTED"
+,"SUBMIT"
+,"2023-06-06 10:45:33.596728"
+,"None"
+,"2023-06-06 10:46:11.877874"
+,"None"
+,"CMSSW_12_6_0"
+,"slc7_amd64_gcc10"
+,"/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM"
+,"T"
+,"0"
+,"[]"
+,"[]"
+,"FileBased"
+,"{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 1, 'runs': [], 'lumis': []}"
+,"9bf3e45e118c52189282086484e79c8967600913ebd8510621c0608bfe3b0699.tar.gz"
+,"https://cmsweb.cern.ch/S3/crabcache_prod"
+,"lfavilla"
+,"/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla"
+,"cms"
+,"None"
+,"None"
+,"ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000"
+,"F"
+,"T2_IT_Pisa"
+,"https://cmsweb.cern.ch/dbs/prod/global/DBSReader"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter"
+,"F"
+,"[]"
+,"[]"
+,"['tree_hadd.root']"
+,"Analysis"
+,"pythia"
+,"None"
+,"{}"
+,"None"
+,"T"
+,"crab-prod-tw01"
+,"[]"
+,"1250"
+,"1"
+,"2000"
+,"10"
+,"['/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/lfavilla-ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000/USER']"
+,"[]"
+,"http://vocms0137.cern.ch/mon/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018"
+,"crab_script.sh"
+,"[]"
+,"[]"
+,"None"
+,"cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"
+,"crab3@vocms0137.cern.ch"
+,"F"
+,"[]"
+,"T"
+,"/store/user/lfavilla/DM_v0"
+,"F"
+,"None"
+,"F"
+,"None"
+,"ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8"
+,"None"
+,"2a2d17ad3d62c8f28b7555c9cc2592b0dcd000f580f80287356abd91188119eb.tar.gz"
+,"92461218"
+,"None"
+,"F"
+,"188.185.89.202"
+,"0.0"
+,"None"
+,"{\"partialdataset\": false, \"requireaccelerator\": false, \"acceleratorparams\": null, \"inputblocks\": null}"
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.185.101.116:8443...
+* Connected to cmsweb.cern.ch (188.185.101.116) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+*  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6240 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13122 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6378 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 28 02:56:51 2023 GMT
+*  expire date: Apr  3 02:56:51 2024 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/task?subresource=search&workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018 HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.230417
+> Accept: */*
+> Content-Length: 85
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [85 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Wed, 07 Jun 2023 10:43:40 GMT
+< Server: Apache
+< Content-Type: application/json
+< Content-Length: 3197
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "410ab0bbd3aeb6f1a93c5d1719fe10b8eadfe344"
+< X-Rest-Time: 13212.442 us
+< CMS-Server-Time: D=46967 t=1686134620897164
+< 
+{ [5 bytes data]
+100  3282  100  3197  100    85  47321   1258 --:--:-- --:--:-- --:--:-- 48985
+* Connection #0 to host cmsweb.cern.ch left intact
+{"desc": {"columns": ["tm_taskname", "tm_activity", "panda_jobset_id", "tm_task_status", "tm_task_command", "tm_start_time", "tm_start_injection", "tm_end_injection", "tm_task_failure", "tm_job_sw", "tm_job_arch", "tm_input_dataset", "tm_nonvalid_input_dataset", "tm_use_parent", "tm_site_whitelist", "tm_site_blacklist", "tm_split_algo", "tm_split_args", "tm_user_sandbox", "tm_cache_url", "tm_username", "tm_user_dn", "tm_user_vo", "tm_user_role", "tm_user_group", "tm_publish_name", "tm_publish_groupname", "tm_asyncdest", "tm_dbs_url", "tm_publish_dbs_url", "tm_publication", "tm_outfiles", "tm_tfile_outfiles", "tm_edm_outfiles", "tm_job_type", "tm_generator", "tm_events_per_lumi", "tm_arguments", "panda_resubmitted_jobs", "tm_save_logs", "tw_name", "tm_user_infiles", "tm_maxjobruntime", "tm_numcores", "tm_maxmemory", "tm_priority", "tm_output_dataset", "tm_task_warnings", "tm_user_webdir", "tm_scriptexe", "tm_scriptargs", "tm_extrajdl", "tm_asourl", "tm_collector", "tm_schedd", "tm_dry_run", "tm_user_files", "tm_transfer_outputs", "tm_output_lfn", "tm_ignore_locality", "tm_fail_limit", "tm_one_event_mode", "tm_secondary_input_dataset", "tm_primary_dataset", "tm_last_publication", "tm_debug_files", "clusterid", "tm_asodb", "tm_ignore_global_blacklist", "tm_submitter_ip_addr", "tm_totalunits", "tm_ddm_reqid", "tm_user_config"]}, "result": [
+ "230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018"
+,"None"
+,"None"
+,"SUBMITTED"
+,"SUBMIT"
+,"2023-06-06 10:45:33.596728"
+,"None"
+,"2023-06-06 10:46:11.877874"
+,"None"
+,"CMSSW_12_6_0"
+,"slc7_amd64_gcc10"
+,"/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM"
+,"T"
+,"0"
+,"[]"
+,"[]"
+,"FileBased"
+,"{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 1, 'runs': [], 'lumis': []}"
+,"9bf3e45e118c52189282086484e79c8967600913ebd8510621c0608bfe3b0699.tar.gz"
+,"https://cmsweb.cern.ch/S3/crabcache_prod"
+,"lfavilla"
+,"/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla"
+,"cms"
+,"None"
+,"None"
+,"ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000"
+,"F"
+,"T2_IT_Pisa"
+,"https://cmsweb.cern.ch/dbs/prod/global/DBSReader"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter"
+,"F"
+,"[]"
+,"[]"
+,"['tree_hadd.root']"
+,"Analysis"
+,"pythia"
+,"None"
+,"{}"
+,"None"
+,"T"
+,"crab-prod-tw01"
+,"[]"
+,"1250"
+,"1"
+,"2000"
+,"10"
+,"['/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/lfavilla-ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000/USER']"
+,"[]"
+,"http://vocms0137.cern.ch/mon/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018"
+,"crab_script.sh"
+,"[]"
+,"[]"
+,"None"
+,"cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"
+,"crab3@vocms0137.cern.ch"
+,"F"
+,"[]"
+,"T"
+,"/store/user/lfavilla/DM_v0"
+,"F"
+,"None"
+,"F"
+,"None"
+,"ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8"
+,"None"
+,"2a2d17ad3d62c8f28b7555c9cc2592b0dcd000f580f80287356abd91188119eb.tar.gz"
+,"92461218"
+,"None"
+,"F"
+,"188.185.89.202"
+,"0.0"
+,"None"
+,"{\"partialdataset\": false, \"requireaccelerator\": false, \"acceleratorparams\": null, \"inputblocks\": null}"
+]}
+
+ retcode : 0
+DEBUG 2023-06-07 10:43:40.949 UTC: 	 Server result: {'desc': {'columns': ['tm_taskname', 'tm_activity', 'panda_jobset_id', 'tm_task_status', 'tm_task_command', 'tm_start_time', 'tm_start_injection', 'tm_end_injection', 'tm_task_failure', 'tm_job_sw', 'tm_job_arch', 'tm_input_dataset', 'tm_nonvalid_input_dataset', 'tm_use_parent', 'tm_site_whitelist', 'tm_site_blacklist', 'tm_split_algo', 'tm_split_args', 'tm_user_sandbox', 'tm_cache_url', 'tm_username', 'tm_user_dn', 'tm_user_vo', 'tm_user_role', 'tm_user_group', 'tm_publish_name', 'tm_publish_groupname', 'tm_asyncdest', 'tm_dbs_url', 'tm_publish_dbs_url', 'tm_publication', 'tm_outfiles', 'tm_tfile_outfiles', 'tm_edm_outfiles', 'tm_job_type', 'tm_generator', 'tm_events_per_lumi', 'tm_arguments', 'panda_resubmitted_jobs', 'tm_save_logs', 'tw_name', 'tm_user_infiles', 'tm_maxjobruntime', 'tm_numcores', 'tm_maxmemory', 'tm_priority', 'tm_output_dataset', 'tm_task_warnings', 'tm_user_webdir', 'tm_scriptexe', 'tm_scriptargs', 'tm_extrajdl', 'tm_asourl', 'tm_collector', 'tm_schedd', 'tm_dry_run', 'tm_user_files', 'tm_transfer_outputs', 'tm_output_lfn', 'tm_ignore_locality', 'tm_fail_limit', 'tm_one_event_mode', 'tm_secondary_input_dataset', 'tm_primary_dataset', 'tm_last_publication', 'tm_debug_files', 'clusterid', 'tm_asodb', 'tm_ignore_global_blacklist', 'tm_submitter_ip_addr', 'tm_totalunits', 'tm_ddm_reqid', 'tm_user_config']}, 'result': ['230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018', 'None', 'None', 'SUBMITTED', 'SUBMIT', '2023-06-06 10:45:33.596728', 'None', '2023-06-06 10:46:11.877874', 'None', 'CMSSW_12_6_0', 'slc7_amd64_gcc10', '/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', 'T', '0', '[]', '[]', 'FileBased', "{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", '9bf3e45e118c52189282086484e79c8967600913ebd8510621c0608bfe3b0699.tar.gz', 'https://cmsweb.cern.ch/S3/crabcache_prod', 'lfavilla', '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla', 'cms', 'None', 'None', 'ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000', 'F', 'T2_IT_Pisa', 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'F', '[]', '[]', "['tree_hadd.root']", 'Analysis', 'pythia', 'None', '{}', 'None', 'T', 'crab-prod-tw01', '[]', '1250', '1', '2000', '10', "['/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/lfavilla-ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000/USER']", '[]', 'http://vocms0137.cern.ch/mon/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018', 'crab_script.sh', '[]', '[]', 'None', 'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', 'crab3@vocms0137.cern.ch', 'F', '[]', 'T', '/store/user/lfavilla/DM_v0', 'F', 'None', 'F', 'None', 'ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8', 'None', '2a2d17ad3d62c8f28b7555c9cc2592b0dcd000f580f80287356abd91188119eb.tar.gz', '92461218', 'None', 'F', '188.185.89.202', '0.0', 'None', '{"partialdataset": false, "requireaccelerator": false, "acceleratorparams": null, "inputblocks": null}']}
+DEBUG 2023-06-07 10:43:40.969 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:43:40.969 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:43:40.969 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:43:40.969 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+DEBUG 2023-06-07 10:43:40.992 UTC: 	 Checking credentials
+DEBUG 2023-06-07 10:43:40.992 UTC: 	 Found proxy file /tmp/x509up_u159320
+DEBUG 2023-06-07 10:43:40.993 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-06-07 10:43:40.993 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u159320
+DEBUG 2023-06-07 10:43:41.640 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-06-07 10:43:41.641 UTC: 	 Getting proxy life time left
+DEBUG 2023-06-07 10:43:41.641 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u159320
+DEBUG 2023-06-07 10:43:42.457 UTC: 	 output : 42688
+42687
+
+ error: 
+ retcode : 0
+DEBUG 2023-06-07 10:43:42.458 UTC: 	 Proxy valid for 11:51:27 hours
+DEBUG 2023-06-07 10:43:42.458 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2023-06-07 10:43:42.458 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.230417" -H "Accept: */*" --data @/tmp/crab_curlDatai4i61ver --cert "/tmp/x509up_u159320" --key "/tmp/x509up_u159320" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/info?subresource=delegatedn" | tee /dev/stderr 
+DEBUG 2023-06-07 10:43:42.524 UTC: 	 output : {"result": [
+ {"services": ["/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch"]}
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.185.101.116:8443...
+* Connected to cmsweb.cern.ch (188.185.101.116) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+*  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6240 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13122 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6378 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 28 02:56:51 2023 GMT
+*  expire date: Apr  3 02:56:51 2024 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/info?subresource=delegatedn HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.230417
+> Accept: */*
+> Content-Length: 22
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [22 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Wed, 07 Jun 2023 10:43:42 GMT
+< Server: Apache
+< Content-Type: application/json
+< Content-Length: 216
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "531fb58a933656ea08a7f418b273fdae3c95932a"
+< X-Rest-Time: 2254.248 us
+< CMS-Server-Time: D=9868 t=1686134622511609
+< 
+{ [5 bytes data]
+100   238  100   216  100    22   7663    780 --:--:-- --:--:-- --:--:--  8206
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ {"services": ["/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch"]}
+]}
+
+ retcode : 0
+DEBUG 2023-06-07 10:43:42.525 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2023-06-07 10:43:42.525 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u159320
+DEBUG 2023-06-07 10:43:43.295 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+
+ error: 
+ retcode : 0
+DEBUG 2023-06-07 10:43:43.296 UTC: 	 Getting myproxy life time left for 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-06-07 10:43:43.296 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-06-07 10:43:43.507 UTC: 	 output : username: 70284ad9de3a40585c76dbf527363be004fcbd17
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 556:00:49  (23.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2023-06-07 10:43:43.508 UTC: 	 Myproxy is valid: 2001600
+DEBUG 2023-06-07 10:43:43.508 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: 70284ad9de3a40585c76dbf527363be004fcbd17  - validity: 23 days, 4:00:00
+DEBUG 2023-06-07 10:43:43.509 UTC: 	 Command use: status
+DEBUG 2023-06-07 10:43:43.509 UTC: 	 Options use: []
+DEBUG 2023-06-07 10:43:43.509 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2023-06-07 10:43:43.509 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.230417" -H "Accept: */*" --data @/tmp/crab_curlDatalktmt0dm --cert "/tmp/x509up_u159320" --key "/tmp/x509up_u159320" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/info?subresource=version" | tee /dev/stderr 
+DEBUG 2023-06-07 10:43:43.560 UTC: 	 output : {"result": [
+ ["3.3.19", "3.3.20", "v3", "development", "v3.230504"]
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.185.101.116:8443...
+* Connected to cmsweb.cern.ch (188.185.101.116) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+*  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6240 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13122 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6378 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 28 02:56:51 2023 GMT
+*  expire date: Apr  3 02:56:51 2024 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/info?subresource=version HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.230417
+> Accept: */*
+> Content-Length: 19
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [19 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Wed, 07 Jun 2023 10:43:43 GMT
+< Server: Apache
+< Content-Type: application/json
+< Content-Length: 72
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "63f3e3aba51685849350eabf1b77b9be151d379c"
+< X-Rest-Time: 2533.674 us
+< CMS-Server-Time: D=10671 t=1686134623546733
+< 
+{ [5 bytes data]
+100    91  100    72  100    19   2912    768 --:--:-- --:--:-- --:--:--  3791
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ ["3.3.19", "3.3.20", "v3", "development", "v3.230504"]
+]}
+
+ retcode : 0
+DEBUG 2023-06-07 10:43:43.560 UTC: 	 CRABClient version: v3.230417
+DEBUG 2023-06-07 10:43:43.560 UTC: 	 Instance is prod
+DEBUG 2023-06-07 10:43:43.560 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2023-06-07 10:43:43.560 UTC: 	 Command api workflow
+DEBUG 2023-06-07 10:43:43.561 UTC: 	 Encoded data for curl request: subresource=search&workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018
+DEBUG 2023-06-07 10:43:43.561 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.230417" -H "Accept: */*" --data @/tmp/crab_curlDataez1qqjd3 --cert "/tmp/x509up_u159320" --key "/tmp/x509up_u159320" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/task?subresource=search&workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018" | tee /dev/stderr 
+DEBUG 2023-06-07 10:43:43.662 UTC: 	 output : {"desc": {"columns": ["tm_taskname", "tm_activity", "panda_jobset_id", "tm_task_status", "tm_task_command", "tm_start_time", "tm_start_injection", "tm_end_injection", "tm_task_failure", "tm_job_sw", "tm_job_arch", "tm_input_dataset", "tm_nonvalid_input_dataset", "tm_use_parent", "tm_site_whitelist", "tm_site_blacklist", "tm_split_algo", "tm_split_args", "tm_user_sandbox", "tm_cache_url", "tm_username", "tm_user_dn", "tm_user_vo", "tm_user_role", "tm_user_group", "tm_publish_name", "tm_publish_groupname", "tm_asyncdest", "tm_dbs_url", "tm_publish_dbs_url", "tm_publication", "tm_outfiles", "tm_tfile_outfiles", "tm_edm_outfiles", "tm_job_type", "tm_generator", "tm_events_per_lumi", "tm_arguments", "panda_resubmitted_jobs", "tm_save_logs", "tw_name", "tm_user_infiles", "tm_maxjobruntime", "tm_numcores", "tm_maxmemory", "tm_priority", "tm_output_dataset", "tm_task_warnings", "tm_user_webdir", "tm_scriptexe", "tm_scriptargs", "tm_extrajdl", "tm_asourl", "tm_collector", "tm_schedd", "tm_dry_run", "tm_user_files", "tm_transfer_outputs", "tm_output_lfn", "tm_ignore_locality", "tm_fail_limit", "tm_one_event_mode", "tm_secondary_input_dataset", "tm_primary_dataset", "tm_last_publication", "tm_debug_files", "clusterid", "tm_asodb", "tm_ignore_global_blacklist", "tm_submitter_ip_addr", "tm_totalunits", "tm_ddm_reqid", "tm_user_config"]}, "result": [
+ "230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018"
+,"None"
+,"None"
+,"SUBMITTED"
+,"SUBMIT"
+,"2023-06-06 10:45:33.596728"
+,"None"
+,"2023-06-06 10:46:11.877874"
+,"None"
+,"CMSSW_12_6_0"
+,"slc7_amd64_gcc10"
+,"/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM"
+,"T"
+,"0"
+,"[]"
+,"[]"
+,"FileBased"
+,"{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 1, 'runs': [], 'lumis': []}"
+,"9bf3e45e118c52189282086484e79c8967600913ebd8510621c0608bfe3b0699.tar.gz"
+,"https://cmsweb.cern.ch/S3/crabcache_prod"
+,"lfavilla"
+,"/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla"
+,"cms"
+,"None"
+,"None"
+,"ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000"
+,"F"
+,"T2_IT_Pisa"
+,"https://cmsweb.cern.ch/dbs/prod/global/DBSReader"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter"
+,"F"
+,"[]"
+,"[]"
+,"['tree_hadd.root']"
+,"Analysis"
+,"pythia"
+,"None"
+,"{}"
+,"None"
+,"T"
+,"crab-prod-tw01"
+,"[]"
+,"1250"
+,"1"
+,"2000"
+,"10"
+,"['/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/lfavilla-ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000/USER']"
+,"[]"
+,"http://vocms0137.cern.ch/mon/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018"
+,"crab_script.sh"
+,"[]"
+,"[]"
+,"None"
+,"cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"
+,"crab3@vocms0137.cern.ch"
+,"F"
+,"[]"
+,"T"
+,"/store/user/lfavilla/DM_v0"
+,"F"
+,"None"
+,"F"
+,"None"
+,"ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8"
+,"None"
+,"2a2d17ad3d62c8f28b7555c9cc2592b0dcd000f580f80287356abd91188119eb.tar.gz"
+,"92461218"
+,"None"
+,"F"
+,"188.185.89.202"
+,"0.0"
+,"None"
+,"{\"partialdataset\": false, \"requireaccelerator\": false, \"acceleratorparams\": null, \"inputblocks\": null}"
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.185.101.116:8443...
+* Connected to cmsweb.cern.ch (188.185.101.116) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+*  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6240 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13122 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6378 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 28 02:56:51 2023 GMT
+*  expire date: Apr  3 02:56:51 2024 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/task?subresource=search&workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018 HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.230417
+> Accept: */*
+> Content-Length: 85
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [85 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Wed, 07 Jun 2023 10:43:43 GMT
+< Server: Apache
+< Content-Type: application/json
+< Content-Length: 3197
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "410ab0bbd3aeb6f1a93c5d1719fe10b8eadfe344"
+< X-Rest-Time: 9827.614 us
+< CMS-Server-Time: D=43483 t=1686134623615548
+< 
+{ [5 bytes data]
+100  3282  100  3197  100    85  46894   1246 --:--:-- --:--:-- --:--:-- 48264
+* Connection #0 to host cmsweb.cern.ch left intact
+{"desc": {"columns": ["tm_taskname", "tm_activity", "panda_jobset_id", "tm_task_status", "tm_task_command", "tm_start_time", "tm_start_injection", "tm_end_injection", "tm_task_failure", "tm_job_sw", "tm_job_arch", "tm_input_dataset", "tm_nonvalid_input_dataset", "tm_use_parent", "tm_site_whitelist", "tm_site_blacklist", "tm_split_algo", "tm_split_args", "tm_user_sandbox", "tm_cache_url", "tm_username", "tm_user_dn", "tm_user_vo", "tm_user_role", "tm_user_group", "tm_publish_name", "tm_publish_groupname", "tm_asyncdest", "tm_dbs_url", "tm_publish_dbs_url", "tm_publication", "tm_outfiles", "tm_tfile_outfiles", "tm_edm_outfiles", "tm_job_type", "tm_generator", "tm_events_per_lumi", "tm_arguments", "panda_resubmitted_jobs", "tm_save_logs", "tw_name", "tm_user_infiles", "tm_maxjobruntime", "tm_numcores", "tm_maxmemory", "tm_priority", "tm_output_dataset", "tm_task_warnings", "tm_user_webdir", "tm_scriptexe", "tm_scriptargs", "tm_extrajdl", "tm_asourl", "tm_collector", "tm_schedd", "tm_dry_run", "tm_user_files", "tm_transfer_outputs", "tm_output_lfn", "tm_ignore_locality", "tm_fail_limit", "tm_one_event_mode", "tm_secondary_input_dataset", "tm_primary_dataset", "tm_last_publication", "tm_debug_files", "clusterid", "tm_asodb", "tm_ignore_global_blacklist", "tm_submitter_ip_addr", "tm_totalunits", "tm_ddm_reqid", "tm_user_config"]}, "result": [
+ "230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018"
+,"None"
+,"None"
+,"SUBMITTED"
+,"SUBMIT"
+,"2023-06-06 10:45:33.596728"
+,"None"
+,"2023-06-06 10:46:11.877874"
+,"None"
+,"CMSSW_12_6_0"
+,"slc7_amd64_gcc10"
+,"/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM"
+,"T"
+,"0"
+,"[]"
+,"[]"
+,"FileBased"
+,"{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 1, 'runs': [], 'lumis': []}"
+,"9bf3e45e118c52189282086484e79c8967600913ebd8510621c0608bfe3b0699.tar.gz"
+,"https://cmsweb.cern.ch/S3/crabcache_prod"
+,"lfavilla"
+,"/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla"
+,"cms"
+,"None"
+,"None"
+,"ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000"
+,"F"
+,"T2_IT_Pisa"
+,"https://cmsweb.cern.ch/dbs/prod/global/DBSReader"
+,"https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter"
+,"F"
+,"[]"
+,"[]"
+,"['tree_hadd.root']"
+,"Analysis"
+,"pythia"
+,"None"
+,"{}"
+,"None"
+,"T"
+,"crab-prod-tw01"
+,"[]"
+,"1250"
+,"1"
+,"2000"
+,"10"
+,"['/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/lfavilla-ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000/USER']"
+,"[]"
+,"http://vocms0137.cern.ch/mon/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018"
+,"crab_script.sh"
+,"[]"
+,"[]"
+,"None"
+,"cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620"
+,"crab3@vocms0137.cern.ch"
+,"F"
+,"[]"
+,"T"
+,"/store/user/lfavilla/DM_v0"
+,"F"
+,"None"
+,"F"
+,"None"
+,"ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8"
+,"None"
+,"2a2d17ad3d62c8f28b7555c9cc2592b0dcd000f580f80287356abd91188119eb.tar.gz"
+,"92461218"
+,"None"
+,"F"
+,"188.185.89.202"
+,"0.0"
+,"None"
+,"{\"partialdataset\": false, \"requireaccelerator\": false, \"acceleratorparams\": null, \"inputblocks\": null}"
+]}
+
+ retcode : 0
+DEBUG 2023-06-07 10:43:43.662 UTC: 	 Got information from server oracle database: {'desc': {'columns': ['tm_taskname', 'tm_activity', 'panda_jobset_id', 'tm_task_status', 'tm_task_command', 'tm_start_time', 'tm_start_injection', 'tm_end_injection', 'tm_task_failure', 'tm_job_sw', 'tm_job_arch', 'tm_input_dataset', 'tm_nonvalid_input_dataset', 'tm_use_parent', 'tm_site_whitelist', 'tm_site_blacklist', 'tm_split_algo', 'tm_split_args', 'tm_user_sandbox', 'tm_cache_url', 'tm_username', 'tm_user_dn', 'tm_user_vo', 'tm_user_role', 'tm_user_group', 'tm_publish_name', 'tm_publish_groupname', 'tm_asyncdest', 'tm_dbs_url', 'tm_publish_dbs_url', 'tm_publication', 'tm_outfiles', 'tm_tfile_outfiles', 'tm_edm_outfiles', 'tm_job_type', 'tm_generator', 'tm_events_per_lumi', 'tm_arguments', 'panda_resubmitted_jobs', 'tm_save_logs', 'tw_name', 'tm_user_infiles', 'tm_maxjobruntime', 'tm_numcores', 'tm_maxmemory', 'tm_priority', 'tm_output_dataset', 'tm_task_warnings', 'tm_user_webdir', 'tm_scriptexe', 'tm_scriptargs', 'tm_extrajdl', 'tm_asourl', 'tm_collector', 'tm_schedd', 'tm_dry_run', 'tm_user_files', 'tm_transfer_outputs', 'tm_output_lfn', 'tm_ignore_locality', 'tm_fail_limit', 'tm_one_event_mode', 'tm_secondary_input_dataset', 'tm_primary_dataset', 'tm_last_publication', 'tm_debug_files', 'clusterid', 'tm_asodb', 'tm_ignore_global_blacklist', 'tm_submitter_ip_addr', 'tm_totalunits', 'tm_ddm_reqid', 'tm_user_config']}, 'result': ['230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018', 'None', 'None', 'SUBMITTED', 'SUBMIT', '2023-06-06 10:45:33.596728', 'None', '2023-06-06 10:46:11.877874', 'None', 'CMSSW_12_6_0', 'slc7_amd64_gcc10', '/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', 'T', '0', '[]', '[]', 'FileBased', "{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", '9bf3e45e118c52189282086484e79c8967600913ebd8510621c0608bfe3b0699.tar.gz', 'https://cmsweb.cern.ch/S3/crabcache_prod', 'lfavilla', '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla', 'cms', 'None', 'None', 'ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000', 'F', 'T2_IT_Pisa', 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'F', '[]', '[]', "['tree_hadd.root']", 'Analysis', 'pythia', 'None', '{}', 'None', 'T', 'crab-prod-tw01', '[]', '1250', '1', '2000', '10', "['/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/lfavilla-ZJetsToNuNu_HT600To800_2018-00000000000000000000000000000000/USER']", '[]', 'http://vocms0137.cern.ch/mon/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018', 'crab_script.sh', '[]', '[]', 'None', 'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', 'crab3@vocms0137.cern.ch', 'F', '[]', 'T', '/store/user/lfavilla/DM_v0', 'F', 'None', 'F', 'None', 'ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8', 'None', '2a2d17ad3d62c8f28b7555c9cc2592b0dcd000f580f80287356abd91188119eb.tar.gz', '92461218', 'None', 'F', '188.185.89.202', '0.0', 'None', '{"partialdataset": false, "requireaccelerator": false, "acceleratorparams": null, "inputblocks": null}']}
+INFO 2023-06-07 10:43:43.662 UTC: 	 CRAB project directory:		/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_ZJetsToNuNu_HT600To800_2018
+INFO 2023-06-07 10:43:43.662 UTC: 	 Task name:			230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018
+INFO 2023-06-07 10:43:43.662 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0137.cern.ch - crab-prod-tw01
+INFO 2023-06-07 10:43:43.662 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2023-06-07 10:43:43.663 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018
+INFO 2023-06-07 10:43:43.671 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=lfavilla&var-task=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018&from=1686044733000&to=now
+DEBUG 2023-06-07 10:43:43.671 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 92461218)
+DEBUG 2023-06-07 10:43:43.671 UTC: 	 Webdir is located at http://vocms0137.cern.ch/mon/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018
+DEBUG 2023-06-07 10:43:43.671 UTC: 	 Encoded data for curl request: subresource=webdirprx&workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018
+DEBUG 2023-06-07 10:43:43.671 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.230417" -H "Accept: */*" --data @/tmp/crab_curlDatatlefovzh --cert "/tmp/x509up_u159320" --key "/tmp/x509up_u159320" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/task?subresource=webdirprx&workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018" | tee /dev/stderr 
+DEBUG 2023-06-07 10:43:43.766 UTC: 	 output : {"result": [
+ "https://cmsweb.cern.ch:8443/scheddmon/0137/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018"
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.185.101.116:8443...
+* Connected to cmsweb.cern.ch (188.185.101.116) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+*  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6240 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13122 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6378 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 28 02:56:51 2023 GMT
+*  expire date: Apr  3 02:56:51 2024 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/task?subresource=webdirprx&workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018 HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.230417
+> Accept: */*
+> Content-Length: 88
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [88 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Wed, 07 Jun 2023 10:43:43 GMT
+< Server: Apache
+< Content-Type: application/json
+< Content-Length: 127
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "244da2e1b2e061d787ad5e2bff0fa19358d9ed2d"
+< X-Rest-Time: 6255.627 us
+< CMS-Server-Time: D=14100 t=1686134623745604
+< 
+{ [5 bytes data]
+100   215  100   127  100    88   3067   2125 --:--:-- --:--:-- --:--:--  5243
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ "https://cmsweb.cern.ch:8443/scheddmon/0137/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018"
+]}
+
+ retcode : 0
+DEBUG 2023-06-07 10:43:43.766 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0137/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018
+DEBUG 2023-06-07 10:43:43.766 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0137/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018/status_cache.pkl
+DEBUG 2023-06-07 10:43:43.766 UTC: 	 Will execute:
+curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u159320 --key /tmp/x509up_u159320 -o /tmp/crab_status-cache-xw1r88tr.pkl -w %"{http_code}" "https://cmsweb.cern.ch:8443/scheddmon/0137/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018/status_cache.pkl"
+DEBUG 2023-06-07 10:43:43.766 UTC: 	 Executing command :
+ curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u159320 --key /tmp/x509up_u159320 -o /tmp/crab_status-cache-xw1r88tr.pkl -w %"{http_code}" "https://cmsweb.cern.ch:8443/scheddmon/0137/lfavilla/230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018/status_cache.pkl"
+DEBUG 2023-06-07 10:43:43.843 UTC: 	 output : 200
+ error: 
+ retcode : 0
+DEBUG 2023-06-07 10:43:43.843 UTC: 	 exitcode: 0
+stdout: 200
+stderr: 
+error details: 
+DEBUG 2023-06-07 10:43:43.844 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['Unknown', 'T2_RU_JINR', 'T2_RU_JINR'], 'ResidentSetSize': [599764], 'SubmitTimes': [1686048377.0], 'StartTimes': [1686048603.0], 'EndTimes': [1686051553.0], 'TotalUserCpuTimeHistory': [2390], 'TotalSysCpuTimeHistory': [25], 'WallDurations': [9.0, 133.64712023735046, 2950.0], 'JobIds': ['92461221.0'], 'State': 'finished', 'RecordedSite': True}, '2': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['Unknown', 'T2_EE_Estonia', 'T2_EE_Estonia'], 'ResidentSetSize': [849548], 'SubmitTimes': [1686048377.0], 'StartTimes': [1686048609.0], 'EndTimes': [1686051517.0], 'TotalUserCpuTimeHistory': [2543], 'TotalSysCpuTimeHistory': [326], 'WallDurations': [11.0, 127.64712023735046, 2908.0], 'JobIds': ['92461222.0'], 'State': 'finished', 'RecordedSite': True}, '3': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['Unknown', 'T2_EE_Estonia', 'T2_EE_Estonia'], 'ResidentSetSize': [937692], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048610.0], 'EndTimes': [1686050960.0], 'TotalUserCpuTimeHistory': [1928], 'TotalSysCpuTimeHistory': [76], 'WallDurations': [12.0, 126.64712023735046, 2350.0], 'JobIds': ['92461223.0'], 'State': 'finished', 'RecordedSite': True}, '4': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['Unknown', 'T2_KR_KISTI', 'T2_KR_KISTI'], 'ResidentSetSize': [699692], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048618.0], 'EndTimes': [1686054915.0], 'TotalUserCpuTimeHistory': [4617], 'TotalSysCpuTimeHistory': [146], 'WallDurations': [9.0, 118.64712023735046, 6297.0], 'JobIds': ['92461224.0'], 'State': 'finished', 'RecordedSite': True}, '5': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['Unknown', 'T2_IT_Legnaro', 'T2_IT_Legnaro'], 'ResidentSetSize': [703844], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048601.0], 'EndTimes': [1686058730.0], 'TotalUserCpuTimeHistory': [7468], 'TotalSysCpuTimeHistory': [937], 'WallDurations': [9.0, 135.64712023735046, 10129.0], 'JobIds': ['92461225.0'], 'State': 'finished', 'RecordedSite': True}, '6': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [813420], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048407.0], 'EndTimes': [1686050820.0], 'TotalUserCpuTimeHistory': [1706], 'TotalSysCpuTimeHistory': [54], 'WallDurations': [9.0, 2413.0], 'JobIds': ['92461226.0'], 'State': 'finished', 'RecordedSite': True}, '7': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [823156], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048407.0], 'EndTimes': [1686053825.0], 'TotalUserCpuTimeHistory': [4316], 'TotalSysCpuTimeHistory': [304], 'WallDurations': [8.0, 5418.0], 'JobIds': ['92461227.0'], 'State': 'finished', 'RecordedSite': True}, '8': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [814276], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048408.0], 'EndTimes': [1686051521.0], 'TotalUserCpuTimeHistory': [2257], 'TotalSysCpuTimeHistory': [73], 'WallDurations': [9.0, 3113.0], 'JobIds': ['92461228.0'], 'State': 'finished', 'RecordedSite': True}, '9': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [812640], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048407.0], 'EndTimes': [1686053433.0], 'TotalUserCpuTimeHistory': [3990], 'TotalSysCpuTimeHistory': [281], 'WallDurations': [9.0, 5026.0], 'JobIds': ['92461229.0'], 'State': 'finished', 'RecordedSite': True}, '10': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [815700], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048409.0], 'EndTimes': [1686051326.0], 'TotalUserCpuTimeHistory': [2475], 'TotalSysCpuTimeHistory': [40], 'WallDurations': [8.0, 2917.0], 'JobIds': ['92461230.0'], 'State': 'finished', 'RecordedSite': True}, '11': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_ES_PIC', 'T1_ES_PIC'], 'ResidentSetSize': [812656], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048408.0], 'EndTimes': [1686050855.0], 'TotalUserCpuTimeHistory': [1538], 'TotalSysCpuTimeHistory': [76], 'WallDurations': [9.0, 2447.0], 'JobIds': ['92461231.0'], 'State': 'finished', 'RecordedSite': True}, '12': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [49328], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048409.0], 'EndTimes': [1686048696.0], 'TotalUserCpuTimeHistory': [84], 'TotalSysCpuTimeHistory': [3], 'WallDurations': [8.0, 287.0], 'JobIds': ['92461232.0'], 'State': 'finished', 'RecordedSite': True}, '13': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [813652], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048429.0], 'EndTimes': [1686050882.0], 'TotalUserCpuTimeHistory': [2232], 'TotalSysCpuTimeHistory': [47], 'WallDurations': [0, 2453.0], 'JobIds': ['92461233.0'], 'State': 'finished', 'RecordedSite': True}, '15': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [809712], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048408.0], 'EndTimes': [1686048995.0], 'TotalUserCpuTimeHistory': [267], 'TotalSysCpuTimeHistory': [16], 'WallDurations': [8.0, 587.0], 'JobIds': ['92461234.0'], 'State': 'finished', 'RecordedSite': True}, '17': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [72460], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048408.0], 'EndTimes': [1686048668.0], 'TotalUserCpuTimeHistory': [73], 'TotalSysCpuTimeHistory': [5], 'WallDurations': [8.0, 260.0], 'JobIds': ['92461235.0'], 'State': 'finished', 'RecordedSite': True}, '18': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [806824], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048408.0], 'EndTimes': [1686048963.0], 'TotalUserCpuTimeHistory': [242], 'TotalSysCpuTimeHistory': [15], 'WallDurations': [9.0, 555.0], 'JobIds': ['92461236.0'], 'State': 'finished', 'RecordedSite': True}, '14': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [809896], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048412.0], 'EndTimes': [1686049902.0], 'TotalUserCpuTimeHistory': [1227], 'TotalSysCpuTimeHistory': [28], 'WallDurations': [8.0, 1490.0], 'JobIds': ['92461237.0'], 'State': 'finished', 'RecordedSite': True}, '16': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [161036], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048408.0], 'EndTimes': [1686048626.0], 'TotalUserCpuTimeHistory': [37], 'TotalSysCpuTimeHistory': [3], 'WallDurations': [9.0, 218.0], 'JobIds': ['92461238.0'], 'State': 'finished', 'RecordedSite': True}, '19': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [814060], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048409.0], 'EndTimes': [1686049368.0], 'TotalUserCpuTimeHistory': [540], 'TotalSysCpuTimeHistory': [33], 'WallDurations': [8.0, 959.0], 'JobIds': ['92461239.0'], 'State': 'finished', 'RecordedSite': True}, '20': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_FR_CCIN2P3', 'T1_FR_CCIN2P3'], 'ResidentSetSize': [804908], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048409.0], 'EndTimes': [1686048986.0], 'TotalUserCpuTimeHistory': [257], 'TotalSysCpuTimeHistory': [16], 'WallDurations': [9.0, 577.0], 'JobIds': ['92461240.0'], 'State': 'finished', 'RecordedSite': True}, '21': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [818120], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048410.0], 'EndTimes': [1686057296.0], 'TotalUserCpuTimeHistory': [7645], 'TotalSysCpuTimeHistory': [105], 'WallDurations': [8.0, 8886.0], 'JobIds': ['92461241.0'], 'State': 'finished', 'RecordedSite': True}, '22': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [837904], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048412.0], 'EndTimes': [1686063974.0], 'TotalUserCpuTimeHistory': [14785], 'TotalSysCpuTimeHistory': [236], 'WallDurations': [9.0, 15562.0], 'JobIds': ['92461242.0'], 'State': 'finished', 'RecordedSite': True}, '23': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_ES_PIC', 'T1_ES_PIC'], 'ResidentSetSize': [312748], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048408.0], 'EndTimes': [1686048712.0], 'TotalUserCpuTimeHistory': [59], 'TotalSysCpuTimeHistory': [4], 'WallDurations': [9.0, 304.0], 'JobIds': ['92461243.0'], 'State': 'finished', 'RecordedSite': True}, '24': {'Retries': 2, 'Restarts': 0, 'SiteHistory': ['Unknown', 'T2_PL_Cyfronet', 'T2_PL_Cyfronet', 'Unknown', 'T2_PL_Cyfronet', 'T2_PL_Cyfronet', 'Unknown', 'T2_PL_Cyfronet', 'T2_PL_Cyfronet'], 'ResidentSetSize': [453352, 534248, 487484], 'SubmitTimes': [1686048378.0, 1686062389.0, 1686064963.0], 'StartTimes': [1686048952.0, 1686062602.0, 1686065161.0], 'EndTimes': [1686062321.0, 1686064836.0, 1686067776.0], 'TotalUserCpuTimeHistory': [8, 11, 10.0], 'TotalSysCpuTimeHistory': [2, 1, 1.0], 'WallDurations': [0, 8.0, 13369.0, 9.0, 296.8309996128082, 2234.0, 9.0, 146.2300145626068, 2615.0], 'JobIds': ['92461244.0', '92469892.0', '92470327.0'], 'State': 'failed', 'RecordedSite': True, 'Error': [50115, 'BadFWJRXML', {}]}, '25': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [808280], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048425.0], 'EndTimes': [1686049940.0], 'TotalUserCpuTimeHistory': [1284], 'TotalSysCpuTimeHistory': [24], 'WallDurations': [8.0, 1515.0], 'JobIds': ['92461245.0'], 'State': 'finished', 'RecordedSite': True}, '26': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [833912], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048412.0], 'EndTimes': [1686062369.0], 'TotalUserCpuTimeHistory': [12440], 'TotalSysCpuTimeHistory': [188], 'WallDurations': [8.0, 13957.0], 'JobIds': ['92461246.0'], 'State': 'finished', 'RecordedSite': True}, '27': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [812168], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048410.0], 'EndTimes': [1686053480.0], 'TotalUserCpuTimeHistory': [4443], 'TotalSysCpuTimeHistory': [71], 'WallDurations': [9.0, 5070.0], 'JobIds': ['92461247.0'], 'State': 'finished', 'RecordedSite': True}, '28': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [823764], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048442.0], 'EndTimes': [1686063853.0], 'TotalUserCpuTimeHistory': [15018], 'TotalSysCpuTimeHistory': [281], 'WallDurations': [9.0, 15411.0], 'JobIds': ['92461248.0'], 'State': 'finished', 'RecordedSite': True}, '29': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [796288], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048440.0], 'EndTimes': [1686048967.0], 'TotalUserCpuTimeHistory': [314], 'TotalSysCpuTimeHistory': [7], 'WallDurations': [10.0, 527.0], 'JobIds': ['92461249.0'], 'State': 'finished', 'RecordedSite': True}, '31': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['Unknown', 'T2_AT_Vienna', 'T2_AT_Vienna'], 'ResidentSetSize': [73376], 'SubmitTimes': [1686048378.0], 'StartTimes': [1686048614.0], 'EndTimes': [1686049227.0], 'TotalUserCpuTimeHistory': [192], 'TotalSysCpuTimeHistory': [15], 'WallDurations': [8.0, 122.64712023735046, 613.0], 'JobIds': ['92461250.0'], 'State': 'finished', 'RecordedSite': True}, '30': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [813056], 'SubmitTimes': [1686048379.0], 'StartTimes': [1686048410.0], 'EndTimes': [1686052972.0], 'TotalUserCpuTimeHistory': [3775], 'TotalSysCpuTimeHistory': [54], 'WallDurations': [10.0, 4562.0], 'JobIds': ['92461251.0'], 'State': 'finished', 'RecordedSite': True}, '32': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_ES_PIC', 'T1_ES_PIC'], 'ResidentSetSize': [1149608], 'SubmitTimes': [1686048379.0], 'StartTimes': [1686048409.0], 'EndTimes': [1686049012.0], 'TotalUserCpuTimeHistory': [331], 'TotalSysCpuTimeHistory': [21], 'WallDurations': [8.0, 603.0], 'JobIds': ['92461252.0'], 'State': 'finished', 'RecordedSite': True}, '33': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['Unknown', 'T2_BR_SPRACE', 'T2_BR_SPRACE'], 'ResidentSetSize': [1020956], 'SubmitTimes': [1686048379.0], 'StartTimes': [1686048721.0], 'EndTimes': [1686062746.0], 'TotalUserCpuTimeHistory': [12509], 'TotalSysCpuTimeHistory': [526], 'WallDurations': [9.0, 15.647120237350464, 14025.0], 'JobIds': ['92461253.0'], 'State': 'finished', 'RecordedSite': True}, '34': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [810184], 'SubmitTimes': [1686048379.0], 'StartTimes': [1686048422.0], 'EndTimes': [1686049060.0], 'TotalUserCpuTimeHistory': [364], 'TotalSysCpuTimeHistory': [8], 'WallDurations': [9.0, 638.0], 'JobIds': ['92461254.0'], 'State': 'finished', 'RecordedSite': True}, '35': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T1_RU_JINR', 'T1_RU_JINR'], 'ResidentSetSize': [820156], 'SubmitTimes': [1686048379.0], 'StartTimes': [1686048411.0], 'EndTimes': [1686053463.0], 'TotalUserCpuTimeHistory': [4640], 'TotalSysCpuTimeHistory': [78], 'WallDurations': [9.0, 5052.0], 'JobIds': ['92461255.0'], 'State': 'finished', 'RecordedSite': True}}
+INFO 2023-06-07 10:43:43.844 UTC: 	 Status on the scheduler:	FAILED
+INFO 2023-06-07 10:43:43.869 UTC: 	 
+Jobs status:                    failed       		  2.9% ( 1/35)
+INFO 2023-06-07 10:43:43.869 UTC: 	 				finished     		 97.1% (34/35)
+INFO 2023-06-07 10:43:43.869 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2023-06-07 10:43:43.869 UTC: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+ 1 jobs failed with exit code 50115
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2023-06-07 10:43:43.870 UTC: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2023-06-07 10:43:43.870 UTC: 	 
+Summary of run jobs:
+ * Memory: 48MB min, 1122MB max, 699MB ave
+ * Runtime: 0:03:38 min, 4:19:22 max, 1:07:56 ave
+ * CPU eff: 0% min, 99% max, 86% ave
+ * Waste: 4:45:44 (11% of total)
+
+DEBUG 2023-06-07 10:43:43.870 UTC: 	 Retrieving locations for task 230606_104533:lfavilla_crab_ZJetsToNuNu_HT600To800_2018
+DEBUG 2023-06-07 10:43:43.870 UTC: 	 Retrieving all file locations
+DEBUG 2023-06-07 10:43:43.870 UTC: 	 Retrieving jobs [('jobids', '1'), ('jobids', '2'), ('jobids', '3'), ('jobids', '4'), ('jobids', '5'), ('jobids', '6'), ('jobids', '7'), ('jobids', '8'), ('jobids', '9'), ('jobids', '10'), ('jobids', '11'), ('jobids', '12'), ('jobids', '13'), ('jobids', '15'), ('jobids', '17'), ('jobids', '18'), ('jobids', '14'), ('jobids', '16'), ('jobids', '19'), ('jobids', '20'), ('jobids', '21'), ('jobids', '22'), ('jobids', '23'), ('jobids', '24'), ('jobids', '25'), ('jobids', '26'), ('jobids', '27'), ('jobids', '28'), ('jobids', '29'), ('jobids', '31'), ('jobids', '30'), ('jobids', '32'), ('jobids', '33'), ('jobids', '34'), ('jobids', '35')]
+DEBUG 2023-06-07 10:43:43.871 UTC: 	 Encoded data for curl request: workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018&subresource=data2&limit=-1&jobids=1&jobids=2&jobids=3&jobids=4&jobids=5&jobids=6&jobids=7&jobids=8&jobids=9&jobids=10&jobids=11&jobids=12&jobids=13&jobids=15&jobids=17&jobids=18&jobids=14&jobids=16&jobids=19&jobids=20&jobids=21&jobids=22&jobids=23&jobids=24&jobids=25&jobids=26&jobids=27&jobids=28&jobids=29&jobids=31&jobids=30&jobids=32&jobids=33&jobids=34&jobids=35
+DEBUG 2023-06-07 10:43:43.871 UTC: 	 Executing command :
+ curl -v -X GET -H "User-Agent: CRABClient/v3.230417" -H "Accept: */*" --data @/tmp/crab_curlData82o7as4l --cert "/tmp/x509up_u159320" --key "/tmp/x509up_u159320" --capath "/etc/grid-security/certificates/" "https://cmsweb.cern.ch:8443/crabserver/prod/workflow?workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018&subresource=data2&limit=-1&jobids=1&jobids=2&jobids=3&jobids=4&jobids=5&jobids=6&jobids=7&jobids=8&jobids=9&jobids=10&jobids=11&jobids=12&jobids=13&jobids=15&jobids=17&jobids=18&jobids=14&jobids=16&jobids=19&jobids=20&jobids=21&jobids=22&jobids=23&jobids=24&jobids=25&jobids=26&jobids=27&jobids=28&jobids=29&jobids=31&jobids=30&jobids=32&jobids=33&jobids=34&jobids=35" | tee /dev/stderr 
+DEBUG 2023-06-07 10:43:44.387 UTC: 	 output : {"result": [
+ {"jobid": "22", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_22.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_22.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 301393211, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "28", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_28.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_28.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 219305643, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "33", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_33.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_33.root", "tmpsite": "T2_BR_SPRACE", "directstageout": "F", "size": 138581332, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "26", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_26.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_26.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 253935391, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "5", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_5.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_5.root", "tmpsite": "T2_IT_Legnaro", "directstageout": "F", "size": 116775836, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "21", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_21.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_21.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 156490261, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "35", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_35.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_35.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 97209600, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "4", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_4.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_4.root", "tmpsite": "T2_KR_KISTI", "directstageout": "F", "size": 58142133, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "7", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_7.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_7.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 70836958, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "27", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_27.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_27.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 90797105, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "9", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_9.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_9.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 65827905, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "1", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_1.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_1.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 60780344, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "2", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_2.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_2.root", "tmpsite": "T2_EE_Estonia", "directstageout": "F", "size": 43731264, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "30", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_30.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_30.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 77381861, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "8", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_8.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_8.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 26000350, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "10", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_10.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_10.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 52438402, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "3", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_3.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_3.root", "tmpsite": "T2_EE_Estonia", "directstageout": "F", "size": 25380999, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "13", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_13.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_13.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 35302637, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "11", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_11.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_11.root", "tmpsite": "T1_ES_PIC_Disk", "directstageout": "F", "size": 22159526, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "6", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_6.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_6.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 19949803, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "25", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_25.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_25.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 21660407, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "14", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_14.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_14.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 28833975, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "19", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_19.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_19.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 11404656, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "31", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_31.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_31.root", "tmpsite": "T2_AT_Vienna", "directstageout": "F", "size": 6408551, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "34", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_34.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_34.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 8866310, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "32", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_32.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_32.root", "tmpsite": "T1_ES_PIC_Disk", "directstageout": "F", "size": 7399968, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "15", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_15.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_15.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 7218261, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "20", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_20.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_20.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 7206872, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "29", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_29.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_29.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 7913674, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "18", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_18.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_18.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 6867305, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "23", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_23.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_23.root", "tmpsite": "T1_ES_PIC_Disk", "directstageout": "F", "size": 3956480, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "12", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_12.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_12.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 3888590, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "17", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_17.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_17.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 4329573, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "16", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_16.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_16.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 3876888, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+]}
+
+ error:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.185.101.116:8443...
+* Connected to cmsweb.cern.ch (188.185.101.116) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+*  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+*  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6240 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [13122 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6378 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Change cipher spec (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Change cipher spec (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 28 02:56:51 2023 GMT
+*  expire date: Apr  3 02:56:51 2024 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> GET /crabserver/prod/workflow?workflow=230606_104533%3Alfavilla_crab_ZJetsToNuNu_HT600To800_2018&subresource=data2&limit=-1&jobids=1&jobids=2&jobids=3&jobids=4&jobids=5&jobids=6&jobids=7&jobids=8&jobids=9&jobids=10&jobids=11&jobids=12&jobids=13&jobids=15&jobids=17&jobids=18&jobids=14&jobids=16&jobids=19&jobids=20&jobids=21&jobids=22&jobids=23&jobids=24&jobids=25&jobids=26&jobids=27&jobids=28&jobids=29&jobids=31&jobids=30&jobids=32&jobids=33&jobids=34&jobids=35 HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.230417
+> Accept: */*
+> Content-Length: 434
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [434 bytes data]
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+< Date: Wed, 07 Jun 2023 10:43:44 GMT
+< Server: Apache
+< Content-Type: application/json
+< Content-Length: 16556
+< Vary: Accept
+< Cache-Control: max-age=3600
+< X-Rest-Status: 100
+< Etag: "ff06f166382a1d9a87da7c7d39d8ac7ea11c552a"
+< X-Rest-Time: 408864.737 us
+< CMS-Server-Time: D=415953 t=1686134623966643
+< 
+{ [5 bytes data]
+100 16990  100 16556  100   434  37467    982 --:--:-- --:--:-- --:--:-- 38526
+* Connection #0 to host cmsweb.cern.ch left intact
+{"result": [
+ {"jobid": "22", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_22.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_22.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 301393211, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "28", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_28.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_28.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 219305643, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "33", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_33.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_33.root", "tmpsite": "T2_BR_SPRACE", "directstageout": "F", "size": 138581332, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "26", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_26.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_26.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 253935391, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "5", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_5.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_5.root", "tmpsite": "T2_IT_Legnaro", "directstageout": "F", "size": 116775836, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "21", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_21.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_21.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 156490261, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "35", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_35.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_35.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 97209600, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "4", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_4.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_4.root", "tmpsite": "T2_KR_KISTI", "directstageout": "F", "size": 58142133, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "7", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_7.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_7.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 70836958, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "27", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_27.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_27.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 90797105, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "9", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_9.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_9.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 65827905, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "1", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_1.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_1.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 60780344, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "2", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_2.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_2.root", "tmpsite": "T2_EE_Estonia", "directstageout": "F", "size": 43731264, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "30", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_30.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_30.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 77381861, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "8", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_8.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_8.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 26000350, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "10", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_10.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_10.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 52438402, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "3", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_3.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_3.root", "tmpsite": "T2_EE_Estonia", "directstageout": "F", "size": 25380999, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "13", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_13.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_13.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 35302637, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "11", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_11.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_11.root", "tmpsite": "T1_ES_PIC_Disk", "directstageout": "F", "size": 22159526, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "6", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_6.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_6.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 19949803, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "25", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_25.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_25.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 21660407, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "14", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_14.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_14.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 28833975, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "19", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_19.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_19.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 11404656, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "31", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_31.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_31.root", "tmpsite": "T2_AT_Vienna", "directstageout": "F", "size": 6408551, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "34", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_34.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_34.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 8866310, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "32", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_32.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_32.root", "tmpsite": "T1_ES_PIC_Disk", "directstageout": "F", "size": 7399968, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "15", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_15.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_15.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 7218261, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "20", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_20.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_20.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 7206872, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "29", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_29.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_29.root", "tmpsite": "T1_RU_JINR_Disk", "directstageout": "F", "size": 7913674, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "18", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_18.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_18.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 6867305, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "23", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_23.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_23.root", "tmpsite": "T1_ES_PIC_Disk", "directstageout": "F", "size": 3956480, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "12", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_12.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_12.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 3888590, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "17", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_17.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_17.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 4329573, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+,{"jobid": "16", "lfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_16.root", "site": "T2_IT_Pisa", "tmplfn": "/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_16.root", "tmpsite": "T1_FR_CCIN2P3_Disk", "directstageout": "F", "size": 3876888, "checksum": {"cksum": 0, "md5": "0", "adler32": "0"}}
+]}
+
+ retcode : 0
+DEBUG 2023-06-07 10:43:44.388 UTC: 	 Server result: {'result': [{'jobid': '22', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_22.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_22.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 301393211, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '28', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_28.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_28.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 219305643, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '33', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_33.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_33.root', 'tmpsite': 'T2_BR_SPRACE', 'directstageout': 'F', 'size': 138581332, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '26', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_26.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_26.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 253935391, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '5', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_5.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_5.root', 'tmpsite': 'T2_IT_Legnaro', 'directstageout': 'F', 'size': 116775836, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '21', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_21.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_21.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 156490261, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '35', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_35.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_35.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 97209600, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '4', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_4.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_4.root', 'tmpsite': 'T2_KR_KISTI', 'directstageout': 'F', 'size': 58142133, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '7', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_7.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_7.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 70836958, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '27', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_27.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_27.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 90797105, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '9', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_9.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_9.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 65827905, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '1', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_1.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_1.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 60780344, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '2', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_2.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_2.root', 'tmpsite': 'T2_EE_Estonia', 'directstageout': 'F', 'size': 43731264, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '30', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_30.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_30.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 77381861, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '8', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_8.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_8.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 26000350, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '10', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_10.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_10.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 52438402, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '3', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_3.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_3.root', 'tmpsite': 'T2_EE_Estonia', 'directstageout': 'F', 'size': 25380999, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '13', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_13.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_13.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 35302637, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '11', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_11.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_11.root', 'tmpsite': 'T1_ES_PIC_Disk', 'directstageout': 'F', 'size': 22159526, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '6', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_6.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_6.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 19949803, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '25', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_25.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_25.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 21660407, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '14', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_14.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_14.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 28833975, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '19', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_19.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_19.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 11404656, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '31', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_31.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_31.root', 'tmpsite': 'T2_AT_Vienna', 'directstageout': 'F', 'size': 6408551, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '34', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_34.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_34.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 8866310, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '32', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_32.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_32.root', 'tmpsite': 'T1_ES_PIC_Disk', 'directstageout': 'F', 'size': 7399968, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '15', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_15.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_15.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 7218261, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '20', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_20.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_20.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 7206872, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '29', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_29.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_29.root', 'tmpsite': 'T1_RU_JINR_Disk', 'directstageout': 'F', 'size': 7913674, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '18', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_18.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_18.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 6867305, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '23', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_23.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_23.root', 'tmpsite': 'T1_ES_PIC_Disk', 'directstageout': 'F', 'size': 3956480, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '12', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_12.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_12.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 3888590, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '17', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_17.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_17.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 4329573, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}, {'jobid': '16', 'lfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_16.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_16.root', 'tmpsite': 'T1_FR_CCIN2P3_Disk', 'directstageout': 'F', 'size': 3876888, 'checksum': {'cksum': 0, 'md5': '0', 'adler32': '0'}}]}
+DEBUG 2023-06-07 10:43:44.388 UTC: 	 Getting url info
+DEBUG 2023-06-07 10:43:44.389 UTC: 	 XRootD urls are requested
+INFO 2023-06-07 10:43:44.389 UTC: 	 root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_22.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_28.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_33.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_26.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_5.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_21.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_35.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_4.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_7.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_27.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_9.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_1.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_2.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_30.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_8.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_10.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_3.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_13.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_11.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_6.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_25.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_14.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_19.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_31.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_34.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_32.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_15.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_20.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_29.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_18.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_23.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_12.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_17.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/ZJetsToNuNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/ZJetsToNuNu_HT600To800_2018/230606_104533/0000/tree_hadd_16.root
+DEBUG 2023-06-07 10:43:44.415 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_ZJetsToNuNu_HT600To800_2018/crab.log

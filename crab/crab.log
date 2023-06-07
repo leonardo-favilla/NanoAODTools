@@ -322,3 +322,1210 @@ Traceback (most recent call last):
 CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_ZJetsToNuNu_HT2500ToInf_2018' already exists 
 Please change the requestName in the config file
 INFO 2023-06-07 09:30:45.085 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:35:26.159 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:35:26.159 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:35:26.159 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:35:26.160 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:35:26.160 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:35:26.160 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:35:26.189 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:35:26.189 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:35:26.189 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:35:26.273 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:35:27.350 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:35:27.350 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:35:27.350 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:35:27.350 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:35:27.351 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:35:27.351 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:35:27.632 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:35:27.632 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:35:27.632 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:35:27.635 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:35:28.625 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:35:28.625 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:35:28.625 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:35:28.625 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:35:28.625 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:35:28.625 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:35:28.634 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:35:28.634 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:35:28.634 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:35:28.636 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:35:29.545 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:35:29.546 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:35:29.546 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:35:29.546 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:35:29.546 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:35:29.546 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:35:29.560 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:35:29.561 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:35:29.561 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:35:29.563 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:35:30.504 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:35:30.504 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:35:30.504 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:35:30.504 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:35:30.505 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:35:30.505 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:35:30.512 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:35:30.513 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:35:30.513 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:35:30.514 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:35:31.425 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:35:31.425 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:35:31.425 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:35:31.425 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:35:31.426 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:35:31.426 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:35:31.436 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:35:31.436 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:35:31.436 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:35:31.438 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:35:32.479 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:35:32.479 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:35:32.479 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:35:32.479 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:35:32.480 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:35:32.480 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:35:32.519 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:35:32.519 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:35:32.519 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:35:32.521 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:38:03.299 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:38:03.300 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:38:03.300 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:38:03.300 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:38:03.322 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018
+ERROR 2023-06-07 10:38:03.322 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018
+INFO 2023-06-07 10:38:03.347 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:38:04.402 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:38:04.403 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:38:04.403 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:38:04.403 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:38:04.434 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018
+ERROR 2023-06-07 10:38:04.434 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018
+INFO 2023-06-07 10:38:04.441 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:38:05.507 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:38:05.508 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:38:05.508 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:38:05.508 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:38:05.509 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018
+ERROR 2023-06-07 10:38:05.510 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018
+INFO 2023-06-07 10:38:05.512 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:38:06.540 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:38:06.541 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:38:06.541 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:38:06.541 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:38:06.554 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018
+ERROR 2023-06-07 10:38:06.554 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018
+INFO 2023-06-07 10:38:06.556 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:38:07.717 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:38:07.717 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:38:07.717 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:38:07.718 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:38:07.720 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018
+ERROR 2023-06-07 10:38:07.720 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018
+INFO 2023-06-07 10:38:07.722 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:38:08.857 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:38:08.857 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:38:08.857 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:38:08.858 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:38:08.862 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018
+ERROR 2023-06-07 10:38:08.862 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018
+INFO 2023-06-07 10:38:08.864 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:38:10.053 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:38:10.053 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:38:10.053 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:38:10.053 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:38:10.056 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018
+ERROR 2023-06-07 10:38:10.057 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018
+INFO 2023-06-07 10:38:10.066 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:41:29.198 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:41:29.198 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:41:29.198 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:41:29.198 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:41:29.205 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018
+ERROR 2023-06-07 10:41:29.205 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018
+INFO 2023-06-07 10:41:29.227 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:41:31.411 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:41:31.411 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:41:31.411 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:41:31.412 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:41:31.425 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018
+ERROR 2023-06-07 10:41:31.425 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018
+INFO 2023-06-07 10:41:31.428 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:41:34.250 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:41:34.251 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:41:34.251 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:41:34.251 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:41:34.253 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018
+ERROR 2023-06-07 10:41:34.253 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018
+INFO 2023-06-07 10:41:34.267 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:41:37.447 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:41:37.448 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:41:37.448 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:41:37.448 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:41:37.450 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018
+ERROR 2023-06-07 10:41:37.450 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018
+INFO 2023-06-07 10:41:37.453 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:41:39.717 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:41:39.717 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:41:39.717 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:41:39.717 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:41:39.727 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018
+ERROR 2023-06-07 10:41:39.727 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018
+INFO 2023-06-07 10:41:39.731 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:41:43.547 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:41:43.548 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:41:43.548 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:41:43.548 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:41:43.550 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018
+ERROR 2023-06-07 10:41:43.550 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018
+INFO 2023-06-07 10:41:43.556 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:41:47.077 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:41:47.077 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:41:47.077 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:41:47.089 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:41:47.111 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018
+ERROR 2023-06-07 10:41:47.111 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018
+INFO 2023-06-07 10:41:47.158 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:42:52.068 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:42:52.069 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:42:52.069 UTC: 	 Executing command: 'getoutput'
+DEBUG 2023-06-07 10:42:52.069 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:42:52.071 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018
+ERROR 2023-06-07 10:42:52.071 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018
+INFO 2023-06-07 10:42:52.080 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:42:54.087 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:42:54.087 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:42:54.088 UTC: 	 Executing command: 'getoutput'
+DEBUG 2023-06-07 10:42:54.088 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:42:54.089 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018
+ERROR 2023-06-07 10:42:54.089 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018
+INFO 2023-06-07 10:42:54.093 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:42:55.725 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:42:55.725 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:42:55.725 UTC: 	 Executing command: 'getoutput'
+DEBUG 2023-06-07 10:42:55.725 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:42:55.728 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018
+ERROR 2023-06-07 10:42:55.728 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018
+INFO 2023-06-07 10:42:55.730 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:42:57.212 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:42:57.212 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:42:57.212 UTC: 	 Executing command: 'getoutput'
+DEBUG 2023-06-07 10:42:57.212 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:42:57.215 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018
+ERROR 2023-06-07 10:42:57.215 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018
+INFO 2023-06-07 10:42:57.217 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:42:59.080 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:42:59.080 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:42:59.080 UTC: 	 Executing command: 'getoutput'
+DEBUG 2023-06-07 10:42:59.081 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:42:59.084 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018
+ERROR 2023-06-07 10:42:59.084 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018
+INFO 2023-06-07 10:42:59.100 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:43:00.524 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:43:00.524 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:43:00.524 UTC: 	 Executing command: 'getoutput'
+DEBUG 2023-06-07 10:43:00.525 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:43:00.526 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018
+ERROR 2023-06-07 10:43:00.526 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018
+INFO 2023-06-07 10:43:00.529 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:43:02.378 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:43:02.379 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:43:02.379 UTC: 	 Executing command: 'getoutput'
+DEBUG 2023-06-07 10:43:02.379 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:43:02.392 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018
+ERROR 2023-06-07 10:43:02.392 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018
+INFO 2023-06-07 10:43:02.401 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:45:58.485 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:45:58.486 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:45:58.486 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:45:58.486 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:45:58.491 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:45:58.498 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:45:58.514 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:45:58.515 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:45:58.515 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:45:58.518 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:45:59.732 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:45:59.733 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:45:59.733 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:45:59.733 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:45:59.734 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:45:59.734 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:45:59.770 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:45:59.770 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:45:59.770 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:45:59.772 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:01.052 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:01.052 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:01.052 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:46:01.052 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:46:01.053 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:46:01.053 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:46:01.101 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:46:01.101 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:46:01.101 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:46:01.106 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:02.419 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:02.420 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:02.420 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:46:02.420 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:46:02.421 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:46:02.421 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:46:02.493 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:46:02.493 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:46:02.493 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:46:02.496 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:04.003 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:04.003 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:04.003 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:46:04.004 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:46:04.005 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:46:04.005 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:46:04.072 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:46:04.072 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:46:04.072 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:46:04.075 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:05.456 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:05.456 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:05.456 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:46:05.456 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:46:05.457 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:46:05.457 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:46:05.470 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:46:05.470 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:46:05.470 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:46:05.474 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:06.551 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:06.552 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:06.552 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 10:46:06.552 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 10:46:06.552 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 10:46:06.552 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 10:46:06.560 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 10:46:06.561 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 10:46:06.561 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 10:46:06.563 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:27.677 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:27.677 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:27.677 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:46:27.677 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:46:27.678 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018
+ERROR 2023-06-07 10:46:27.678 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018
+INFO 2023-06-07 10:46:27.680 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:29.165 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:29.165 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:29.165 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:46:29.165 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:46:29.166 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018
+ERROR 2023-06-07 10:46:29.166 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018
+INFO 2023-06-07 10:46:29.169 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:30.637 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:30.637 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:30.637 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:46:30.637 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:46:30.638 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018
+ERROR 2023-06-07 10:46:30.638 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018
+INFO 2023-06-07 10:46:30.642 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:32.355 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:32.355 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:32.355 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:46:32.355 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:46:32.356 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018
+ERROR 2023-06-07 10:46:32.356 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018
+INFO 2023-06-07 10:46:32.359 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:33.944 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:33.945 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:33.945 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:46:33.945 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:46:33.946 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018
+ERROR 2023-06-07 10:46:33.946 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018
+INFO 2023-06-07 10:46:33.989 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:35.891 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:35.891 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:35.891 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:46:35.891 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:46:35.892 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018
+ERROR 2023-06-07 10:46:35.892 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018
+INFO 2023-06-07 10:46:35.900 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:37.323 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:37.323 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:37.323 UTC: 	 Executing command: 'status'
+DEBUG 2023-06-07 10:46:37.323 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:46:37.324 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018
+ERROR 2023-06-07 10:46:37.324 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018
+INFO 2023-06-07 10:46:37.326 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:56.948 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:56.948 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:56.948 UTC: 	 Executing command: 'kill'
+DEBUG 2023-06-07 10:46:56.948 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:46:56.949 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018
+ERROR 2023-06-07 10:46:56.949 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT200to300_2018
+INFO 2023-06-07 10:46:56.957 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:46:58.486 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:46:58.486 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:46:58.486 UTC: 	 Executing command: 'kill'
+DEBUG 2023-06-07 10:46:58.486 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:46:58.487 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018
+ERROR 2023-06-07 10:46:58.487 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT300to500_2018
+INFO 2023-06-07 10:46:58.488 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:47:00.299 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:47:00.299 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:47:00.299 UTC: 	 Executing command: 'kill'
+DEBUG 2023-06-07 10:47:00.299 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:47:00.300 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018
+ERROR 2023-06-07 10:47:00.300 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT500to700_2018
+INFO 2023-06-07 10:47:00.302 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:47:01.830 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:47:01.830 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:47:01.830 UTC: 	 Executing command: 'kill'
+DEBUG 2023-06-07 10:47:01.830 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:47:01.831 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018
+ERROR 2023-06-07 10:47:01.831 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT700to1000_2018
+INFO 2023-06-07 10:47:01.834 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:47:03.389 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:47:03.389 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:47:03.389 UTC: 	 Executing command: 'kill'
+DEBUG 2023-06-07 10:47:03.389 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:47:03.390 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018
+ERROR 2023-06-07 10:47:03.390 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1000to1500_2018
+INFO 2023-06-07 10:47:03.392 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:47:05.196 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:47:05.197 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:47:05.197 UTC: 	 Executing command: 'kill'
+DEBUG 2023-06-07 10:47:05.197 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:47:05.197 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018
+ERROR 2023-06-07 10:47:05.198 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT1500to2000_2018
+INFO 2023-06-07 10:47:05.200 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 10:47:07.330 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 10:47:07.331 UTC: 	 Running on: Linux lxplus735.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 10:47:07.331 UTC: 	 Executing command: 'kill'
+DEBUG 2023-06-07 10:47:07.331 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+ERROR 2023-06-07 10:47:07.332 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018
+ERROR 2023-06-07 10:47:07.332 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_QCD_HT2000toInf_2018
+INFO 2023-06-07 10:47:07.334 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log
+DEBUG 2023-06-07 12:52:42.992 UTC: 	 CRAB Client version: v3.230417
+DEBUG 2023-06-07 12:52:42.992 UTC: 	 Running on: Linux lxplus7113.cern.ch 3.10.0-1160.90.1.el7.x86_64 #1 SMP Thu May 4 15:21:22 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-06-07 12:52:42.993 UTC: 	 Executing command: 'submit'
+DEBUG 2023-06-07 12:52:42.993 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-06-07 12:52:42.994 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-06-07 12:52:42.994 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-06-07 12:52:43.022 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2023-06-07 12:52:43.023 UTC: 	 Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TT_Mtt_700to1000_2018' already exists 
+Please change the requestName in the config file
+ERROR 2023-06-07 12:52:43.023 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 159, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/bin/crab.py", line 144, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.230417.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TT_Mtt_700to1000_2018' already exists 
+Please change the requestName in the config file
+INFO 2023-06-07 12:52:43.119 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab.log

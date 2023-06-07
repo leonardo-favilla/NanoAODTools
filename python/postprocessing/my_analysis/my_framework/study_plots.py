@@ -24,10 +24,10 @@ from coffea.nanoevents import NanoEventsFactory, NanoAODSchema
 
 ROOT.gROOT.SetBatch()
 ### ARGS ###
-dataset             = "tDM_Mphi1000_2018"                           # Dataset
+dataset             = "tDM_Mphi500_2018"                           # Dataset
 path_to_file        = "/eos/user/l/lfavilla/ml1/Skim_Folder"        # Path where file is saved 
 filename            = f"{dataset}.root"
-print_graphics      = False
+print_graphics      = True
 save_graphics       = True
 ### TREE ###
 tree                = NanoEventsFactory.from_root(f"{path_to_file}/{filename}",
@@ -215,7 +215,6 @@ plt.title(f"Integrals Ratio [H/(L+H)] vs pt_limit (dataset={dataset})")
 plt.legend()
 plt.grid(True)
 plt.savefig(f"{ScorePath}/IntegralsRatio_H_dataset_{dataset}.jpg") 
-plt.show()
 
 """
 Integrals Ratio 2
@@ -247,7 +246,6 @@ plt.title(f"Integrals Ratio [L/(L+H)] vs pt_limit (dataset={dataset})")
 plt.legend()
 plt.grid(True)
 plt.savefig(f"{ScorePath}/IntegralsRatio_L_dataset_{dataset}.jpg") 
-plt.show()
 
 
 """
@@ -332,7 +330,6 @@ for pt_flag in ["Low", "High"]:
     plt.legend()
     plt.grid(True)
     plt.savefig(f"{ScoreVsPtPath}/ScoreVsPt_CorrelationFactor_ptflag_{pt_flag}_dataset_{dataset}.jpg") 
-    plt.show()
 
 
 
