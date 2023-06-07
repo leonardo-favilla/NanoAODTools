@@ -149,7 +149,7 @@ ZJetsToNuNu_HT2500ToInf_2018.file      = "/store/mc/" + tag2018_1 + "/ZJetsToNuN
 
 ZJetsToNuNu_2018                        = sample(ROOT.kBlue, 1, 1001, "ZJetsToNuNu_2018", "ZJetsToNuNu_2018")
 ZJetsToNuNu_2018.year                   = 2018
-ZJetsToNuNu_2018.components             = [ZJetsToNuNu_HT100To200_2018, 
+ZJetsToNuNu_2018.components             = [
                                            ZJetsToNuNu_HT200To400_2018, 
                                            ZJetsToNuNu_HT400To600_2018, 
                                            ZJetsToNuNu_HT600To800_2018, 
