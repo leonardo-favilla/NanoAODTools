@@ -178,12 +178,12 @@ tDM_Mphi1000_2018.sigma = 0.00002499
 tDM_Mphi1000_2018.file  = "/afs/cern.ch/user/a/acagnott/public/xJonLeo/" + "tDM_mPhi1000_mChi1.root"
 
 
-tDM_2018                        = sample(ROOT.kBlue, 1, 1001, "tDM_2018", "tDM_2018")
-tDM_2018.year                   = 2018
-tDM_2018.components             = [tDM_Mphi50_2018, 
-                                   tDM_Mphi500_2018,
-                                   tDM_Mphi1000_2018
-                                  ]
+# tDM_2018                        = sample(ROOT.kBlue, 1, 1001, "tDM_2018", "tDM_2018")
+# tDM_2018.year                   = 2018
+# tDM_2018.components             = [tDM_Mphi50_2018, 
+#                                    tDM_Mphi500_2018,
+#                                    tDM_Mphi1000_2018
+#                                   ]
 
 ################################ Tprime ################################
 TprimeBToTZ_M800_2018           = sample(ROOT.kMagenta, 1, 1001, "TprimeBToTZ_M800_2018", "TprimeBToTZ_M800_2018")
@@ -205,12 +205,12 @@ TprimeBToTZ_M1800_2018.dataset   = "/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13T
 TprimeBToTZ_M1800_2018.file      = "/store/mc/" + tag2018_2 + "/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8" + nano + "/" + aftertag2018 + "-v1" + "/280000/8C730D19-F6E3-E742-AE3B-6E26B2C5B1F5.root"
 
 
-TprimeBToTZ_2018                        = sample(ROOT.kBlue, 1, 1001, "TprimeBToTZ_2018", "TprimeBToTZ_2018")
-TprimeBToTZ_2018.year                   = 2018
-TprimeBToTZ_2018.components             = [TprimeBToTZ_M800_2018, 
-                                           TprimeBToTZ_M1200_2018,
-                                           TprimeBToTZ_M1800_2018
-                                          ]
+# TprimeBToTZ_2018                        = sample(ROOT.kBlue, 1, 1001, "TprimeBToTZ_2018", "TprimeBToTZ_2018")
+# TprimeBToTZ_2018.year                   = 2018
+# TprimeBToTZ_2018.components             = [TprimeBToTZ_M800_2018, 
+#                                            TprimeBToTZ_M1200_2018,
+#                                            TprimeBToTZ_M1800_2018
+#                                           ]
 
 ################################## DATASET TO RUN ON ##################################
 sample_dict =          {
