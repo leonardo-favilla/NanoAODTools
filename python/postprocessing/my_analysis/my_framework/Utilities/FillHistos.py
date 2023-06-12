@@ -87,9 +87,10 @@ for pt_flag in pt_flags:
 
 
 """
-Efficiency(Counts/totCounts) vs. Score using:
+Efficiency(Counts/totCounts) vs. ScoreThreshold using:
 1. TopLowPt_pt in [0, 1000]GeV
 2. TopHighPt_pt in [50, inf]GeV
 """
+
 
 
