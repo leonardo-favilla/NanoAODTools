@@ -16,12 +16,15 @@ with open(f"{path_to_json}/{json_filename}", "r") as f:
 
 path_to_graphics_folder = "/eos/user/l/lfavilla/my_framework/plots"
 ### OutHistos Root File ###
-save_graphics = True
+save_graphics           = True
+PlotsGeneralRFilePath   = f"{path_to_graphics_folder}/GeneralPlots.root"
 if save_graphics:
     if not os.path.exists(path_to_graphics_folder):
         os.makedirs(path_to_graphics_folder)
-    PlotsGeneralRFile = ROOT.TFile(f"{path_to_graphics_folder}/GeneralPlots.root", "RECREATE")
-    
+    if not os.path.exists(PlotsGeneralRFilePath): 
+        PlotsGeneralRFile = ROOT.TFile(PlotsGeneralRFilePath, "RECREATE")
+    else:
+        PlotsGeneralRFile = ROOT.TFile(PlotsGeneralRFilePath, "UPDATE")
 pt_flags        = ["Low", "High"]
 truths          = [True, False]   
     
@@ -62,7 +65,7 @@ for label in utilities.keys():
 ### Add all histograms of all components for QCD and ZJets ###
 for label in HistLists.keys():
     if "QCD" in label:
-        qcd_add = ROOT.TH1F
+        qcd_add = ROOT.TH1F()
         for c in HistLists[label].keys():
             # print(c)
             for histoName, histo in HistLists[label][c][0].items():
