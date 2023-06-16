@@ -1,0 +1,650 @@
+Labels found in HistLists:	dict_keys(['tDM_Mphi50_2018', 'tDM_Mphi500_2018', 'tDM_Mphi1000_2018', 'TprimeBToTZ_M800_2018', 'TprimeBToTZ_M1200_2018', 'TprimeBToTZ_M1800_2018', 'TT_2018', 'QCD_2018', 'ZJetsToNuNu_2018'])
+Components found for label <tDM_Mphi50_2018>:dict_keys(['tDM_Mphi50_2018'])
+Istogrammi trovati per component <tDM_Mphi50_2018>	(sigma=0.7 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.220095694065094
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	154.0669858455658
+
+			TopLowPt_EfficiencyVsScore_False:		0.7431285977363586
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	520.190018415451
+
+			TopHighPt_EfficiencyVsScore_True:		0.07612456381320953
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	53.287194669246674
+
+			TopHighPt_EfficiencyVsScore_False:		0.8724700212478638
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	610.7290148735046
+
+
+
+Components found for label <tDM_Mphi500_2018>:dict_keys(['tDM_Mphi500_2018'])
+Istogrammi trovati per component <tDM_Mphi500_2018>	(sigma=0.0004385 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.43150874972343445
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.18921658675372602
+
+			TopLowPt_EfficiencyVsScore_False:		0.8118130564689636
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	0.3559800252616406
+
+			TopHighPt_EfficiencyVsScore_True:		0.08848582953214645
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.03880103624984622
+
+			TopHighPt_EfficiencyVsScore_False:		0.9017487168312073
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	0.39541681233048437
+
+
+
+Components found for label <tDM_Mphi1000_2018>:dict_keys(['tDM_Mphi1000_2018'])
+Istogrammi trovati per component <tDM_Mphi1000_2018>	(sigma=2.499e-05 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.541032612323761
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.013520404981970786
+
+			TopLowPt_EfficiencyVsScore_False:		0.8484325408935547
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	0.02120232919692993
+
+			TopHighPt_EfficiencyVsScore_True:		0.08934926241636276
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0022328380677849053
+
+			TopHighPt_EfficiencyVsScore_False:		0.9197665452957153
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	0.022984965966939924
+
+
+
+Components found for label <TprimeBToTZ_M800_2018>:dict_keys(['TprimeBToTZ_M800_2018'])
+Istogrammi trovati per component <TprimeBToTZ_M800_2018>	(sigma=0.04154 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.5478742122650146
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	22.758694777488707
+
+			TopLowPt_EfficiencyVsScore_False:		0.8327816724777222
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	34.593750674724575
+
+			TopHighPt_EfficiencyVsScore_True:		0.0619945265352726
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	2.5752526322752236
+
+			TopHighPt_EfficiencyVsScore_False:		0.8905683159828186
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	36.99420784592628
+
+
+
+Components found for label <TprimeBToTZ_M1200_2018>:dict_keys(['TprimeBToTZ_M1200_2018'])
+Istogrammi trovati per component <TprimeBToTZ_M1200_2018>	(sigma=0.00511 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.8370530605316162
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	4.277341139316559
+
+			TopLowPt_EfficiencyVsScore_False:		0.8955854177474976
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	4.576441484689713
+
+			TopHighPt_EfficiencyVsScore_True:		0.0525284968316555
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.26842061880975965
+
+			TopHighPt_EfficiencyVsScore_False:		0.9185714721679688
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	4.69390022277832
+
+
+
+Components found for label <TprimeBToTZ_M1800_2018>:dict_keys(['TprimeBToTZ_M1800_2018'])
+Istogrammi trovati per component <TprimeBToTZ_M1800_2018>	(sigma=0.00044 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.8583941459655762
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.3776934242248535
+
+			TopLowPt_EfficiencyVsScore_False:		0.921847403049469
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	0.4056128573417664
+
+			TopHighPt_EfficiencyVsScore_True:		0.09258512407541275
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.04073745459318161
+
+			TopHighPt_EfficiencyVsScore_False:		0.9412980079650879
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	0.4141711235046387
+
+
+
+Components found for label <TT_2018>:dict_keys(['TT_Mtt_700to1000_2018', 'TT_Mtt_1000toInf_2018'])
+Istogrammi trovati per component <TT_Mtt_700to1000_2018>	(sigma=80.5 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.36094772815704346
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	29056.292116642
+
+			TopLowPt_EfficiencyVsScore_False:		0.6864357590675354
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	55258.0786049366
+
+			TopHighPt_EfficiencyVsScore_True:		0.06920205801725388
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	5570.765670388937
+
+			TopHighPt_EfficiencyVsScore_False:		0.840144157409668
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	67631.60467147827
+
+
+
+Istogrammi trovati per component <TT_Mtt_1000toInf_2018>	(sigma=21.3 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.49686098098754883
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	39639.43101167679
+
+			TopLowPt_EfficiencyVsScore_False:		0.8093351125717163
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	72496.91650271416
+
+			TopHighPt_EfficiencyVsScore_True:		0.054759591817855835
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	6737.144976109266
+
+			TopHighPt_EfficiencyVsScore_False:		0.9065607786178589
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	86941.34925603867
+
+
+
+Components found for label <QCD_2018>:dict_keys(['QCD_HT200to300_2018', 'QCD_HT300to500_2018', 'QCD_HT500to700_2018', 'QCD_HT700to1000_2018', 'QCD_HT1000to1500_2018', 'QCD_HT1500to2000_2018', 'QCD_HT2000toInf_2018'])
+Istogrammi trovati per component <QCD_HT200to300_2018>	(sigma=1712000 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	0.0
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	0.0
+
+
+
+Istogrammi trovati per component <QCD_HT300to500_2018>	(sigma=347700 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	0.0
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	0.0
+
+
+
+Istogrammi trovati per component <QCD_HT500to700_2018>	(sigma=32100 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	0.0
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	0.0
+
+
+
+Istogrammi trovati per component <QCD_HT700to1000_2018>	(sigma=6831 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.9702970385551453
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	6628099.070370197
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.9827089309692383
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	6712884.707450867
+
+
+
+Istogrammi trovati per component <QCD_HT1000to1500_2018>	(sigma=1207 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		1.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	7835099.070370197
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.9870129823684692
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	7904209.377169609
+
+
+
+Istogrammi trovati per component <QCD_HT1500to2000_2018>	(sigma=119.9 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.9789156913757324
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	7952471.061766148
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.9902869462966919
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	8022944.782030582
+
+
+
+Istogrammi trovati per component <QCD_HT2000toInf_2018>	(sigma=25.24 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.968960165977478
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	7976927.616355419
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.988876461982727
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	8047904.023931026
+
+
+
+Components found for label <ZJetsToNuNu_2018>:dict_keys(['ZJetsToNuNu_HT200To400_2018', 'ZJetsToNuNu_HT400To600_2018', 'ZJetsToNuNu_HT600To800_2018', 'ZJetsToNuNu_HT800To1200_2018', 'ZJetsToNuNu_HT1200To2500_2018', 'ZJetsToNuNu_HT2500ToInf_2018'])
+Istogrammi trovati per component <ZJetsToNuNu_HT200To400_2018>	(sigma=118.0584 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.7049325108528137
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	83223.20433926582
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.7983759641647339
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	94254.98892774583
+
+
+
+Istogrammi trovati per component <ZJetsToNuNu_HT400To600_2018>	(sigma=14.700100000000003 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.8275343179702759
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	95388.04156686067
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.886234700679779
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	107282.72765120865
+
+
+
+Istogrammi trovati per component <ZJetsToNuNu_HT600To800_2018>	(sigma=2.6624000000000003 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.8931909203529358
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	97766.07307320833
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.9313828945159912
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	109762.44146956803
+
+
+
+Istogrammi trovati per component <ZJetsToNuNu_HT800To1200_2018>	(sigma=1.3451999999999997 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.9348515868186951
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	99023.63542779683
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.9545559883117676
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	111046.51018504502
+
+
+
+Istogrammi trovati per component <ZJetsToNuNu_HT1200To2500_2018>	(sigma=0.2552 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.9573115110397339
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	99267.94132541417
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.9755312204360962
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	111295.46575250031
+
+
+
+Istogrammi trovati per component <ZJetsToNuNu_HT2500ToInf_2018>	(sigma=0.0061600000000000005 pb-1):
+			TopLowPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True:	0.0
+
+			TopLowPt_EfficiencyVsScore_False:		0.9585700631141663
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False:	99273.84611700295
+
+			TopHighPt_EfficiencyVsScore_True:		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True:	0.0
+
+			TopHighPt_EfficiencyVsScore_False:		0.9914430379867554
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False:	111301.5730416143
+
+
+
+Labels found in HistLists:	dict_keys(['tDM_Mphi50_2018', 'tDM_Mphi500_2018', 'tDM_Mphi1000_2018', 'TprimeBToTZ_M800_2018', 'TprimeBToTZ_M1200_2018', 'TprimeBToTZ_M1800_2018', 'TT_2018', 'QCD_2018', 'ZJetsToNuNu_2018'])
+Components found for label <tDM_Mphi50_2018>:dict_keys(['tDM_Mphi50_2018'])
+Istogrammi trovati per component <tDM_Mphi50_2018>	(sigma=0.7 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.220095694065094
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	154.0669858455658
+
+			TopLowPt_EfficiencyVsScore_False        :		0.7431285977363586
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	520.190018415451
+
+			TopHighPt_EfficiencyVsScore_True        :		0.07612456381320953
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	53.287194669246674
+
+			TopHighPt_EfficiencyVsScore_False       :		0.8724700212478638
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	610.7290148735046
+
+
+
+Components found for label <tDM_Mphi500_2018>:dict_keys(['tDM_Mphi500_2018'])
+Istogrammi trovati per component <tDM_Mphi500_2018>	(sigma=0.0004385 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.43150874972343445
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.18921658675372602
+
+			TopLowPt_EfficiencyVsScore_False        :		0.8118130564689636
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	0.3559800252616406
+
+			TopHighPt_EfficiencyVsScore_True        :		0.08848582953214645
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.03880103624984622
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9017487168312073
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	0.39541681233048437
+
+
+
+Components found for label <tDM_Mphi1000_2018>:dict_keys(['tDM_Mphi1000_2018'])
+Istogrammi trovati per component <tDM_Mphi1000_2018>	(sigma=2.499e-05 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.541032612323761
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.013520404981970786
+
+			TopLowPt_EfficiencyVsScore_False        :		0.8484325408935547
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	0.02120232919692993
+
+			TopHighPt_EfficiencyVsScore_True        :		0.08934926241636276
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0022328380677849053
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9197665452957153
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	0.022984965966939924
+
+
+
+Components found for label <TprimeBToTZ_M800_2018>:dict_keys(['TprimeBToTZ_M800_2018'])
+Istogrammi trovati per component <TprimeBToTZ_M800_2018>	(sigma=0.04154 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.5478742122650146
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	22.758694777488707
+
+			TopLowPt_EfficiencyVsScore_False        :		0.8327816724777222
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	34.593750674724575
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0619945265352726
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	2.5752526322752236
+
+			TopHighPt_EfficiencyVsScore_False       :		0.8905683159828186
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	36.99420784592628
+
+
+
+Components found for label <TprimeBToTZ_M1200_2018>:dict_keys(['TprimeBToTZ_M1200_2018'])
+Istogrammi trovati per component <TprimeBToTZ_M1200_2018>	(sigma=0.00511 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.8370530605316162
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	4.277341139316559
+
+			TopLowPt_EfficiencyVsScore_False        :		0.8955854177474976
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	4.576441484689713
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0525284968316555
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.26842061880975965
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9185714721679688
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	4.69390022277832
+
+
+
+Components found for label <TprimeBToTZ_M1800_2018>:dict_keys(['TprimeBToTZ_M1800_2018'])
+Istogrammi trovati per component <TprimeBToTZ_M1800_2018>	(sigma=0.00044 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.8583941459655762
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.3776934242248535
+
+			TopLowPt_EfficiencyVsScore_False        :		0.921847403049469
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	0.4056128573417664
+
+			TopHighPt_EfficiencyVsScore_True        :		0.09258512407541275
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.04073745459318161
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9412980079650879
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	0.4141711235046387
+
+
+
+Components found for label <TT_2018>:        dict_keys(['TT_Mtt_700to1000_2018', 'TT_Mtt_1000toInf_2018'])
+Istogrammi trovati per component <TT_Mtt_700to1000_2018>	(sigma=80.5 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.36094772815704346
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	29056.292116642
+
+			TopLowPt_EfficiencyVsScore_False        :		0.6864357590675354
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	55258.0786049366
+
+			TopHighPt_EfficiencyVsScore_True        :		0.06920205801725388
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	5570.765670388937
+
+			TopHighPt_EfficiencyVsScore_False       :		0.840144157409668
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	67631.60467147827
+
+
+
+Istogrammi trovati per component <TT_Mtt_1000toInf_2018>	(sigma=21.3 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.49686098098754883
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	39639.43101167679
+
+			TopLowPt_EfficiencyVsScore_False        :		0.8093351125717163
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	72496.91650271416
+
+			TopHighPt_EfficiencyVsScore_True        :		0.054759591817855835
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	6737.144976109266
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9065607786178589
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	86941.34925603867
+
+
+
+Components found for label <QCD_2018>:       dict_keys(['QCD_HT200to300_2018', 'QCD_HT300to500_2018', 'QCD_HT500to700_2018', 'QCD_HT700to1000_2018', 'QCD_HT1000to1500_2018', 'QCD_HT1500to2000_2018', 'QCD_HT2000toInf_2018'])
+Istogrammi trovati per component <QCD_HT200to300_2018>	(sigma=1712000 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	0.0
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	0.0
+
+
+
+Istogrammi trovati per component <QCD_HT300to500_2018>	(sigma=347700 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	0.0
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	0.0
+
+
+
+Istogrammi trovati per component <QCD_HT500to700_2018>	(sigma=32100 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	0.0
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	0.0
+
+
+
+Istogrammi trovati per component <QCD_HT700to1000_2018>	(sigma=6831 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.9702970385551453
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	6628099.070370197
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9827089309692383
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	6712884.707450867
+
+
+
+Istogrammi trovati per component <QCD_HT1000to1500_2018>	(sigma=1207 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		1.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	7835099.070370197
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9870129823684692
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	7904209.377169609
+
+
+
+Istogrammi trovati per component <QCD_HT1500to2000_2018>	(sigma=119.9 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.9789156913757324
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	7952471.061766148
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9902869462966919
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	8022944.782030582
+
+
+
+Istogrammi trovati per component <QCD_HT2000toInf_2018>	(sigma=25.24 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.968960165977478
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	7976927.616355419
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.988876461982727
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	8047904.023931026
+
+
+
+Components found for label <ZJetsToNuNu_2018>:dict_keys(['ZJetsToNuNu_HT200To400_2018', 'ZJetsToNuNu_HT400To600_2018', 'ZJetsToNuNu_HT600To800_2018', 'ZJetsToNuNu_HT800To1200_2018', 'ZJetsToNuNu_HT1200To2500_2018', 'ZJetsToNuNu_HT2500ToInf_2018'])
+Istogrammi trovati per component <ZJetsToNuNu_HT200To400_2018>	(sigma=118.0584 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.7049325108528137
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	83223.20433926582
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.7983759641647339
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	94254.98892774583
+
+
+
+Istogrammi trovati per component <ZJetsToNuNu_HT400To600_2018>	(sigma=14.700100000000003 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.8275343179702759
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	95388.04156686067
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.886234700679779
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	107282.72765120865
+
+
+
+Istogrammi trovati per component <ZJetsToNuNu_HT600To800_2018>	(sigma=2.6624000000000003 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.8931909203529358
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	97766.07307320833
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9313828945159912
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	109762.44146956803
+
+
+
+Istogrammi trovati per component <ZJetsToNuNu_HT800To1200_2018>	(sigma=1.3451999999999997 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.9348515868186951
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	99023.63542779683
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9545559883117676
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	111046.51018504502
+
+
+
+Istogrammi trovati per component <ZJetsToNuNu_HT1200To2500_2018>	(sigma=0.2552 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.9573115110397339
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	99267.94132541417
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9755312204360962
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	111295.46575250031
+
+
+
+Istogrammi trovati per component <ZJetsToNuNu_HT2500ToInf_2018>	(sigma=0.0061600000000000005 pb-1):
+			TopLowPt_EfficiencyVsScore_True         :		0.0
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_True         :	0.0
+
+			TopLowPt_EfficiencyVsScore_False        :		0.9585700631141663
+			TOTAL ENTRIES IN TopLowPt_EfficiencyVsScore_False        :	99273.84611700295
+
+			TopHighPt_EfficiencyVsScore_True        :		0.0
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_True        :	0.0
+
+			TopHighPt_EfficiencyVsScore_False       :		0.9914430379867554
+			TOTAL ENTRIES IN TopHighPt_EfficiencyVsScore_False       :	111301.5730416143
+
+
+
