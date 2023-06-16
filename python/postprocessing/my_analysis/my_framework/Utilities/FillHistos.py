@@ -1,4 +1,5 @@
 import os
+import sys
 import ROOT
 import awkward as ak
 import mplhep as hep
@@ -9,7 +10,8 @@ import numpy as np
 from array import array
 
 import warnings
-warnings.filterwarnings("ignore", category=UserWarning)
+# warnings.filterwarnings("ignore", category=UserWarning)
+warnings.filterwarnings("ignore")
 
 
 ######### Create arguments to insert from shell #########
@@ -35,10 +37,17 @@ rhistos_filename            = options.rhistos_filename
 tree                = NanoEventsFactory.from_root(f"{path_to_rfile}", schemaclass=NanoAODSchema.v6).events()
 num_entries         = len(tree)
 ### Select which histograms must be filled or not ###
-do_CountsVsScore                = False
-do_EfficiencyVsScore            = False
-do_CountsOverThrVsScoreThrs     = False
-do_EfficiencyOverThrVsScoreThrs = False
+do_ALL = True
+if do_ALL:
+    do_CountsVsScore                = True
+    do_EfficiencyVsScore            = True
+    do_CountsOverThrVsScoreThrs     = True
+    do_EfficiencyOverThrVsScoreThrs = True
+else:
+    do_CountsVsScore                = False
+    do_EfficiencyVsScore            = False
+    do_CountsOverThrVsScoreThrs     = False
+    do_EfficiencyOverThrVsScoreThrs = False
 
 
 
@@ -47,13 +56,13 @@ PlotsRFilePath  = f"{path_to_graphics_folder}/{rhistos_filename}"
 if save_graphics:
     if not os.path.exists(path_to_graphics_folder):
         os.makedirs(path_to_graphics_folder)
-    if not os.path.exists(PlotsRFilePath): 
+    if ((not os.path.exists(PlotsRFilePath)) or (do_ALL)):
         PlotsRFile  = ROOT.TFile(PlotsRFilePath, "RECREATE")
     else:
         PlotsRFile  = ROOT.TFile(PlotsRFilePath, "UPDATE")
 
-pt_flags        = ["Low", "High"]
-truths          = [True, False]
+pt_flags            = ["Low", "High"]
+truths              = [True, False]
 
 
 ### Store TopCandidates in dictionary ###
@@ -156,31 +165,51 @@ TopOverThr vs. Score Thresholds using:
 2. TopHighPt_pt in [50, inf]GeV
 """
 if do_CountsOverThrVsScoreThrs:
-    scoreThrs  = np.arange(0, 1.1, 0.1)
+    nbins      = 10
+    xmin       = 0
+    xmax       = 1
+    step       = (xmax-xmin)/nbins
+    scoreThrs  = np.arange(xmin, xmax+step, step)
     for pt_flag in pt_flags:
         for truth in truths:
             counts = []
             for thr in scoreThrs:
+                count              = 0
                 if num_entries:
                     Tops_Over_Thr  = TopsOverThr(tree=tree, pt_flag=pt_flag, truth=truth, thr=thr)
                     count          = ak.sum(ak.num(Tops_Over_Thr))
                 counts.append(count)
                 
-            # Create and Fill TGraph 
-            graph      = ROOT.TGraph(len(counts), array("d", scoreThrs), array("d", counts))
-            graphName  = f"Top{pt_flag}Pt_CountsOverThrVsScoreThrs_{truth}"
-            graphTitle = f"Top{pt_flag}Pt_CountsOverThrVsScoreThrs_{truth}"
-            graph.SetName(graphName)
-            graph.SetTitle(graphTitle)
-            graph.GetXaxis().SetTitle("Score Thrs")
-            graph.GetYaxis().SetTitle("Top Over Thr")
-            graph.SetLineColor(ROOT.kBlue)
-            graph.SetLineStyle(2)
-            graph.SetLineWidth(2)
-            graph.SetMarkerStyle(ROOT.kFullCircle)
-            graph.SetMarkerSize(1.5)
+            # # Create and Fill TGraph 
+            # graph      = ROOT.TGraph(len(counts), array("d", scoreThrs), array("d", counts))
+            # graphName  = f"Top{pt_flag}Pt_CountsOverThrVsScoreThrs_{truth}"
+            # graphTitle = f"Top{pt_flag}Pt_CountsOverThrVsScoreThrs_{truth}"
+            # graph.SetName(graphName)
+            # graph.SetTitle(graphTitle)
+            # graph.GetXaxis().SetTitle("Score Thrs")
+            # graph.GetYaxis().SetTitle("Top Over Thr")
+            # graph.SetLineColor(ROOT.kBlue)
+            # graph.SetLineStyle(2)
+            # graph.SetLineWidth(2)
+            # graph.SetMarkerStyle(ROOT.kFullCircle)
+            # graph.SetMarkerSize(1.5)
+            # if save_graphics:
+            #     graph.Write()
+            
+            # Create and Fill TH1F 
+            histoName  = f"Top{pt_flag}Pt_CumCountsOverThrVsScoreThrs_{truth}"
+            histoTitle = f"Top{pt_flag}Pt_CumCountsOverThrVsScoreThrs_{truth}"
+            histo      = ROOT.TH1F(histoName, histoTitle, nbins, xmin, xmax)
+            for bin, count in enumerate(counts):
+                histo.SetBinContent(bin+1, count)
+            
+            histo.GetXaxis().SetTitle("Score Thrs")
+            histo.GetYaxis().SetTitle("Top Over Thr")
+            histo.SetFillStyle(3001)
+            histo.SetLineWidth(2)
+            histo.SetLineColor(ROOT.kBlue)
             if save_graphics:
-                graph.Write()
+                histo.Write()
                 
                 
 """
@@ -203,18 +232,36 @@ if do_EfficiencyOverThrVsScoreThrs:
                         efficiency = count / ntop
                 efficiencies.append(efficiency)
                 
-            # Create and Fill TGraph 
-            graph      = ROOT.TGraph(len(efficiencies), array("d", scoreThrs), array("d", efficiencies))
-            graphName  = f"Top{pt_flag}Pt_ScoreThrs_{truth}"
-            graphTitle = f"Top{pt_flag}Pt_ScoreThrs_{truth}"
-            graph.SetName(graphName)
-            graph.SetTitle(graphTitle)
-            graph.GetXaxis().SetTitle("Score Thrs")
-            graph.GetYaxis().SetTitle("Efficiency Over Thr")
-            graph.SetLineColor(ROOT.kBlue)
-            graph.SetLineStyle(2)
-            graph.SetLineWidth(2)
-            graph.SetMarkerStyle(ROOT.kFullCircle)
-            graph.SetMarkerSize(1.5)
+            # # Create and Fill TGraph 
+            # graph      = ROOT.TGraph(len(efficiencies), array("d", scoreThrs), array("d", efficiencies))
+            # graphName  = f"Top{pt_flag}Pt_EfficiencyOverThrVsScoreThrs_{truth}"
+            # graphTitle = f"Top{pt_flag}Pt_EfficiencyOverThrVsScoreThrs_{truth}"
+            # graph.SetName(graphName)
+            # graph.SetTitle(graphTitle)
+            # graph.GetXaxis().SetTitle("Score Thrs")
+            # graph.GetYaxis().SetTitle("Efficiency Over Thr")
+            # graph.SetLineColor(ROOT.kBlue)
+            # graph.SetLineStyle(2)
+            # graph.SetLineWidth(2)
+            # graph.SetMarkerStyle(ROOT.kFullCircle)
+            # graph.SetMarkerSize(1.5)
+            # if save_graphics:
+            #     graph.Write()
+                
+            # Create and Fill TH1F 
+            histoName  = f"Top{pt_flag}Pt_CumEfficiencyOverThrVsScoreThrs_{truth}"
+            histoTitle = f"Top{pt_flag}Pt_CumEfficiencyOverThrVsScoreThrs_{truth}"
+            histo      = ROOT.TH1F(histoName, histoTitle, nbins, xmin, xmax)
+            for bin, efficiency in enumerate(efficiencies):
+                histo.SetBinContent(bin+1, efficiency)
+            
+            histo.GetXaxis().SetTitle("Score Thrs")
+            histo.GetYaxis().SetTitle("Efficiency Over Thr")
+            histo.SetFillStyle(3001)
+            histo.SetLineWidth(2)
+            histo.SetLineColor(ROOT.kBlue)
             if save_graphics:
-                graph.Write()
+                histo.Write()
+
+if save_graphics:
+    PlotsRFile.Close()
