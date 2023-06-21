@@ -133,37 +133,3 @@ if save_graphics:
         for histoName in histos_scaled_added[label].keys():
             histos_scaled_added[label][histoName].Write()
         PlotsSingleRFile.Close()
-
-################## GENERAL PLOTS ##################
-# if save_graphics:
-#     # General Plots rFile
-#     if not os.path.exists(PlotsGeneralRFilePath): 
-#         PlotsGeneralRFile = ROOT.TFile(PlotsGeneralRFilePath, "RECREATE")
-#     else:
-#         PlotsGeneralRFile = ROOT.TFile(PlotsGeneralRFilePath, "UPDATE")
-
-
-
-
-
-"""
-Selection Efficiency(TopOverThr/nTop) vs. Score Thresholds using:
-1. TopLowPt_pt in [0, 1000]GeV
-2. TopHighPt_pt in [50, inf]GeV
-Draw all components together for True and False candidates
-"""
-
-
-
-
-
-
-
-"""
-Selection Efficiency(TopOverThr/nTop) vs. Score Thresholds using:
-1. TopLowPt_pt in [0, 1000]GeV
-2. TopHighPt_pt in [50, inf]GeV
-Draw all components together for True and False candidates
-"""
-
-# PlotsGeneralRFile.Close()
