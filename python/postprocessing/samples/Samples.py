@@ -186,19 +186,20 @@ tDM_Mphi1000_2018.file  = "/afs/cern.ch/user/a/acagnott/public/xJonLeo/" + "tDM_
 #                                   ]
 
 ################################ Tprime ################################
-TprimeBToTZ_M800_2018           = sample(ROOT.kSpring+3, 1, 1001, "TprimeBToTZ_M800_2018", "TprimeBToTZ_M800_2018")
+# TprimeBToTZ_M800_2018           = sample(ROOT.kRed+0, 1, 1001, "TprimeBToTZ_M800_2018", "TprimeBToTZ_M800_2018")
+TprimeBToTZ_M800_2018           = sample(ROOT.kRed+0, 1, 1001, "T'#rightarrowt+Z (m_{T'}=800GeV)", "TprimeBToTZ_M800_2018")
 TprimeBToTZ_M800_2018.year      = 2018
 TprimeBToTZ_M800_2018.sigma     = 0.04154 #pb
 TprimeBToTZ_M800_2018.dataset   = "/TprimeBToTZ_M-800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/" + tag2018_2 + "-" + aftertag2018 + "-v1" + nano
 TprimeBToTZ_M800_2018.file      = "/store/mc/" + tag2018_2 + "/TprimeBToTZ_M-800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8" + nano + "/" + aftertag2018 + "-v1" + "/280000/677E3379-9749-D44C-8F05-F7562A10E32A.root"
 
-TprimeBToTZ_M1200_2018           = sample(ROOT.kSpring+3, 1, 1001, "TprimeBToTZ_M1200_2018", "TprimeBToTZ_M1200_2018")
+TprimeBToTZ_M1200_2018           = sample(ROOT.kRed+2, 1, 1001, "T'#rightarrowt+Z (m_{T'}=1.2TeV)", "TprimeBToTZ_M1200_2018")
 TprimeBToTZ_M1200_2018.year      = 2018
 TprimeBToTZ_M1200_2018.sigma     = 0.00511 #pb
 TprimeBToTZ_M1200_2018.dataset   = "/TprimeBToTZ_M-1200_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/" + tag2018_2 + "-" + aftertag2018 + "-v1" + nano
 TprimeBToTZ_M1200_2018.file      = "/store/mc/" + tag2018_2 + "/TprimeBToTZ_M-1200_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8" + nano + "/" + aftertag2018 + "-v1" + "/280000/B89BE3EA-5DEB-A147-99B4-C8DF303C157D.root"
 
-TprimeBToTZ_M1800_2018           = sample(ROOT.kSpring+3, 1, 1001, "TprimeBToTZ_M1800_2018", "TprimeBToTZ_M1800_2018")
+TprimeBToTZ_M1800_2018           = sample(ROOT.kRed+4, 1, 1001, "T'#rightarrowt+Z (m_{T'}=1.8TeV)", "TprimeBToTZ_M1800_2018")
 TprimeBToTZ_M1800_2018.year      = 2018
 TprimeBToTZ_M1800_2018.sigma     = 0.00044 #pb
 TprimeBToTZ_M1800_2018.dataset   = "/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/" + tag2018_2 + "-" + aftertag2018 + "-v1" + nano

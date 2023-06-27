@@ -14,6 +14,10 @@ path_to_rfiles = "/eos/user/l/lfavilla/my_framework/added_plots"
 printPath      = f"{path_to_rfiles}/General_Plots"
 signal         = "tDM"
 
+# Create folder for plots
+printPath      = f"{printPath}/{signal}"
+if not os.path.exists(printPath):
+    os.mkdir(printPath)
 
 
 if signal=="tDM":

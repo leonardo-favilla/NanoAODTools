@@ -129,7 +129,20 @@ if save_graphics:
         # else:
         #     PlotsSingleRFile    = ROOT.TFile(PlotsSingleRFilePath, "UPDATE")
         
+        # Create Folder for printing plots 
+        PlotsSingleRFileFolder  = f"{path_to_added_graphics_folder}/{label}_Plots"
+        if not os.path.exists(PlotsSingleRFileFolder):
+            os.mkdir(PlotsSingleRFileFolder)
+            
+            
         # Saving histos
         for histoName in histos_scaled_added[label].keys():
+            histos_scaled_added[label][histoName].SetOption("HIST")
             histos_scaled_added[label][histoName].Write()
+            # Save as pdf and png 
+            c = ROOT.TCanvas("c", "c")
+            c.Draw()
+            histos_scaled_added[label][histoName].Draw()
+            c.SaveAs(f"{PlotsSingleRFileFolder}/{histoName}.pdf")
+            c.SaveAs(f"{PlotsSingleRFileFolder}/{histoName}.png")
         PlotsSingleRFile.Close()

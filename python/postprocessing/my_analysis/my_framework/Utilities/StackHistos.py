@@ -204,14 +204,18 @@ class StackPlot():
         
         # Set y in Log Scale 
         maximum = stackHisto.GetMaximum()
+        minimum = stackHisto.GetMinimum()
         if logy:
             canvas.SetLogy()
             if "Efficiency" in stackHisto.GetName():
                 stackHisto.SetMaximum(maximum*100)
+                stackHisto.SetMinimum(1e-3)
             else:
                 stackHisto.SetMaximum(maximum*1000)
+                stackHisto.SetMinimum(1e-3)
         else:
             stackHisto.SetMaximum(maximum*1.6)
+            stackHisto.SetMinimum(1e-3)
         # Draw stack
         stackHisto.Draw(stackOption)
         
@@ -221,7 +225,7 @@ class StackPlot():
         for siglabel in signalsHisto.keys():
             # signalsHisto[siglabel].Draw("HIST SAME")
             # signalsHisto[siglabel].Draw("P0SAME")
-            signalsHisto[siglabel].Draw("SAME")
+            signalsHisto[siglabel].Draw("HIST SAME")
         
         # Draw TLegend on Canvas
         legend.Draw("SAME")
