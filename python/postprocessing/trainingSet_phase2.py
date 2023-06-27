@@ -14,29 +14,46 @@ import pickle as pkl
 import matplotlib.pyplot as plt
 import mplhep as hep
 hep.style.use(hep.style.CMS)
+import json
 
-verbose = True
+###### Save utilities from a json file to dictionary ######
+path_to_json  = "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/my_analysis/my_framework/Utilities"
+json_filename = "utilities.json"
+with open(f"{path_to_json}/{json_filename}", "r") as f:
+    utilities = json.load(f)
 
 
 
 
-select_trs      = True#False#
-select_best_top = False#True#
+verbose         = True
+# select_trs      = True#False#
+# select_best_top = False#True#
 
-folderIn= "/eos/user/l/lfavilla/v2/Skim_Folder/"
+# folderIn = "/eos/user/l/lfavilla/my_framework/Skim_Folder/"
 
-datasets    = ['tDM_mPhi1000_mChi1', 'QCD_HT1000to1500','QCD_HT1500to2000', 'QCD_HT2000toInf', 'TT_Mtt_700to1000', 'TT_Mtt_1000toInf']
-infile      = {datasets[0]: "tDM_Mphi1000_2018_Skim.root",
-               datasets[1]: "QCD_HT1000to1500_2018_Skim.root",
-               datasets[2]: "QCD_HT1500to2000_2018_Skim.root",
-               datasets[3]: "QCD_HT2000toInf_2018_Skim.root",
-               datasets[4]: "TT_Mtt_700to1000_2018_Skim.root",
-               datasets[5]: "TT_Mtt_1000toInf_2018_Skim.root"
-               }
+
+
+
+
+# datasets    = ['tDM_mPhi1000_mChi1', 'QCD_HT1000to1500','QCD_HT1500to2000', 'QCD_HT2000toInf', 'TT_Mtt_700to1000', 'TT_Mtt_1000toInf']
+# infile      = {datasets[0]: "tDM_Mphi1000_2018_Skim.root",
+#                datasets[1]: "QCD_HT1000to1500_2018_Skim.root",
+#                datasets[2]: "QCD_HT1500to2000_2018_Skim.root",
+#                datasets[3]: "QCD_HT2000toInf_2018_Skim.root",
+#                datasets[4]: "TT_Mtt_700to1000_2018_Skim.root",
+#                datasets[5]: "TT_Mtt_1000toInf_2018_Skim.root"
+#                }
+
+# output = {d: {c: 0  for c in categories} for d in datasets}
+
+
+
+
+
 
 categories = ['3j0fj', '3j1fj', '2j1fj']
+output = {d: {c: 0  for c in categories} for label in utilities.keys() for d in utilities[label].keys()}
 
-output = {d: {c: 0  for c in categories} for d in datasets}
 
 #-------------------------------------------------------------
 #------ utilities---------------------------------------------
@@ -54,10 +71,10 @@ def fill_mass(mass_dnn, idx_top, j0, j1, j2, fj, variables_cluster):
         mass_dnn[idx_top, 0] = (j0.p4()+j1.p4()+j2.p4()).M()
         top                  = top3j1fj(fj, j0, j1, j2)
         mass_dnn[idx_top, 1] = top.M()
-    if isinstance(variables_cluster,list):
-        mass_dnn[idx_top, 2] = variables_cluster[0]
-        mass_dnn[idx_top, 3] = variables_cluster[1]
-        mass_dnn[idx_top, 4] = variables_cluster[2]
+    # if isinstance(variables_cluster,list):
+    #     mass_dnn[idx_top, 2] = variables_cluster[0]
+    #     mass_dnn[idx_top, 3] = variables_cluster[1]
+    #     mass_dnn[idx_top, 4] = variables_cluster[2]
     return mass_dnn
 
 def fill_fj(fj_dnn, fj, idx_top): 
@@ -128,161 +145,173 @@ trs_toselect = trs10#trs01  #---------------------------------------------------
 trs_cluster = trs10
 '''
 
-trs_toselect = 0.1
-trs_cluster  = 0.1
+# trs_toselect = 0.1
+# trs_cluster  = 0.1
 if verbose:
     print("Starting datasets loop")
 trees=[]
 import copy
-for d in datasets:
-    rfile           = ROOT.TFile.Open(folderIn+infile[d])
-    #trees.append[InputTree(cprfile.Get("Events"))]
-    # trees.append(copy.deepcopy(InputTree(rfile.Get("Events"))))
-    tree            = InputTree(rfile.Get("Events"))
-    data_jets       = np.zeros((1,3,8))
-    data_fatjets    = np.zeros((1,12))
-    data_mass       = np.zeros((1,5))
-    data_label      = np.zeros((1,1))
-    event_category  = np.zeros((1,1))
-    if verbose:
-        print(f"Starting event loop for dataset:\t{d}")
-    #for i in range(tree.GetEntries()):
-    # tree=trees[len(trees)-1]
-    print("tree is ",tree)
-    for i in range(10):
-        if(i==10):
+# for d in datasets:
+for label in utilities.keys():
+    for d in utilities[label].keys():
+        filePath        = utilities[label][d]["rFiles"][0]
+        rfile           = ROOT.TFile.Open(filePath)
+        #trees.append[InputTree(cprfile.Get("Events"))]
+        # trees.append(copy.deepcopy(InputTree(rfile.Get("Events"))))
+        tree            = InputTree(rfile.Get("Events"))
+        if tree.GetEntries()==0:
             continue
-
-        event       = Event(tree, i)
-        jets        = Collection(event, "Jet")
-        fatjets     = Collection(event, "FatJet")
-        tops        = Collection(event, "TopHighPt")
-        ntops       = len(tops)
-        goodjets, goodfatjets = presel(jets, fatjets)
+        data_jets       = np.zeros((1,3,8))
+        data_fatjets    = np.zeros((1,12))
+        # data_mass       = np.zeros((1,5))
+        data_mass       = np.zeros((1,2))
+        data_label      = np.zeros((1,1))
+        event_category  = np.zeros((1,1))
         if verbose:
-            print(f"len(goodjets):\t{len(goodjets)}\tlen(goodfatjets):\t{len(goodfatjets)}")
-            print(f"ntops:\t{ntops}")
-        ntopcand.append(ntops)
-        ntopcand3j1fj.append(0)
-        ntopcand3j0fj.append(0) 
-        ntopcand2j1fj.append(0)
-        ntoptrue3j1fj.append(0)
-        ntoptrue3j0fj.append(0) 
-        ntoptrue2j1fj.append(0)
-        for t in tops:
-            tmp = topcategory(t)
-            if tmp==0: ntopcand3j1fj[-1]+=1
-            elif tmp==1: ntopcand3j0fj[-1]+=1
-            else:ntopcand2j1fj[-1]+=1
-        if 'QCD' not in d:
-            tr  = 0
-            cat = -1
+            print(f"Starting event loop for dataset:\t{d}")
+        #for i in range(tree.GetEntries()):
+        # tree=trees[len(trees)-1]
+        print("tree is ",tree)
+        for i in range(10):
+            if(i==10):
+                continue
+
+            event       = Event(tree, i)
+            jets        = Collection(event, "Jet")
+            fatjets     = Collection(event, "FatJet")
+            tops        = Collection(event, "TopHighPt")
+            ntops       = len(tops)
+            goodjets, goodfatjets = presel(jets, fatjets)
+            if verbose:
+                print(f"len(goodjets):\t{len(goodjets)}\tlen(goodfatjets):\t{len(goodfatjets)}")
+                print(f"ntops:\t{ntops}")
+            ntopcand.append(ntops)
+            ntopcand3j1fj.append(0)
+            ntopcand3j0fj.append(0) 
+            ntopcand2j1fj.append(0)
+            ntoptrue3j1fj.append(0)
+            ntoptrue3j0fj.append(0) 
+            ntoptrue2j1fj.append(0)
             for t in tops:
-                if t.truth==1:
-                    tr +=1
-                    tmp = topcategory(t)
-                    if tmp==0: ntoptrue3j1fj[-1]+=1
-                    elif tmp==1: ntoptrue3j0fj[-1]+=1
-                    else:ntoptrue2j1fj[-1]+=1
-            #if tr==0: print(i)    
-            ntoptrue.append(tr)
-        if ntops==0: continue
- 
+                tmp = topcategory(t)
+                if tmp==0: ntopcand3j1fj[-1]+=1
+                elif tmp==1: ntopcand3j0fj[-1]+=1
+                else:ntopcand2j1fj[-1]+=1
+            if 'QCD' not in d:
+                tr  = 0
+                cat = -1
+                for t in tops:
+                    if t.truth==1:
+                        tr +=1
+                        tmp = topcategory(t)
+                        if tmp==0: ntoptrue3j1fj[-1]+=1
+                        elif tmp==1: ntoptrue3j0fj[-1]+=1
+                        else:ntoptrue2j1fj[-1]+=1
+                #if tr==0: print(i)    
+                ntoptrue.append(tr)
+            if ntops==0: continue
+    
 
 
-        '''
-        best_top = []
-        if select_trs:
-            best_top            = get_top_over_trs(tops, trs_toselect, 'highpt')
+            '''
+            best_top = []
+            if select_trs:
+                best_top            = get_top_over_trs(tops, trs_toselect, 'highpt')
+                variables_cluster   = None
+                #for t in best_top:
+            if select_best_top:
+                t__ = get_best_top(tops)
+                if t__.score>trs_toselect:
+                    best_top.append(get_best_top(tops))
+                    top_over_trs        = get_top_over_trs(tops, trs_toselect)
+                    out                 = top_cluster_excl(tops, trs_cluster)
+                    variables_cluster   = [out['n_cluster'][0], out['n_cluster_over_trs'][0]/out['n_cluster'][0], out['best_score'][0]]
+                print(variables_cluster)
+            print(best_top)
+            '''
+
+
             variables_cluster   = None
-            #for t in best_top:
-        if select_best_top:
-            t__ = get_best_top(tops)
-            if t__.score>trs_toselect:
-                best_top.append(get_best_top(tops))
-                top_over_trs        = get_top_over_trs(tops, trs_toselect)
-                out                 = top_cluster_excl(tops, trs_cluster)
-                variables_cluster   = [out['n_cluster'][0], out['n_cluster_over_trs'][0]/out['n_cluster'][0], out['best_score'][0]]
-            print(variables_cluster)
-        print(best_top)
-        '''
-
-
-        variables_cluster   = None
-        best_top            = tops
-        if verbose:
-            # if(i%100==0):
-            if(i%1==0):
-                print(f"dataset:\t{d}\tevent:\t{i}")
-            print(f"len(best_top):\t{len(best_top)}")
-        for t in best_top:
-            best_top_category       = topcategory(t)
-            
-            jet_toappend            = np.zeros((1,3,8))
-            fatjet_toappend         = np.zeros((1,12))
-            mass_toappend           = np.zeros((1, 5))
-            label_toappend          = np.zeros((1,1))
-            event_category_toappend = np.zeros((1,1))
-            
-            if best_top_category == 0:
-                fj              = goodfatjets[t.idxFatJet]
-                j0, j1, j2      = goodjets[t.idxJet0], goodjets[t.idxJet1], goodjets[t.idxJet2]
-                fatjet_toappend = fill_fj(fj_dnn= fatjet_toappend, fj=fj, idx_top=0)
-                jet_toappend    = fill_jets(jets_dnn= jet_toappend, j0= j0, j1= j1, j2= j2, sumjet= (j0.p4()+j1.p4()+j2.p4()), 
-                                         fj_phi= fj.phi, fj_eta= fj.eta, idx_top= 0)
-                mass_toappend   = fill_mass(mass_dnn= mass_toappend, idx_top= 0, j0= j0, j1= j1, j2= j2, fj= fj, variables_cluster=variables_cluster)
-                if not 'QCD' in d: label_toappend[0] = truth(fj=fj, j0=j0, j1=j1, j2=j2) 
-                event_category_toappend[0] = best_top_category
+            best_top            = tops
+            if verbose:
+                # if(i%100==0):
+                if(i%1==0):
+                    print(f"dataset:\t{d}\tevent:\t{i}")
+                print(f"len(best_top):\t{len(best_top)}")
+            for t in best_top:
+                best_top_category       = topcategory(t)
                 
-            elif best_top_category == 1:
-                fj              = ROOT.TLorentzVector()
-                fj.SetPtEtaPhiM(0,0,0,0)
-                j0, j1, j2      = goodjets[t.idxJet0], goodjets[t.idxJet1], goodjets[t.idxJet2]
-                jet_toappend    = fill_jets(jets_dnn= jet_toappend, j0= j0, j1= j1, j2= j2, sumjet= (j0.p4()+j1.p4()+j2.p4()), 
-                                         fj_phi= fj.Phi(), fj_eta= fj.Eta(), idx_top= 0)
-                mass_toappend   = fill_mass(mass_dnn= mass_toappend, idx_top= 0, j0= j0, j1= j1, j2= j2, fj= None, variables_cluster=variables_cluster)
-                if not 'QCD' in d: label_toappend[0] = truth(j0=j0, j1=j1, j2=j2) 
-                event_category_toappend[0] = best_top_category
+                jet_toappend            = np.zeros((1,3,8))
+                fatjet_toappend         = np.zeros((1,12))
+                # mass_toappend           = np.zeros((1, 5))
+                mass_toappend           = np.zeros((1, 2))
+                label_toappend          = np.zeros((1,1))
+                event_category_toappend = np.zeros((1,1))
+                
+                if best_top_category == 0: #3j1fj
+                    fj              = goodfatjets[t.idxFatJet]
+                    j0, j1, j2      = goodjets[t.idxJet0], goodjets[t.idxJet1], goodjets[t.idxJet2]
+                    fatjet_toappend = fill_fj(fj_dnn= fatjet_toappend, fj=fj, idx_top=0)
+                    jet_toappend    = fill_jets(jets_dnn= jet_toappend, j0= j0, j1= j1, j2= j2, sumjet= (j0.p4()+j1.p4()+j2.p4()), 
+                                            fj_phi= fj.phi, fj_eta= fj.eta, idx_top= 0)
+                    mass_toappend   = fill_mass(mass_dnn= mass_toappend, idx_top= 0, j0= j0, j1= j1, j2= j2, fj= fj, variables_cluster=variables_cluster)
+                    if not 'QCD' in d: label_toappend[0] = truth(fj=fj, j0=j0, j1=j1, j2=j2) 
+                    event_category_toappend[0] = best_top_category
+                    
+                elif best_top_category == 1: #3j0fj
+                    fj              = ROOT.TLorentzVector()
+                    fj.SetPtEtaPhiM(0,0,0,0)
+                    j0, j1, j2      = goodjets[t.idxJet0], goodjets[t.idxJet1], goodjets[t.idxJet2]
+                    jet_toappend    = fill_jets(jets_dnn= jet_toappend, j0= j0, j1= j1, j2= j2, sumjet= (j0.p4()+j1.p4()+j2.p4()), 
+                                            fj_phi= fj.Phi(), fj_eta= fj.Eta(), idx_top= 0)
+                    mass_toappend   = fill_mass(mass_dnn= mass_toappend, idx_top= 0, j0= j0, j1= j1, j2= j2, fj= None, variables_cluster=variables_cluster)
+                    if not 'QCD' in d: label_toappend[0] = truth(j0=j0, j1=j1, j2=j2) 
+                    event_category_toappend[0] = best_top_category
+                else: #2j1fj
+                    fj              = goodfatjets[t.idxFatJet]
+                    j0, j1          = goodjets[t.idxJet0], goodjets[t.idxJet1]
+                    fatjet_toappend = fill_fj(fj_dnn= fatjet_toappend, fj=fj, idx_top=0)
+                    jet_toappend    = fill_jets(jets_dnn= jet_toappend, j0= j0, j1= j1, j2=0, sumjet= (j0.p4()+j1.p4()), 
+                                            fj_phi= fj.phi, fj_eta= fj.eta, idx_top= 0)
+                    mass_toappend   = fill_mass(mass_dnn= mass_toappend, idx_top= 0, j0= j0, j1= j1, j2= None, fj= fj, variables_cluster=variables_cluster)
+                    if not 'QCD' in d: label_toappend[0] = truth(fj=fj, j0=j0, j1=j1) 
+                    event_category_toappend[0] = best_top_category
+                
+                #dopo aver fillato jet_toappend e fatjet_toappend
+                data_jets       = np.append(data_jets, jet_toappend, axis = 0)
+                data_fatjets    = np.append(data_fatjets, fatjet_toappend, axis = 0)
+                data_mass       = np.append(data_mass, mass_toappend, axis = 0)
+                if label_toappend[0]==2: print(d, i, label_toappend)
+                data_label      = np.append(data_label, label_toappend, axis=0)
+                #print(event_category, event_category_toappend)
+                event_category  = np.append(event_category, event_category_toappend, axis=0)
+                #print(event_category)
+                if (data_jets[0, 0, 0]==0):
+                    data_jets       = np.delete(data_jets, 0, axis = 0)
+                    data_fatjets    = np.delete(data_fatjets, 0, axis = 0)
+                    data_mass       = np.delete(data_mass, 0, axis = 0)
+                    data_label      = np.delete(data_label, 0, axis = 0)
+                    event_category  = np.delete(event_category, 0, axis = 0)
+                #print(data_mass)
+        event_category = event_category.flatten()
+        for c in categories:
+            if '0fj' in c :
+                n = 1
+            elif '2j' in c :
+                n = 2
             else:
-                fj              = goodfatjets[t.idxFatJet]
-                j0, j1          = goodjets[t.idxJet0], goodjets[t.idxJet1]
-                fatjet_toappend = fill_fj(fj_dnn= fatjet_toappend, fj=fj, idx_top=0)
-                jet_toappend    = fill_jets(jets_dnn= jet_toappend, j0= j0, j1= j1, j2=0, sumjet= (j0.p4()+j1.p4()), 
-                                         fj_phi= fj.phi, fj_eta= fj.eta, idx_top= 0)
-                mass_toappend   = fill_mass(mass_dnn= mass_toappend, idx_top= 0, j0= j0, j1= j1, j2= None, fj= fj, variables_cluster=variables_cluster)
-                if not 'QCD' in d: label_toappend[0] = truth(fj=fj, j0=j0, j1=j1) 
-                event_category_toappend[0] = best_top_category
-            
-            #dopo aver fillato jet_toappend e fatjet_toappend
-            data_jets       = np.append(data_jets, jet_toappend, axis = 0)
-            data_fatjets    = np.append(data_fatjets, fatjet_toappend, axis = 0)
-            data_mass       = np.append(data_mass, mass_toappend, axis = 0)
-            if label_toappend[0]==2: print(d, i, label_toappend)
-            data_label      = np.append(data_label, label_toappend, axis=0)
-            #print(event_category, event_category_toappend)
-            event_category  = np.append(event_category, event_category_toappend, axis=0)
-            #print(event_category)
-            if (data_jets[0, 0, 0]==0):
-                data_jets       = np.delete(data_jets, 0, axis = 0)
-                data_fatjets    = np.delete(data_fatjets, 0, axis = 0)
-                data_mass       = np.delete(data_mass, 0, axis = 0)
-                data_label      = np.delete(data_label, 0, axis = 0)
-                event_category  = np.delete(event_category, 0, axis = 0)
-            #print(data_mass)
-    event_category = event_category.flatten()
-    for c in categories:
-        if '0fj' in c :
-            n = 1
-        elif '2j' in c :
-            n = 2
-        else:
-            n = 0
-        output[d][c] = [data_jets[event_category == n], data_fatjets[event_category == n], data_mass[event_category == n], data_label[event_category == n]]
-    rfile.Close()
+                n = 0
+            output[d][c] = [data_jets[event_category == n], data_fatjets[event_category == n], data_mass[event_category == n], data_label[event_category == n]]
+        rfile.Close()
 
-outfile = open("/eos/home-l/lfavilla/SWAN_projects/Distributions_v3", "wb")
-pkl.dump(output, outfile)
-outfile.close()
+with open("/eos/user/l/lfavilla/my_framework/dataset.json", "wb") as f:
+    json.dump(output, f, indent=4)
+    f.close()
+
+
+
+# outfile = open("/eos/user/l/lfavilla/my_framework/dataset.json", "wb")
+# pkl.dump(output, outfile)
 
 '''
 fig, ax = plt.subplots()

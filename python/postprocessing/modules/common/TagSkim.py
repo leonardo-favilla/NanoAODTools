@@ -199,11 +199,23 @@ class InitSkim(Module):
         FatJet     = Collection(event, "FatJet")
 
         PassTrigger     = HLT.PFMETNoMu120_PFMHTNoMu120_IDTight or HLT.PFMET120_PFMHT120_IDTight
-        PassMET         = MET.pt                                                                    > 200
-        PassJet         = [x.isGood and x.btag >= 1 for x in Jet].count(1)                          >= 1
-        PassFatJet      = [x.isGood for x in FatJet].count(1)                                       >= 1
-        PassMinDeltaPhi = self.minDeltaPhi(Jet, MET)                                                > 0.6
-        PassLepVeto     = [x.isGood for x in Electron].count(1) + [x.isGood for x in Muon].count(1) == 0
+        PassMET         = MET.pt                                                                  > 50 # 200
+        PassJet_0       = [x.isGood and x.btag >= 1 for x in Jet].count(1)                        >= 1
+        PassJet_1       = [x.isGood for x in Jet].count(1)                                        >= 3
+        PassFatJet      = [x.isGood for x in FatJet].count(1)                                     >= 1
+
+
+        
+        PassJet         = PassJet_0 and PassJet_1
+        PassMinDeltaPhi = True
+        PassLepVeto     = True
+        # PassJet         = [x.isGood and x.btag >= 1 for x in Jet].count(1)                          >= 1
+        # PassMinDeltaPhi = self.minDeltaPhi(Jet, MET)                                                > 0.6
+        # PassLepVeto     = [x.isGood for x in Electron].count(1) + [x.isGood for x in Muon].count(1) == 0
+
+
+
+
 
         PassEvent       = PassTrigger and PassMET and (PassJet or PassFatJet) and PassMinDeltaPhi and PassLepVeto
         return PassEvent

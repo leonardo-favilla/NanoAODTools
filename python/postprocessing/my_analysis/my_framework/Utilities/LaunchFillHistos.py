@@ -2,8 +2,8 @@ import os
 import ROOT
 import json
 from tqdm import tqdm
-# Samples
-from PhysicsTools.NanoAODTools.postprocessing.samples.Samples import *
+# samples
+from PhysicsTools.NanoAODTools.postprocessing.samples.samples import *
 
 
 ###### Save utilities from a json file to dictionary ######
@@ -19,6 +19,5 @@ do_ALL              = True
 for label in tqdm(utilities.keys()):
     for c in utilities[label].keys():
         print(f"Making Histograms of component:\t{c}")
-        for path_to_rfile, path_to_rHisto in zip(utilities[label][c]["rFiles"], utilities[label][c]["rHistos"]):
-            print(f"\tRunning:\t{path_to_rfile}\n\tSaving histos to:\t{path_to_rHisto}")
-            os.system(f"python3 FillHistos.py -dataset {c} -path_to_rfile {path_to_rfile} -save_graphics {save_graphics} -path_to_graphics_folder {'/'.join(path_to_rHisto.split('/')[:-1])} -rhistos_filename {path_to_rHisto.split('/')[-1]} -do_ALL {do_ALL}")
+        list_of_rfiles, path_to_rHisto = utilities[label][c]["rFiles"], utilities[label][c]["rHistos"]
+        os.system(f"python3 FillHistos.py -dataset {c} -list_of_rfiles {' '.join(list_of_rfiles)} -save_graphics {save_graphics} -path_to_graphics_folder {'/'.join(path_to_rHisto.split('/')[:-1])} -rhistos_filename {path_to_rHisto.split('/')[-1]} -do_ALL {do_ALL}")

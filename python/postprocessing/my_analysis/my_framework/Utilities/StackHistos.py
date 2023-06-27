@@ -4,8 +4,8 @@ import mplhep as hep
 hep.style.use(hep.style.CMS)
 
 
-# Samples
-from PhysicsTools.NanoAODTools.postprocessing.samples.Samples import *
+# samples
+from PhysicsTools.NanoAODTools.postprocessing.samples.samples import *
 ROOT.gROOT.SetBatch()
 
 # ######### Create arguments to insert from shell #########

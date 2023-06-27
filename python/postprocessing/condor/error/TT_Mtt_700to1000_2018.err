@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/my_analysis/my_framework/Utilities/FillHistos.py", line 39, in <module>
+    trees.append(NanoEventsFactory.from_root(f, schemaclass=NanoAODSchema.v6).events())
+  File "/afs/cern.ch/user/l/lfavilla/.local/lib/python3.9/site-packages/coffea/nanoevents/factory.py", line 95, in from_root
+    tree = uproot.open({file: None}, **uproot_options)[treepath]
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc10/external/py3-uproot/4.3.5-d4c15180c692dbe2161e59bf1541b5d3/lib/python3.9/site-packages/uproot/reading.py", line 141, in open
+    file = ReadOnlyFile(
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc10/external/py3-uproot/4.3.5-d4c15180c692dbe2161e59bf1541b5d3/lib/python3.9/site-packages/uproot/reading.py", line 580, in __init__
+    self._source = Source(
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc10/external/py3-uproot/4.3.5-d4c15180c692dbe2161e59bf1541b5d3/lib/python3.9/site-packages/uproot/source/xrootd.py", line 272, in __init__
+    self._open()
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc10/external/py3-uproot/4.3.5-d4c15180c692dbe2161e59bf1541b5d3/lib/python3.9/site-packages/uproot/source/xrootd.py", line 275, in _open
+    self._resource = XRootDResource(self._file_path, self._timeout)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc10/external/py3-uproot/4.3.5-d4c15180c692dbe2161e59bf1541b5d3/lib/python3.9/site-packages/uproot/source/xrootd.py", line 83, in __init__
+    self._open()
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc10/external/py3-uproot/4.3.5-d4c15180c692dbe2161e59bf1541b5d3/lib/python3.9/site-packages/uproot/source/xrootd.py", line 92, in _open
+    self._xrd_error(status)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc10/external/py3-uproot/4.3.5-d4c15180c692dbe2161e59bf1541b5d3/lib/python3.9/site-packages/uproot/source/xrootd.py", line 118, in _xrd_error
+    raise OSError(
+OSError: XRootD error: [ERROR] Operation expired
+in file root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/TT_Mtt-700to1000_TuneCP5_13TeV-powheg-pythia8/TT_Mtt_700to1000_2018/230531_145009/0000/tree_hadd_30.root
+rm: cannot remove 'runner_TT_Mtt_700to1000_2018.sh': No such file or directory

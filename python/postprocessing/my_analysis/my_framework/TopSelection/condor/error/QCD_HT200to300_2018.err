@@ -1,0 +1,7 @@
+/pool/condor/dir_2044136/runner_QCD_HT200to300_2018.sh: line 3: cmsenv: command not found
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/my_analysis/my_framework/TopSelection/TopSelection.py", line 7, in <module>
+    from PhysicsTools.NanoAODTools.postprocessing.framework.datamodel import Collection, Object
+  File "/usr/lib64/python3.9/site-packages/ROOT/_facade.py", line 154, in _importhook
+    return _orig_ihook(name, *args, **kwds)
+ModuleNotFoundError: No module named 'PhysicsTools'

@@ -94,6 +94,11 @@ model2_name = "DNN_phase2_test2.h5"#"DNN_withtopmass_phase2.h5"
 model_highpt_p2 = keras.models.load_model(folder_model+model2_name)
 
 
+
+
+
+
+
 class nanoTopevaluate(Module):
     def __init__(self, isMC=1):
         self.isMC = isMC
@@ -176,6 +181,7 @@ class nanoTopevaluate(Module):
         else:
             top_score_DNN = []
             #top_score_LSTM = []
+
         self.out.fillBranch("TopLowPt_scoreDNN", top_score_DNN)
         #self.out.fillBranch("TopLowPt_scoreLSTM", top_score_LSTM)
         return True

@@ -1,0 +1,15 @@
+Proxy_filename          = x509up
+Proxy_path              = /afs/cern.ch/user/l/lfavilla/private/$(Proxy_filename)
+universe                = vanilla
+x509userproxy           = $(Proxy_path)
+use_x509userproxy       = true
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = $(Proxy_path)
++JobFlavour             = "espresso"
+executable              = runner_TT_Mtt_1000toInf_2018.sh
+arguments               = 
+output                  = condor/output/TT_Mtt_1000toInf_2018.out
+error                   = condor/error/TT_Mtt_1000toInf_2018.err
+log                     = condor/log/TT_Mtt_1000toInf_2018.log
+queue

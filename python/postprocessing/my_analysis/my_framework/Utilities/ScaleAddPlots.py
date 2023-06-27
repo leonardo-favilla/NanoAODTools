@@ -2,10 +2,10 @@ import os
 import ROOT
 import json
 from tqdm import tqdm
-# Samples
-from PhysicsTools.NanoAODTools.postprocessing.samples.Samples import *
+# samples
+from PhysicsTools.NanoAODTools.postprocessing.samples.samples import *
 ROOT.gROOT.SetBatch()
-
+ROOT.gStyle.SetOptStat(0)
 
 ###### Save utilities from a json file to dictionary ######
 path_to_json  = "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/my_analysis/my_framework/Utilities"
@@ -56,23 +56,22 @@ def loadHists(histFile):
 HistLists = {}
 # print(os.listdir(path_to_graphics_folder))
 for label in utilities.keys():
-    HistLists[label]        = {}
+    HistLists[label]            = {}
     for c in utilities[label].keys():
-        HistLists[label][c] = []
-        for path_to_rHisto in utilities[label][c]["rHistos"]:
-            rhistos_filename = path_to_rHisto.split('/')[-1]
-            if rhistos_filename in os.listdir(path_to_graphics_folder):
-                if verbose:
-                    print(f"LOADING HISTOS FROM FILE:\t\t\t\t\t\t\t{path_to_graphics_folder}/{rhistos_filename}")
-                HistLists[label][c].append(loadHists(f"{path_to_graphics_folder}/{rhistos_filename}"))
+        path_to_rHisto          = utilities[label][c]["rHistos"]
+        rhistos_filename        = path_to_rHisto.split('/')[-1]
+        if rhistos_filename in os.listdir(path_to_graphics_folder):
+            if verbose:
+                print(f"LOADING HISTOS FROM FILE:\t\t\t\t\t\t\t{path_to_graphics_folder}/{rhistos_filename}")
+            HistLists[label][c] = loadHists(f"{path_to_graphics_folder}/{rhistos_filename}")
 
-### Add all histograms of all components for QCD and ZJets ###
+### Add all histograms of all components ###
 histos_scaled_added = {}
 for label in HistLists.keys():
     if verbose:
         print("\n\n\n")
         print(f"SCALING AND ADDING process:\t\t\t{label}")
-    histos_scaled_added[label]  = {}
+    histos_scaled_added[label] = {}
     for i, c in enumerate(HistLists[label].keys()):
         if hasattr(sample_dict[label], "components"):
             sigma = list(filter(lambda x: x.label==c, sample_dict[label].components))[0].sigma
@@ -81,44 +80,33 @@ for label in HistLists.keys():
         weight    = sigma * lumi
         if verbose:
             print(f"\tADDING COMPONENT:\t\t{c}")
-        for histoName, histo in HistLists[label][c][0].items():
-            if (("Efficiency" in histoName) and (type(histo)==ROOT.TH1F)):
+        for histoName, histo in HistLists[label][c].items():
+            if (("Counts" in histoName) and (type(histo)==ROOT.TH1F)):
                 scaledHisto = histo.Clone()
+                # Scaling by nEntries or BinContent(1)
+                print(f"\tScaling histogram:\t{histoName}")
+                if (("Cum" in histoName) and (scaledHisto.GetBinContent(1))):
+                    scaledHisto.Scale(1/scaledHisto.GetBinContent(1))
+                elif (("Cum" not in histoName) and (scaledHisto.Integral())):
+                    scaledHisto.Scale(1/scaledHisto.Integral())
 
-                if len(HistLists[label].keys())==1:
+                # Normalize to luminosity
+                scaledHisto.Scale(weight)
+
+                # Add histo
+                if i==0:
+                    if verbose:
+                        print(f"\t\tCREATING KEY for: \t{histoName}\t\tto:\t{histos_scaled_added[label].keys()}")
                     histos_scaled_added[label][histoName] = scaledHisto
 
                 else:
-                    scaledHisto.Scale(weight)
-                    if i==0:
-                        if verbose:
-                            print(f"\t\tCREATING KEY for: \t{histoName}\t\tto:\t{histos_scaled_added[label].keys()}")
-                        histos_scaled_added[label][histoName] = scaledHisto
-
-                    else:
-                        if verbose:
-                            print(f"\t\tADDING histoName:\t{histoName}\t\tto:\t{histos_scaled_added[label][histoName].GetName()}")
-                        histos_scaled_added[label][histoName].Add(scaledHisto)
-                        
-                        ### Scale total histograms at the end of adding###
-                        if (i==len(HistLists[label].keys())-1):
-                            
-                            if (("Cum" in histoName) and (histos_scaled_added[label][histoName].GetBinContent(1))):
-                                # Divide by BinContent(1), i.e. by total entries, after all additions
-                                if verbose:
-                                    print(f"Final Scaling by: {histos_scaled_added[label][histoName].GetBinContent(1)}")
-                                histos_scaled_added[label][histoName].Scale(1/histos_scaled_added[label][histoName].GetBinContent(1))
-                                
-                            elif (("Cum" not in histoName) and (histos_scaled_added[label][histoName].Integral())):
-                                # Divide by Integral, i.e. by total entries, after all additions
-                                if verbose:
-                                    print(f"Final Scaling by: {histos_scaled_added[label][histoName].Integral()}")
-                                histos_scaled_added[label][histoName].Scale(1/histos_scaled_added[label][histoName].Integral())
+                    if verbose:
+                        print(f"\t\tADDING histoName:\t{histoName}\t\tto:\t{histos_scaled_added[label][histoName].GetName()}")
+                    histos_scaled_added[label][histoName].Add(scaledHisto)
+                    
 
 
-
-
-## Save SCALED and ADDED Efficiency Histograms to .root files ###
+## Save SCALED and ADDED Counts Histograms to .root files ###
 if save_graphics:
     for label in utilities.keys():
         # Single processes Plots rFile
@@ -145,4 +133,25 @@ if save_graphics:
             histos_scaled_added[label][histoName].Draw()
             c.SaveAs(f"{PlotsSingleRFileFolder}/{histoName}.pdf")
             c.SaveAs(f"{PlotsSingleRFileFolder}/{histoName}.png")
+
+        # Creating and Saving Efficiencies histograms
+        for histoName in histos_scaled_added[label].keys():
+            histo = histos_scaled_added[label][histoName].Clone("")
+            if (("Cum" in histoName) and (histo.GetBinContent(1))):
+                histo.Scale(1/histo.GetBinContent(1))
+            elif (("Cum" not in histoName) and (histo.Integral())):
+                histo.Scale(1/histo.Integral())
+            histo.SetName((histo.GetName()).replace("Counts", "Efficiency"))
+            histo.SetTitle((histo.GetTitle()).replace("Counts", "Efficiency"))
+            histo.SetOption("HIST")
+            histo.Write()
+            # Save as pdf and png 
+            c = ROOT.TCanvas("c", "c")
+            c.Draw()
+            histo.Draw()
+            c.SaveAs(f"{PlotsSingleRFileFolder}/{histo.GetName()}.pdf")
+            c.SaveAs(f"{PlotsSingleRFileFolder}/{histo.GetName()}.png")
+
+
+
         PlotsSingleRFile.Close()

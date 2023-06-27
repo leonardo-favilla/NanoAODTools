@@ -1,4 +1,4 @@
-from PhysicsTools.NanoAODTools.postprocessing.samples.Samples import *
+from PhysicsTools.NanoAODTools.postprocessing.samples.samples import *
 import os
 import optparse
 import sys
@@ -26,9 +26,10 @@ def cfg_writer(sample, isMC, outdir):
     f.write("config.section_('JobType')\n")
     f.write("config.JobType.pluginName = 'Analysis'\n")
     f.write("config.JobType.psetName = 'PSet.py'\n")
+    f.write("config.JobType.maxJobRuntimeMin = 2700\n")
     f.write("config.JobType.scriptExe = 'crab_script.sh'\n")
     f.write("config.JobType.inputFiles = ['crab_script.py','../scripts/haddnano.py', '../scripts/keep_and_drop.txt']\n") #hadd nano will not be needed once nano tools are in cmssw
-    f.write("config.JobType.sendPythonFolder = True\n")
+    # f.write("config.JobType.sendPythonFolder = True\n")
     f.write("config.section_('Data')\n")
     f.write("config.Data.inputDataset = '"+sample.dataset+"'\n")
     f.write("config.Data.allowNonValidInputDataset = True\n")
@@ -82,6 +83,9 @@ def crab_script_writer(sample, outpath, isMC, modules, presel):
     f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.nanoTopcandidate_v2 import *\n")
     f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.nanoTopevaluate import *\n")
     f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.topselection import *\n")
+
+    ###### MultiScore Evaluation and Branching ######
+    f.write("from PhysicsTools.NanoAODTools.postprocessing.modules.common.nanoTopEvaluate_MultiScore import *\n")
 
     #f.write("infile = "+str(sample.files)+"\n")
     #f.write("outpath = '"+ outpath+"'\n")
@@ -190,11 +194,20 @@ for sample in samples:
             #if("WP" in sample.label):
             #    modules=modules.replace("MCweight_writer()","LHAPDFWeight_NNPDF(),LHAPDFWeight_NNPDFLO(),LHAPDFWeight_PDF4LHC15(),MCweight_writer(LHAPDFs=['LHANNPDF','LHAPDF4LHC15','LHANNPDFLO'])")
             # modules = "MCweight_writer(), preselection(), GenPart_MomFirstCp(flavour='-5,-4,-3,-2,-1,1,2,3,4,5,6,-6,24,-24'), nanoprepro(), nanoTopcand("+str(isMC)+"), nanoTopevaluate()"
-            modules = "MCweight_writer(), PreSkimSetup(), InitSkim(), GenPart_MomFirstCp(flavour='-5,-4,-3,-2,-1,1,2,3,4,5,6,-6,24,-24'), nanoprepro(), nanoTopcand("+str(isMC)+"), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()"
+            
+            
+            ####### MODULES BEFORE MultiScore #######
+            # modules = "MCweight_writer(), PreSkimSetup(), InitSkim(), GenPart_MomFirstCp(flavour='-5,-4,-3,-2,-1,1,2,3,4,5,6,-6,24,-24'), nanoprepro(), nanoTopcand("+str(isMC)+"), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()"
+            modules = "MCweight_writer(), PreSkimSetup(), InitSkim(), GenPart_MomFirstCp(flavour='-5,-4,-3,-2,-1,1,2,3,4,5,6,-6,24,-24'), nanoprepro(), nanoTopcand("+str(isMC)+"), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate_MultiScore()"
+            # modules = "nanoTopevaluate_MultiScore()"
         else:
             #modules = "HLT(), preselection(), metCorrector(), fatJetCorrector(), metCorrector_tot(), fatJetCorrector_tot()" # Put here all the modules you want to be runned by crab
             # modules = "preselection(), nanoTopcand(isMC="+str(isMC)+"), nanoTopevaluate()"
-            modules = "MCweight_writer(), PreSkimSetup(), InitSkim(), nanoTopcand("+str(isMC)+"), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()"
+            
+            
+            ####### MODULES BEFORE MultiScore #######
+            # modules = "MCweight_writer(), PreSkimSetup(), InitSkim(), nanoTopcand("+str(isMC)+"), W_Top_Tagger(), Re_Bo_Tagger(), Merge_Tagger(), nanoTopevaluate()"
+            modules = "nanoTopevaluate_MultiScore()"
         print("Producing crab script")
         crab_script_writer(sample,'/eos/user/'+str(os.environ.get('USER')[0]) + '/'+str(os.environ.get('USER'))+'/', isMC, modules, presel)
         os.system("chmod +x crab_script.sh")
@@ -218,6 +231,7 @@ for sample in samples:
 
     elif getout:
         print("crab getoutput -d crab_" + sample.label + " --xrootd > ./macros/files/" + sample.label + ".txt")
-        os.system("crab getoutput -d crab_" + sample.label + " --xrootd > ./macros/files/" + sample.label + ".txt")
+        # os.system("crab getoutput -d crab_" + sample.label + " --xrootd > ./macros/files/" + sample.label + ".txt")
+        os.system("python3 macros/writefiles.py -d "+sample.label)
         #for i in xrange(1, 969):
         #os.system("crab getoutput -d crab_" + sample.label + " --outputpath=/eos/user/"+str(os.environ.get('USER')[0]) + "/"+str(os.environ.get('USER'))+"/Wprime/nosynch/" + sample.label + "/ --jobids="+str(i))
