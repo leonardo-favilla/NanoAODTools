@@ -1,0 +1,19 @@
+Error in <TNetXNGFile::ReadBuffer>: error reading all requested bytes, got 0 of 300
+Error in <TNetXNGFile::Init>: root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/TT_semilep_2018/231114_154513/0000/tree_hadd_142.root failed to read the file type data.
+Error in <TNetXNGFile::TNetXNGFile>: Object is in 'zombie' state
+Error in <TNetXNGFile::ReadBuffer>: error reading all requested bytes, got 0 of 300
+Error in <TNetXNGFile::Init>: root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/TT_semilep_2018/231114_154513/0000/tree_hadd_161.root failed to read the file type data.
+Error in <TNetXNGFile::TNetXNGFile>: Object is in 'zombie' state
+Error in <TNetXNGFile::Init>: file root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT300to500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT300to500_2018/231114_202922/0000/tree_hadd_109.root is truncated at 311296 bytes: should be 3994867, trying to recover
+TNetXNGFile::Init:0: RuntimeWarning: no keys recovered, file has been made a Zombie
+Error in <TNetXNGFile::TNetXNGFile>: Object is in 'zombie' state
+Error in <TNetXNGFile::Open>: [ERROR] Server responded with an error: [3011] No servers are available to read the file.
+
+Error in <TFile::Open>: no url specified
+Error in <TNetXNGFile::Init>: file root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/WJetsToLNu_HT-600To800_TuneCP5_13TeV-madgraphMLM-pythia8/WJetsHT600to800_2018/231114_183038/0000/tree_hadd_24.root is truncated at 311296 bytes: should be 119212569, trying to recover
+TNetXNGFile::Init:0: RuntimeWarning: no keys recovered, file has been made a Zombie
+Error in <TNetXNGFile::TNetXNGFile>: Object is in 'zombie' state
+Traceback (most recent call last):
+  File "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/samples/samples_into_dict.py", line 76, in <module>
+    with open(path_to_json, "w") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/my_analysis/my_framework/samples/dict_samples.json'

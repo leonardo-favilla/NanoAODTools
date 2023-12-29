@@ -1,0 +1,75 @@
+000 (9136786.000.000) 12/12 09:54:35 Job submitted from host: <188.184.90.62:9618?addrs=188.184.90.62-9618+[2001-1458-201-e4--100-238]-9618&alias=bigbird16.cern.ch&noUDP&sock=schedd_4073970_23e3>
+...
+040 (9136786.000.000) 12/12 10:18:40 Started transferring input files
+	Transferring to host: <128.142.59.146:9618?addrs=128.142.59.146-9618+[2001-1458-301-21--100-91]-9618&alias=b7s04p9314.cern.ch&noUDP&sock=slot1_4_4374_a0eb_303379>
+...
+040 (9136786.000.000) 12/12 10:18:40 Finished transferring input files
+...
+001 (9136786.000.000) 12/12 10:18:41 Job executing on host: <128.142.59.146:9618?addrs=128.142.59.146-9618+[2001-1458-301-21--100-91]-9618&alias=b7s04p9314.cern.ch&noUDP&sock=startd_3049_f059>
+...
+006 (9136786.000.000) 12/12 10:18:50 Image size of job updated: 308780
+	143  -  MemoryUsage of job (MB)
+	145860  -  ResidentSetSize of job (KB)
+...
+006 (9136786.000.000) 12/12 10:23:51 Image size of job updated: 1164608
+	143  -  MemoryUsage of job (MB)
+	146256  -  ResidentSetSize of job (KB)
+...
+006 (9136786.000.000) 12/12 10:28:52 Image size of job updated: 1165516
+	144  -  MemoryUsage of job (MB)
+	147044  -  ResidentSetSize of job (KB)
+...
+006 (9136786.000.000) 12/12 10:33:52 Image size of job updated: 1166300
+	145  -  MemoryUsage of job (MB)
+	147816  -  ResidentSetSize of job (KB)
+...
+006 (9136786.000.000) 12/12 10:37:10 Image size of job updated: 1166688
+	145  -  MemoryUsage of job (MB)
+	147816  -  ResidentSetSize of job (KB)
+...
+040 (9136786.000.000) 12/12 10:37:10 Started transferring output files
+...
+040 (9136786.000.000) 12/12 10:37:10 Finished transferring output files
+...
+005 (9136786.000.000) 12/12 10:37:10 Job terminated.
+	(1) Normal termination (return value 1)
+		Usr 0 00:00:15, Sys 0 00:00:05  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:15, Sys 0 00:00:05  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	3491  -  Run Bytes Sent By Job
+	10566  -  Run Bytes Received By Job
+	3491  -  Total Bytes Sent By Job
+	10566  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :     0.02        1         1 
+	   Disk (KB)            :    38          12   1269841 
+	   Memory (MB)          :   145        2000      2000 
+
+	Job terminated of its own accord at 2023-12-12T09:37:10Z.
+...
+000 (9140447.000.000) 12/12 10:57:21 Job submitted from host: <188.184.90.62:9618?addrs=188.184.90.62-9618+[2001-1458-201-e4--100-238]-9618&alias=bigbird16.cern.ch&noUDP&sock=schedd_4073970_23e3>
+...
+000 (9141173.000.000) 12/12 11:04:51 Job submitted from host: <188.184.90.62:9618?addrs=188.184.90.62-9618+[2001-1458-201-e4--100-238]-9618&alias=bigbird16.cern.ch&noUDP&sock=schedd_4073970_23e3>
+...
+009 (9140447.000.000) 12/12 11:06:03 Job was aborted.
+	via condor_rm (by user lfavilla)
+...
+009 (9141173.000.000) 12/12 11:06:03 Job was aborted.
+	via condor_rm (by user lfavilla)
+...
+000 (9141319.000.000) 12/12 11:06:18 Job submitted from host: <188.184.90.62:9618?addrs=188.184.90.62-9618+[2001-1458-201-e4--100-238]-9618&alias=bigbird16.cern.ch&noUDP&sock=schedd_4073970_23e3>
+...
+000 (9145909.000.000) 12/12 12:31:20 Job submitted from host: <188.184.90.62:9618?addrs=188.184.90.62-9618+[2001-1458-201-e4--100-238]-9618&alias=bigbird16.cern.ch&noUDP&sock=schedd_4073970_23e3>
+...
+009 (9145909.000.000) 12/12 12:33:20 Job was aborted.
+	via condor_rm (by user lfavilla)
+...
+009 (9141319.000.000) 12/12 12:33:20 Job was aborted.
+	via condor_rm (by user lfavilla)
+...
+000 (9145910.000.000) 12/12 12:33:28 Job submitted from host: <188.184.90.62:9618?addrs=188.184.90.62-9618+[2001-1458-201-e4--100-238]-9618&alias=bigbird16.cern.ch&noUDP&sock=schedd_4073970_23e3>
+...
+009 (9145910.000.000) 12/12 15:05:51 Job was aborted.
+	via condor_rm (by user lfavilla)
+...
