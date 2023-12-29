@@ -8,26 +8,30 @@ from PhysicsTools.NanoAODTools.postprocessing.framework.datamodel import Collect
 from PhysicsTools.NanoAODTools.postprocessing.tools import deltaPhi, deltaR
 # samples #
 from PhysicsTools.NanoAODTools.postprocessing.samples.samples import *
-
+# variables #
+from PhysicsTools.NanoAODTools.postprocessing.variables import *
 
 
 ROOT.gStyle.SetOptStat(0)
 ######### Create arguments to insert from shell #########
 from argparse import ArgumentParser
 parser          = ArgumentParser()
-parser.add_argument("-dat", dest="dat", default=None, required=True, type=str, help="dataset to run")
+parser.add_argument("-c", dest="c", default=None, required=True, type=str, help="component to run")
 options         = parser.parse_args()
 
 ### ARGS ###
-dat                 = options.dat       
+c                   = sample_dict[options.c]       
 path_to_txt_folder  = "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/macros/files"
 # path_to_json        = "/eos/user/l/lfavilla/my_framework/MLstudies/Training/plots/score_thrs.json"
 path_to_json        = "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/my_analysis/my_framework/MLstudies/Efficiency_Studies/score_thrs_base.json"
 path_to_json_base2  = "/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/my_analysis/my_framework/MLstudies/Efficiency_Studies/score_thrs_base2.json"
-path_to_outFile     = "/eos/user/l/lfavilla/my_framework/TopSelection_tmp/hist_{}.root".format(dat)
+path_to_outFolder   = "/eos/user/l/lfavilla/my_framework/TopSelection_tmp/plots"
+path_to_outFile     = "{}/{}.root".format(path_to_outFolder, c.label)
 path_to_pkl_Hpt     = "/eos/home-a/acagnott/SWAN_projects/DM/DNNmodel/DNN_phase2_test2/tresholds.pkl"
 path_to_pkl_Lpt     = "/eos/home-a/acagnott/SWAN_projects/DM/DNNmodel/DNN_phase1_test_lowpt_DNN/tresholds_DNN.pkl"
 
+if not os.path.exists(path_to_outFolder):
+    os.makedirs(path_to_outFolder)
 
 ### Retrieve thresholds ###
 with open(f"{path_to_json}", "r") as f:
@@ -78,13 +82,6 @@ thrs["TvsQCD"]["5%"]        = 0
 thrs["TvsQCD"]["1%"]        = 0.94
 thrs["TvsQCD"]["0.1%"]      = 1
 
-### Extract Components ###
-if hasattr(sample_dict[dat], "components"):
-    components = sample_dict[dat].components
-else:
-    components = [sample_dict[dat]]
-
-
 ######################################
 ### Functions for: Event Selection ###
 ######################################
@@ -120,6 +117,13 @@ def select_event(event):
     # print("passLeptonVeto:  {}".format(passLeptonVeto))
     # print("passEvent:       {}\n".format(passEvent))
     return passEvent
+
+def region_selection(reg, event):
+    if reg=="NoCut":
+        selectEvent = True
+    
+    return selectEvent
+
 
 
 def check_same_top(top1, top2):
@@ -199,252 +203,379 @@ def tag_event(nRes_, nMix_, nMer_):
     return tag
 
 
+##################################
+### Calulate Isolation for Top ###
+##################################
+def jet_isolation(top_jet, jets, dR, fatjets=None):
+    '''
+    Compute the isolation of a jet/fatjet w.r.t. jets/fatjets
+    '''
+    pt_around   = 0
+    njet_around = 0
+    for j in jets:
+        if (j.isGood) and (deltaR(j, top_jet)<dR) and (j.idx!=top_jet.idx):
+            pt_around   += j.pt
+            njet_around += 1
+            
+    if fatjets is not None:
+        for fj in fatjets:
+            if (j.isGood) and (deltaR(j, top_jet)<dR):
+                pt_around   += j.pt
+                njet_around += 1
+                
+    pt_isolation   = pt_around/top_jet.pt
+    njet_isolation = njet_around                
+                
+    return pt_isolation, njet_isolation
+
+
+def top_isolation(top, jets, dR, fatjets=None):
+    '''
+    Compute the isolation of a top w.r.t. other jets/fatjets
+    '''
+    pt_around    = 0
+    njet_around  = 0
+    
+    for j in jets:
+        if (j.isGood) and (deltaR(j, top)<dR) and (j.idx!=top.idxJet0 and j.idx!=top.idxJet1 and j.idx!=top.idxJet2):
+            pt_around        += j.pt
+            njet_around      += 1
+            
+    if fatjets is not None:
+        for fj in fatjets:
+            if (fj.isGood) and (deltaR(fj, top)<dR):
+                if hasattr(top, "idxFatJet"):
+                    if (fj.idx!=top.idxFatJet):
+                        pt_around    += fj.pt
+                        njet_around  += 1
+                else:
+                    pt_around    += j.pt
+                    njet_around  += 1
+    
+    pt_isolation   = pt_around/top.pt
+    njet_isolation = njet_around
+    
+    return pt_isolation, njet_isolation
+
+
+#######################################
+### Functions for Output Histograms ###
+#######################################
+def bookhisto(reg, var, s_cut):
+    h_ = {}
+    for r in reg:
+        h_[r] = {}
+        for v in var:
+            h_[r][v._name] = ROOT.TH1D(name="{}_{}_{}".format(v._name,r,s_cut), title="{} {}".format(v._title,r), nbinsx=v._nbins, xlow=v._xmin, xup=v._xmax)
+    return h_
+
+################### utils ###################
+def cut_string(cut):
+    return cut.replace(" ", "").replace("&&","_").replace(">","_g_").replace(".","_").replace("==","_e_")
+
+cut     = requirements
+s_cut   = cut_string(cut)
+
+
+
 ############################
 ### Histograms in Output ###
 ############################
-histos = {}
-histos["nMixvsnRes_nMer0"] = ROOT.TH2F(name="nMixvsnRes_nMer0", title="nev with nMer=0 - nMix vs. nRes [{}]".format(dat), nbinsx=5, xlow=-0.5, xup=4.5, nbinsy=5, ylow=-0.5, yup=4.5) # TH2F (name, title, nbinsx, xlow, xup, nbinsy, ylow, yup)
-histos["nMixvsnRes_nMer0"].GetXaxis().SetTitle("nResolved")
-histos["nMixvsnRes_nMer0"].GetYaxis().SetTitle("nMixed")
-histos["nMixvsnRes_nMer0"].GetXaxis().SetNdivisions(5)
-histos["nMixvsnRes_nMer0"].GetYaxis().SetNdivisions(5)
-histos["nMixvsnRes_nMer0"].SetOption("COLZ TEXT")
+tmp = bookhisto(reg=regions, var=vars, s_cut=s_cut)
 
-histos["nMixvsnRes_nMer1"] = ROOT.TH2F(name="nMixvsnRes_nMer1", title="nev with nMer=1 - nMix vs. nRes [{}]".format(dat), nbinsx=5, xlow=-0.5, xup=4.5, nbinsy=5, ylow=-0.5, yup=4.5)
-histos["nMixvsnRes_nMer1"].GetXaxis().SetTitle("nResolved")
-histos["nMixvsnRes_nMer1"].GetYaxis().SetTitle("nMixed")
-histos["nMixvsnRes_nMer1"].GetXaxis().SetNdivisions(5)
-histos["nMixvsnRes_nMer1"].GetYaxis().SetNdivisions(5)
-histos["nMixvsnRes_nMer1"].SetOption("COLZ TEXT")
+for r in regions:
+    tmp[r]["nMixvsnRes_nMer0"] = ROOT.TH2D(name="nMixvsnRes_nMer0_{}".format(r), title="nMix vs. nRes - nMer=0 {}".format(r), nbinsx=5, xlow=-0.5, xup=4.5, nbinsy=5, ylow=-0.5, yup=4.5) # TH2D (name, title, nbinsx, xlow, xup, nbinsy, ylow, yup)
+    tmp[r]["nMixvsnRes_nMer0"].GetXaxis().SetTitle("nResolved")
+    tmp[r]["nMixvsnRes_nMer0"].GetYaxis().SetTitle("nMixed")
+    tmp[r]["nMixvsnRes_nMer0"].GetXaxis().SetNdivisions(5)
+    tmp[r]["nMixvsnRes_nMer0"].GetYaxis().SetNdivisions(5)
+    tmp[r]["nMixvsnRes_nMer0"].SetOption("COLZ TEXT")
 
-histos["nMixvsnRes_nMer2"] = ROOT.TH2F(name="nMixvsnRes_nMer2", title="nev with nMer=2 - nMix vs. nRes [{}]".format(dat), nbinsx=5, xlow=-0.5, xup=4.5, nbinsy=5, ylow=-0.5, yup=4.5)
-histos["nMixvsnRes_nMer2"].GetXaxis().SetTitle("nResolved")
-histos["nMixvsnRes_nMer2"].GetYaxis().SetTitle("nMixed")
-histos["nMixvsnRes_nMer2"].GetXaxis().SetNdivisions(5)
-histos["nMixvsnRes_nMer2"].GetYaxis().SetNdivisions(5)
-histos["nMixvsnRes_nMer2"].SetOption("COLZ TEXT")
+    tmp[r]["nMixvsnRes_nMer1"] = ROOT.TH2D(name="nMixvsnRes_nMer1_{}".format(r), title="nMix vs. nRes - nMer=1 {}".format(r), nbinsx=5, xlow=-0.5, xup=4.5, nbinsy=5, ylow=-0.5, yup=4.5)
+    tmp[r]["nMixvsnRes_nMer1"].GetXaxis().SetTitle("nResolved")
+    tmp[r]["nMixvsnRes_nMer1"].GetYaxis().SetTitle("nMixed")
+    tmp[r]["nMixvsnRes_nMer1"].GetXaxis().SetNdivisions(5)
+    tmp[r]["nMixvsnRes_nMer1"].GetYaxis().SetNdivisions(5)
+    tmp[r]["nMixvsnRes_nMer1"].SetOption("COLZ TEXT")
 
-histos["Eventag"]          = ROOT.TH1F(name="Eventag", title="Event Tag [{}]".format(dat), nbinsx=4, xlow=0.5, xup=4.5)
-histos["Eventag"].GetXaxis().SetTitle("Event Tag")
-histos["Eventag"].GetXaxis().SetNdivisions(4)
-# histos["Eventag"].GetXaxis().SetBinLabel(1,"Resolved")
-# histos["Eventag"].GetXaxis().SetBinLabel(2,"Mixed")
-# histos["Eventag"].GetXaxis().SetBinLabel(3,"Merged")
-# histos["Eventag"].GetXaxis().SetBinLabel(4,"Nothing")
-histos["Eventag"].GetYaxis().SetTitle("Counts")
+    tmp[r]["nMixvsnRes_nMer2"] = ROOT.TH2D(name="nMixvsnRes_nMer2_{}".format(r), title="nMix vs. nRes - nMer=2 {}".format(r), nbinsx=5, xlow=-0.5, xup=4.5, nbinsy=5, ylow=-0.5, yup=4.5)
+    tmp[r]["nMixvsnRes_nMer2"].GetXaxis().SetTitle("nResolved")
+    tmp[r]["nMixvsnRes_nMer2"].GetYaxis().SetTitle("nMixed")
+    tmp[r]["nMixvsnRes_nMer2"].GetXaxis().SetNdivisions(5)
+    tmp[r]["nMixvsnRes_nMer2"].GetYaxis().SetNdivisions(5)
+    tmp[r]["nMixvsnRes_nMer2"].SetOption("COLZ TEXT")
 
-histos["Eventag_truth"]   = ROOT.TH1F(name="Eventag_truth", title="Event Tag matched with truth [{}]".format(dat), nbinsx=4, xlow=0.5, xup=4.5)
-histos["Eventag_truth"].GetXaxis().SetTitle("Event Tag matched")
-histos["Eventag_truth"].GetXaxis().SetNdivisions(4)
-# histos["Eventag_truth"].GetXaxis().SetBinLabel(1,"Resolved")
-# histos["Eventag_truth"].GetXaxis().SetBinLabel(2,"Mixed")
-# histos["Eventag_truth"].GetXaxis().SetBinLabel(3,"Merged")
-# histos["Eventag_truth"].GetXaxis().SetBinLabel(4,"Nothing")
-histos["Eventag_truth"].GetYaxis().SetTitle("Counts")
-
-histos["nTruthvsEventag"]   = ROOT.TH2F(name="nTruthvsRegion", title="True top found vs. Event Tag [{}]".format(dat), nbinsx=4, xlow=0.5, xup=4.5, nbinsy=4, ylow=0.5, yup=4.5)
-histos["nTruthvsEventag"].GetXaxis().SetTitle("Event Tag")
-histos["nTruthvsEventag"].GetXaxis().SetNdivisions(4)
-# histos["nTruthvsEventag"].GetXaxis().SetBinLabel(1,"Resolved")
-# histos["nTruthvsEventag"].GetXaxis().SetBinLabel(2,"Mixed")
-# histos["nTruthvsEventag"].GetXaxis().SetBinLabel(3,"Merged")
-# histos["nTruthvsEventag"].GetXaxis().SetBinLabel(4,"Nothing")
-histos["nTruthvsEventag"].GetYaxis().SetTitle("True top found")
-histos["nTruthvsEventag"].GetYaxis().SetBinLabel(1,"Resolved")
-histos["nTruthvsEventag"].GetYaxis().SetBinLabel(2,"Mixed")
-histos["nTruthvsEventag"].GetYaxis().SetBinLabel(3,"Merged")
-histos["nTruthvsEventag"].GetYaxis().SetBinLabel(4,"None")
-
-histos["nClusters"]   = ROOT.TH1F(name="nClusters", title="Number of Top Clusters [{}]".format(dat), nbinsx=4, xlow=0.5, xup=4.5)
-histos["nClusters"].GetXaxis().SetTitle("# Top Clusters")
-histos["nClusters"].GetXaxis().SetNdivisions(4)
-histos["nClusters"].GetXaxis().SetBinLabel(1,"Resolved")
-histos["nClusters"].GetXaxis().SetBinLabel(2,"Mixed")
-histos["nClusters"].GetXaxis().SetBinLabel(3,"Merged")
-histos["nClusters"].GetXaxis().SetBinLabel(4,"All")
-histos["nClusters"].GetYaxis().SetTitle("Counts")
+    tmp[r]["nTruthvsEventag"]   = ROOT.TH2D(name="nTruthvsRegion_{}".format(r), title="True top found vs. Event Tag {}".format(r), nbinsx=4, xlow=0.5, xup=4.5, nbinsy=4, ylow=0.5, yup=4.5)
+    tmp[r]["nTruthvsEventag"].GetXaxis().SetTitle("Event Tag")
+    tmp[r]["nTruthvsEventag"].GetXaxis().SetNdivisions(4)
+    tmp[r]["nTruthvsEventag"].GetYaxis().SetTitle("True top found")
+    tmp[r]["nTruthvsEventag"].GetYaxis().SetBinLabel(1,"Resolved")
+    tmp[r]["nTruthvsEventag"].GetYaxis().SetBinLabel(2,"Mixed")
+    tmp[r]["nTruthvsEventag"].GetYaxis().SetBinLabel(3,"Merged")
+    tmp[r]["nTruthvsEventag"].GetYaxis().SetBinLabel(4,"None")
 
 #############################################
 ######## Loop on components & events ########
 #############################################
-verbose = False
-fpr     = "1%"
-nevTot  = 0
-for c in components:
-    print(c.label)
+verbose     = False
+fpr         = "0.1%"
+nevTot      = 0
 
-    filename        = "{}.txt".format(c.label)
-    if filename in os.listdir(path_to_txt_folder):
+print("Examining Component:         {}".format(c.label))
+filename    = "{}.txt".format(c.label)
+if verbose:
+    print("Regions found:       {}".format(tmp.keys()))
+    print("Variables to fill:   {}".format(tmp["NoCut"].keys()))
+
+if filename in os.listdir(path_to_txt_folder):
+    if verbose:
+        print("Found file for component: {}".format(c.label))
+    path_to_txt_file = "{}/{}".format(path_to_txt_folder,filename)
+
+    # Take files stored in .txt file
+    with open(path_to_txt_file) as f:
+        lines = f.readlines()
+    if len(lines):
+        inFile_to_open    = lines[0].replace("\n","")
         if verbose:
-            print("Found file for component: {}".format(c.label))
-        path_to_txt_file = "{}/{}".format(path_to_txt_folder,filename)
+            print("Opening file: {}".format(inFile_to_open))
+    else:
+        print("No file found for component: {}".format(c.label))
+        sys.exit()
 
-        # Take files stored in .txt file
-        with open(path_to_txt_file) as f:
-            lines = f.readlines()
-        if len(lines):
-            inFile_to_open    = lines[0].replace("\n","")
+    # Open root file
+    inFile                = ROOT.TFile.Open(inFile_to_open, "READ")
+    # tree                 = inFile.Get("Events")
+    tree                  = inFile.Events
+    nNewEntries           = tree.GetEntries()
+    print("nNewEntries: {}".format(nNewEntries))
+    nOldEntries           = inFile.plots.h_genweight.GetBinContent(1)
+    print("nOldEntries: {}".format(nOldEntries))
+    nev                   = tree.GetEntries()
+    # nev                   = 5000
+    nevTot               += nev
+
+
+    # Total number of events for efficiency #
+    for r in regions:
+        for v in vars:
+            if isinstance(tmp[r][v._name], ROOT.TH1D):
+                tmp[r][v._name].SetBinContent(0,nevTot)
+    
+    
+    ###########################
+    ### EVENT LOOP STARTING ###
+    ###########################
+    for i, event in enumerate(tree):
+        if i==0 and verbose:
+            print("--------- Entering Event-loop ---------")
+        if i<nev:
+            if i%100==0:
+                print("Event nr: {}".format(i))
+            
+
+            ### Event Selection ###
+            if not select_event(event):
+                continue
+
+            toplowpt            = Collection(event, "TopLowPt")
+            tophighpt           = Collection(event, "TopHighPt")
+            fatjets             = Collection(event, "FatJet")
+            jets                = Collection(event, "Jet")
+
+            #################
+            ### Event Tag ###
+            #################
+
+            ### Top Selection ###
+            # Total amount of Resolved, Mixed and Merged candidates selected in a single event #
+            tops = {}
+            tops["Resolved"] = top_selection(tops=toplowpt, thr=thrs["scoreDNN"][fpr])
+            tops["Mixed"]    = top_selection(tops=tophighpt, thr=thrs["base2"][fpr])
+            tops["Merged"]   = top_selection(tops=fatjets, thr=thrs["TvsQCD"]["1%"])
+
             if verbose:
-                print("Opening file: {}".format(inFile_to_open))
-        else:
-            continue
-
-
-        # Open root file
-        inFile                = ROOT.TFile.Open(inFile_to_open, "READ")
-        # tree                 = inFile.Get("Events")
-        tree                  = inFile.Events
-        nNewEntries           = tree.GetEntries()
-        print("nNewEntries: {}".format(nNewEntries))
-        nOldEntries           = inFile.plots.h_genweight.GetBinContent(1)
-        print("nOldEntries: {}".format(nOldEntries))
-        nev                   = tree.GetEntries()
-        # nev                   = 1000
-        nevTot               += nev
-
-
-        # Total number of events for efficiency #
-        histos["Eventag"].SetBinContent(0,nevTot)
-        histos["Eventag_truth"].SetBinContent(0,nevTot)
-        histos["nClusters"].SetBinContent(0,nevTot)
-        
-        
-        
-        
-        ###########################
-        ### EVENT LOOP STARTING ###
-        ###########################
-        for i, event in enumerate(tree):
-            if i==0 and verbose:
-                print("--------- Entering Event-loop ---------")
-            if i<nev:
-                if i%100==0:
-                    print("Event nr: {}".format(i))
-                
-
-                ### Event Selection ###
-                if not select_event(event):
-                    continue
-
-                toplowpt            = Collection(event, "TopLowPt")
-                tophighpt           = Collection(event, "TopHighPt")
-                fatjets             = Collection(event, "FatJet")
-                jets                = Collection(event, "Jet")
-
-                #################
-                ### Event Tag ###
-                #################
-
-                ### Top Selection ###
-                # Total amount of Resolved, Mixed and Merged candidates selected in a single event #
-                tops = {}
-                tops["Resolved"] = top_selection(tops=toplowpt, thr=thrs["scoreDNN"][fpr])
-                tops["Mixed"]    = top_selection(tops=tophighpt, thr=thrs["base2"][fpr])
-                tops["Merged"]   = top_selection(tops=fatjets, thr=thrs["TvsQCD"]["1%"])
-
-                if verbose:
-                    for key, (tops_over_thr,tops_selected) in tops.items():
-                        print("event {} taken".format(i))
-                        if len(tops_over_thr):
-                            print("tops_over_thr: {}".format(tops_over_thr))
-                            if key=="Resolved":
-                                print("scores:        {}".format([t.scoreDNN for (idx,t) in tops_over_thr]))
-                                print("truth:         {}".format([t.truth for (idx,t) in tops_over_thr]))
-                                for idx,t in tops_over_thr:
-                                    print("indexes:     [{} {} {}]".format(t.idxJet0, t.idxJet1, t.idxJet2))
-                            elif key=="Mixed":
-                                print("scores:        {}".format([t.score_base2 for (idx,t) in tops_over_thr]))
-                                print("truth:         {}".format([t.truth for (idx,t) in tops_over_thr]))
-                                for idx,t in tops_over_thr:
-                                    print("indexes:     [{} {} {} - {}]".format(t.idxJet0, t.idxJet1, t.idxJet2, t.idxFatJet))
-                            elif key=="Merged":
-                                print("scores:        {}".format([t.particleNet_TvsQCD for (idx,t) in tops_over_thr]))
-                                print("truth:         {}".format([t.matched==3 for (idx,t) in tops_over_thr]))
-                                for idx,t in tops_over_thr:
-                                    print("indexes:     [{}]".format(t.idx))
-
-                            print("tops_selected: {}".format(tops_selected))
-                            
-                        else:
-                            print("No candidate found in cat.:      {}".format(key))
-
-
-
-                ### Top Counting ###
-                # Number of tops selected in a single event #
-                nRes_   = len(tops["Resolved"][1])
-                nMix_   = len(tops["Mixed"][1])
-                nMer_   = len(tops["Merged"][1])
-                
-                
-                if nMer_==0:
-                    histos["nMixvsnRes_nMer0"].Fill(nRes_, nMix_)
-                elif nMer_==1:
-                    histos["nMixvsnRes_nMer1"].Fill(nRes_, nMix_)
-                elif nMer_==2:
-                    histos["nMixvsnRes_nMer2"].Fill(nRes_, nMix_)
-
-                # Tag the event depending on the number of candidates found #
-                tag   = tag_event(nRes_, nMix_, nMer_)
-                histos["Eventag"].Fill(tag)
-                
-                if verbose:
-                    print("nRes_:   {}".format(nRes_))
-                    print("nMix_:   {}".format(nMix_))
-                    print("nMer_:   {}".format(nMer_))
-                    print("tag:     {}".format(tag))
-
-                if verbose:
-                    print("\n-------------------------------------------------------------\n")
-                    
-                
-                # Count if event tag correspond to the presence of a true top candidate #
-                nRes_True  = 0
-                nMix_True  = 0
-                nMer_True  = 0
-                
                 for key, (tops_over_thr,tops_selected) in tops.items():
-                    if len(tops_selected):
+                    print("event {} taken".format(i))
+                    if len(tops_over_thr):
+                        print("tops_over_thr: {}".format(tops_over_thr))
                         if key=="Resolved":
-                            nRes_True = sum([t.truth for (idx,t) in tops_selected])
+                            print("scores:        {}".format([t.scoreDNN for (idx,t) in tops_over_thr]))
+                            print("truth:         {}".format([t.truth for (idx,t) in tops_over_thr]))
+                            for idx,t in tops_over_thr:
+                                print("indexes:     [{} {} {}]".format(t.idxJet0, t.idxJet1, t.idxJet2))
                         elif key=="Mixed":
-                            nMix_True = sum([t.truth for (idx,t) in tops_selected])
+                            print("scores:        {}".format([t.score_base2 for (idx,t) in tops_over_thr]))
+                            print("truth:         {}".format([t.truth for (idx,t) in tops_over_thr]))
+                            for idx,t in tops_over_thr:
+                                print("indexes:     [{} {} {} - {}]".format(t.idxJet0, t.idxJet1, t.idxJet2, t.idxFatJet))
                         elif key=="Merged":
-                            nMer_True = sum([t.matched==3 for (idx,t) in tops_selected])
-                    
-                    
-                if (tag==1) and nRes_True:
-                    histos["Eventag_truth"].Fill(tag)
-                elif (tag==2) and nMix_True:
-                    histos["Eventag_truth"].Fill(tag)
-                elif (tag==3) and nMer_True:
-                    histos["Eventag_truth"].Fill(tag)
-                elif (tag==4) and (nRes_True or nMix_True or nMer_True):
-                    histos["Eventag_truth"].Fill(tag)
-            
-            
+                            print("scores:        {}".format([t.particleNet_TvsQCD for (idx,t) in tops_over_thr]))
+                            print("truth:         {}".format([t.matched==3 for (idx,t) in tops_over_thr]))
+                            for idx,t in tops_over_thr:
+                                print("indexes:     [{}]".format(t.idx))
+
+                        print("tops_selected: {}".format(tops_selected))
+                        
+                    else:
+                        print("No candidate found in cat.:      {}".format(key))
+
+
+
+            ### Top Counting ###
+            # Number of tops selected in a single event #
+            nRes_   = len(tops["Resolved"][1])
+            nMix_   = len(tops["Mixed"][1])
+            nMer_   = len(tops["Merged"][1])
             
 
-                # Count events with a true candidate #
-                if nRes_True:
-                    histos["nTruthvsEventag"].Fill(tag, 1)
-                if nMix_True:
-                    histos["nTruthvsEventag"].Fill(tag, 2)
-                if nMer_True:
-                    histos["nTruthvsEventag"].Fill(tag, 3)
-                if (not nRes_True) and (not nMix_True) and (not nMer_True):
-                    histos["nTruthvsEventag"].Fill(tag, 4)
+            # Tag the event depending on the number of candidates found #
+            tag   = tag_event(nRes_, nMix_, nMer_)
+            
+            if verbose:
+                print("nRes_:   {}".format(nRes_))
+                print("nMix_:   {}".format(nMix_))
+                print("nMer_:   {}".format(nMer_))
+                print("tag:     {}".format(tag))
+
+            if verbose:
+                print("\n-------------------------------------------------------------\n")
                 
-                # Count number of clusters #
-                histos["nClusters"].Fill(1, nRes_)
-                histos["nClusters"].Fill(2, nMix_)
-                histos["nClusters"].Fill(3, nMer_)
-                histos["nClusters"].Fill(4, nRes_+nMix_+nMer_)
-                
-                
-            else:
-                break
-        inFile.Close()
+            
+            # Count if event tag correspond to the presence of a true top candidate #
+            nRes_True  = 0
+            nMix_True  = 0
+            nMer_True  = 0
+            
+            for key, (tops_over_thr,tops_selected) in tops.items():
+                if len(tops_selected):
+                    if key=="Resolved":
+                        nRes_True = sum([t.truth for (idx,t) in tops_selected])
+                    elif key=="Mixed":
+                        nMix_True = sum([t.truth for (idx,t) in tops_selected])
+                    elif key=="Merged":
+                        nMer_True = sum([t.matched==3 for (idx,t) in tops_selected])
+            
+            ### Calculating Isolation ###
+            for key, (tops_over_thr,tops_selected) in tops.items():
+                if len(tops_selected):
+                    if key=="Resolved":
+                        for idx,t in tops_selected:
+                            pt_isolation, njet_isolation    = top_isolation(top=t, jets=jets, fatjets=fatjets, dR=0.4)
+                            t.pt_iso_4                      = pt_isolation
+                            t.njet_iso_4                    = njet_isolation
+                    elif key=="Mixed":
+                        for idx,t in tops_selected:
+                            pt_isolation, njet_isolation    = top_isolation(top=t, jets=jets, fatjets=fatjets, dR=0.4)
+                            t.pt_iso_4                      = pt_isolation
+                            t.njet_iso_4                    = njet_isolation
+                    elif key=="Merged":
+                        for idx,t in tops_selected:
+                            pt_isolation, njet_isolation    = jet_isolation(top_jet=t, jets=jets, fatjets=fatjets, dR=0.4)
+                            t.pt_iso_4                      = pt_isolation
+                            t.njet_iso_4                    = njet_isolation
+            
+            
+            
+            
+            
+            ######################
+            ### Filling Histos ###
+            ######################
+            for r in regions:
+                if region_selection(reg=r, event=event):
+                    ####################
+                    ### Filling TH1D ###
+                    ####################
+                    tmp[r]["Eventag"].Fill(tag)
+                    
+                    # Count events with a true candidate matched #
+                    if (tag==1) and nRes_True:
+                        tmp[r]["Eventag_matched"].Fill(tag)
+                    elif (tag==2) and nMix_True:
+                        tmp[r]["Eventag_matched"].Fill(tag)
+                    elif (tag==3) and nMer_True:
+                        tmp[r]["Eventag_matched"].Fill(tag)
+                    elif (tag==4) and (nRes_True or nMix_True or nMer_True):
+                        tmp[r]["Eventag_matched"].Fill(tag)
+                        
+                    # number of clusters, no mathcing to region #
+                    tmp[r]["nClusters_Res_0"].Fill(nRes_)
+                    tmp[r]["nClusters_Mix_0"].Fill(nMix_)
+                    tmp[r]["nClusters_Mer_0"].Fill(nMer_)
+                    
+                    # Count number of clusters matched to region #
+                    if tag==1:
+                        tmp[r]["nClusters_Res"].Fill(nRes_)
+                    elif tag==2:
+                        tmp[r]["nClusters_Mix"].Fill(nMix_)
+                    elif tag==3:
+                        tmp[r]["nClusters_Mer"].Fill(nMer_)
+                        
+                        
+                    # isolation plots #
+                    for key, (tops_over_thr,tops_selected) in tops.items():
+                        if len(tops_selected):
+                            if key=="Resolved":
+                                for idx,t in tops_selected:
+                                    if t.truth:
+                                        tmp[r]["top_Res_isolation_pt_True"].Fill(t.pt_iso_4)
+                                        tmp[r]["top_Res_isolation_njet_True"].Fill(t.njet_iso_4)
+                                    else:
+                                        tmp[r]["top_Res_isolation_pt_False"].Fill(t.pt_iso_4)
+                                        tmp[r]["top_Res_isolation_njet_False"].Fill(t.njet_iso_4)
+                                    
+                                    tmp[r]["top_Res_isolation_pt"].Fill(t.pt_iso_4)
+                                    tmp[r]["top_Res_isolation_njet"].Fill(t.njet_iso_4)
+                            elif key=="Mixed":
+                                for idx,t in tops_selected:
+                                    if t.truth:
+                                        tmp[r]["top_Mix_isolation_pt_True"].Fill(t.pt_iso_4)
+                                        tmp[r]["top_Mix_isolation_njet_True"].Fill(t.njet_iso_4)
+                                    else:
+                                        tmp[r]["top_Mix_isolation_pt_False"].Fill(t.pt_iso_4)
+                                        tmp[r]["top_Mix_isolation_njet_False"].Fill(t.njet_iso_4)
+                                    
+                                    tmp[r]["top_Mix_isolation_pt"].Fill(t.pt_iso_4)
+                                    tmp[r]["top_Mix_isolation_njet"].Fill(t.njet_iso_4)
+                            elif key=="Merged":
+                                for idx,t in tops_selected:
+                                    if t.matched==3:
+                                        tmp[r]["top_Mer_isolation_pt_True"].Fill(t.pt_iso_4)
+                                        tmp[r]["top_Mer_isolation_njet_True"].Fill(t.njet_iso_4)
+                                    else:
+                                        tmp[r]["top_Mer_isolation_pt_False"].Fill(t.pt_iso_4)
+                                        tmp[r]["top_Mer_isolation_njet_False"].Fill(t.njet_iso_4)
+                                    
+                                    tmp[r]["top_Mer_isolation_pt"].Fill(t.pt_iso_4)
+                                    tmp[r]["top_Mer_isolation_njet"].Fill(t.njet_iso_4)
+                    
+                        
+                    ####################
+                    ### Filling TH2D ###
+                    ####################
+                    
+                    # Mixed vs. Resolved (for different values of Merged) #
+                    if nMer_==0:
+                        tmp[r]["nMixvsnRes_nMer0"].Fill(nRes_, nMix_)
+                    elif nMer_==1:
+                        tmp[r]["nMixvsnRes_nMer1"].Fill(nRes_, nMix_)
+                    elif nMer_==2:
+                        tmp[r]["nMixvsnRes_nMer2"].Fill(nRes_, nMix_)
+                        
+                    # Count events with a true candidate #
+                    if nRes_True:
+                        tmp[r]["nTruthvsEventag"].Fill(tag, 1)
+                    if nMix_True:
+                        tmp[r]["nTruthvsEventag"].Fill(tag, 2)
+                    if nMer_True:
+                        tmp[r]["nTruthvsEventag"].Fill(tag, 3)
+                    if (not nRes_True) and (not nMix_True) and (not nMer_True):
+                        tmp[r]["nTruthvsEventag"].Fill(tag, 4)
+            
+        else:
+            break
+    inFile.Close()
 
 
 # sys.exit()
@@ -454,6 +585,9 @@ for c in components:
 print("Writing histograms to outFile:           {}".format(path_to_outFile))
 outFile = ROOT.TFile.Open(path_to_outFile, "RECREATE")
 outFile.cd()
-for key,histo in histos.items():
-    histo.Write()
+for r in regions:
+    # for v in vars:
+    #     tmp[r][v._name].Write()
+    for v in tmp[r]:
+        tmp[r][v].Write()
 outFile.Close()
