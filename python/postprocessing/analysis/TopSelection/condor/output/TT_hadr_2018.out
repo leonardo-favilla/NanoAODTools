@@ -1,0 +1,11 @@
+Examining Component:         TT_hadr_2018
+nNewEntries: 686
+nOldEntries: 342000.0
+Event nr: 0
+Event nr: 100
+Event nr: 200
+Event nr: 300
+Event nr: 400
+Event nr: 500
+Event nr: 600
+Writing histograms to outFile:           /eos/user/l/lfavilla/my_framework/TopSelection_tmp/plots/TT_hadr_2018.root

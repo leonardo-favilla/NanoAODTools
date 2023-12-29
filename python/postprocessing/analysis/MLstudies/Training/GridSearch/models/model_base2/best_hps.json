@@ -1,0 +1,15 @@
+{
+    "fj_units": 9,
+    "fj_activation": "relu",
+    "fj_kernel_initializer": "random_uniform",
+    "j_units": 10,
+    "j_activation": "tanh",
+    "j_kernel_initializer": "random_uniform",
+    "j_dropout": 0.0,
+    "learning_rate": 0.004274005497319108,
+    "tuner/epochs": 1000,
+    "tuner/initial_epoch": 334,
+    "tuner/bracket": 6,
+    "tuner/round": 6,
+    "tuner/trial_id": "1247"
+}

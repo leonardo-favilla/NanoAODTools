@@ -1,0 +1,15 @@
+Proxy_filename          = x509up
+Proxy_path              = /afs/cern.ch/user/l/lfavilla/private/$(Proxy_filename)
+universe                = vanilla
+x509userproxy           = $(Proxy_path)
+use_x509userproxy       = true
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files    = $(Proxy_path)
++JobFlavour             = "longlunch"
+executable              = runner_base_pt_l250_3j1fj_2j1fj.sh
+arguments               = 
+output                  = condor/output/base_pt_l250_3j1fj_2j1fj.out
+error                   = condor/error/base_pt_l250_3j1fj_2j1fj.err
+log                     = condor/log/base_pt_l250_3j1fj_2j1fj.log
+queue

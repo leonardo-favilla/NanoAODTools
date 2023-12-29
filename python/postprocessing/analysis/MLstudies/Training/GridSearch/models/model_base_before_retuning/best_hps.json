@@ -1,0 +1,14 @@
+{
+    "fj_units": 10,
+    "fj_activation": "sigmoid",
+    "fj_kernel_initializer": "random_normal",
+    "j_units": 6,
+    "j_activation": "relu",
+    "j_kernel_initializer": "random_uniform",
+    "j_dropout": 0.0,
+    "tuner/epochs": 500,
+    "tuner/initial_epoch": 167,
+    "tuner/bracket": 2,
+    "tuner/round": 2,
+    "tuner/trial_id": "0693"
+}
