@@ -1,0 +1,385 @@
+DEBUG 2023-11-14 16:48:20.034 UTC: 	 CRAB Client version: v3.231010
+DEBUG 2023-11-14 16:48:20.034 UTC: 	 Running on: Linux lxplus799.cern.ch 3.10.0-1160.99.1.el7.x86_64 #1 SMP Wed Sep 13 14:19:20 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-11-14 16:48:20.034 UTC: 	 Executing command: 'submit'
+DEBUG 2023-11-14 16:48:20.034 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+INFO 2023-11-14 16:48:20.036 UTC: 	 Will use CRAB configuration file crab_cfg.py
+DEBUG 2023-11-14 16:48:20.036 UTC: 	 Loading CRAB configuration file.
+DEBUG 2023-11-14 16:48:20.044 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2023-11-14 16:48:20.068 UTC: 	 Checking credentials
+DEBUG 2023-11-14 16:48:20.068 UTC: 	 Found proxy file /tmp/x509up_u159320
+DEBUG 2023-11-14 16:48:20.068 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-11-14 16:48:20.068 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u159320
+DEBUG 2023-11-14 16:48:20.967 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-14 16:48:20.967 UTC: 	 Getting proxy life time left
+DEBUG 2023-11-14 16:48:20.967 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u159320
+DEBUG 2023-11-14 16:48:21.869 UTC: 	 output : 36689
+36689
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-14 16:48:21.869 UTC: 	 Proxy valid for 10:11:29 hours
+DEBUG 2023-11-14 16:48:21.952 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2023-11-14 16:48:22.082 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2023-11-14 16:48:22.082 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u159320
+DEBUG 2023-11-14 16:48:22.807 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-14 16:48:22.807 UTC: 	 Getting myproxy life time left for 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-11-14 16:48:22.807 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-11-14 16:48:23.177 UTC: 	 output : username: 70284ad9de3a40585c76dbf527363be004fcbd17
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 401:55:57  (16.7 days)
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-14 16:48:23.177 UTC: 	 Myproxy is valid: 1446900
+DEBUG 2023-11-14 16:48:23.178 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: 70284ad9de3a40585c76dbf527363be004fcbd17  - validity: 16 days, 17:55:00
+DEBUG 2023-11-14 16:48:23.178 UTC: 	 Command use: submit
+DEBUG 2023-11-14 16:48:23.178 UTC: 	 Options use: ['-c', 'crab_cfg.py']
+DEBUG 2023-11-14 16:48:23.178 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2023-11-14 16:48:23.240 UTC: 	 CRABClient version: v3.231010
+DEBUG 2023-11-14 16:48:23.240 UTC: 	 Instance is prod
+DEBUG 2023-11-14 16:48:23.240 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2023-11-14 16:48:23.240 UTC: 	 Command api workflow
+DEBUG 2023-11-14 16:48:23.240 UTC: 	 Started submission
+DEBUG 2023-11-14 16:48:23.240 UTC: 	 Working on /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-14 16:48:23.240 UTC: 	 Encoded data for curl request: subresource=backendurls
+DEBUG 2023-11-14 16:48:23.420 UTC: 	 Loading required information from the environment
+DEBUG 2023-11-14 16:48:23.421 UTC: 	 Found CMSSW_12_6_0 for slc7_amd64_gcc10 with base /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0
+DEBUG 2023-11-14 16:48:23.421 UTC: 	 Loading required information from the environment
+DEBUG 2023-11-14 16:48:23.421 UTC: 	 Found CMSSW_12_6_0 for slc7_amd64_gcc10 with base /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0
+DEBUG 2023-11-14 16:48:23.421 UTC: 	 UNIQUE NAME: tarUUID eca297b4-beb2-4cc1-9722-482dd4555f02 
+DEBUG 2023-11-14 16:48:23.421 UTC: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.requestName = 'TprimeToTZ_1800_2018'
+config.General.transferLogs = True
+config.section_('JobType')
+config.JobType.inputFiles = ['crab_script.py', '../scripts/haddnano.py', '../scripts/keep_and_drop.txt']
+config.JobType.psetName = 'PSet.py'
+config.JobType.maxJobRuntimeMin = 2700
+config.JobType.pluginName = 'Analysis'
+config.JobType.scriptExe = 'crab_script.sh'
+config.section_('Data')
+config.Data.splitting = 'FileBased'
+config.Data.outLFNDirBase = '/store/user/lfavilla/DM_v0'
+config.Data.outputDatasetTag = 'TprimeToTZ_1800_2018'
+config.Data.publication = False
+config.Data.allowNonValidInputDataset = True
+config.Data.unitsPerJob = 1
+config.Data.inputDBS = 'global'
+config.Data.inputDataset = '/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM'
+config.section_('Site')
+config.Site.storageSite = 'T2_IT_Pisa'
+
+DEBUG 2023-11-14 16:48:23.421 UTC: 	 self.config.JobType.psetName: PSet.py
+INFO 2023-11-14 16:48:23.421 UTC: 	 Importing CMSSW configuration PSet.py
+INFO 2023-11-14 16:48:23.735 UTC: 	 Finished importing CMSSW configuration PSet.py
+DEBUG 2023-11-14 16:48:23.735 UTC: 	 Writing CMSSW configuration to /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/inputs/PSet.py
+DEBUG 2023-11-14 16:48:23.757 UTC: 	 The following EDM output files will be collected: ['tree_hadd.root']
+DEBUG 2023-11-14 16:48:23.757 UTC: 	 The following TFile output files will be collected: []
+DEBUG 2023-11-14 16:48:23.757 UTC: 	 The following user output files (not listed as PoolOuputModule or TFileService in the CMSSW PSet) will be collected: 
+DEBUG 2023-11-14 16:48:23.757 UTC: 	 Loading required information from the environment
+DEBUG 2023-11-14 16:48:23.757 UTC: 	 Found CMSSW_12_6_0 for slc7_amd64_gcc10 with base /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0
+DEBUG 2023-11-14 16:48:23.757 UTC: 	 Making tarball in /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/inputs/eca297b4-beb2-4cc1-9722-482dd4555f02default.tgz
+DEBUG 2023-11-14 16:48:23.759 UTC: 	 Checking directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/bin
+DEBUG 2023-11-14 16:48:23.759 UTC: 	 Adding directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/bin to tarball
+DEBUG 2023-11-14 16:48:23.776 UTC: 	 Checking directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/python
+DEBUG 2023-11-14 16:48:23.776 UTC: 	 Adding directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/python to tarball
+DEBUG 2023-11-14 16:48:23.801 UTC: 	 Checking directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/cfipython
+DEBUG 2023-11-14 16:48:23.802 UTC: 	 Adding directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/cfipython to tarball
+DEBUG 2023-11-14 16:48:23.802 UTC: 	 Checking directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/lib
+DEBUG 2023-11-14 16:48:23.803 UTC: 	 Adding directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/lib to tarball
+DEBUG 2023-11-14 16:48:23.852 UTC: 	 Checking directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/biglib
+DEBUG 2023-11-14 16:48:23.852 UTC: 	 Adding directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/biglib to tarball
+DEBUG 2023-11-14 16:48:23.853 UTC: 	 Checking directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/module
+DEBUG 2023-11-14 16:48:23.853 UTC: 	 Checking directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/config/SCRAM/hooks
+DEBUG 2023-11-14 16:48:23.857 UTC: 	 Adding directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/config/SCRAM/hooks to tarball
+DEBUG 2023-11-14 16:48:24.889 UTC: 	 Adding directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/data to tarball
+DEBUG 2023-11-14 16:48:49.483 UTC: 	 Adding directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/interface to tarball
+DEBUG 2023-11-14 16:48:49.537 UTC: 	 Adding directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python to tarball
+DEBUG 2023-11-14 16:49:36.432 UTC: 	 Adding directory /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/data to tarball
+DEBUG 2023-11-14 16:49:41.259 UTC: 	 Adding file crab_script.py to tarball
+DEBUG 2023-11-14 16:49:41.260 UTC: 	 Adding file ../scripts/haddnano.py to tarball
+DEBUG 2023-11-14 16:49:41.263 UTC: 	 Adding file ../scripts/keep_and_drop.txt to tarball
+DEBUG 2023-11-14 16:49:47.408 UTC: 	 Uploading archive /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/inputs/eca297b4-beb2-4cc1-9722-482dd4555f02default.tgz (88 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
+DEBUG 2023-11-14 16:50:17.208 UTC: 	 Encoded data for curl request: subresource=upload&objecttype=sandbox&tarballname=05bf1cab3b690b9f1e43746f04f1ed2675afff85574a231e53b7553f3109c7e8.tar.gz
+DEBUG 2023-11-14 16:50:17.382 UTC: 	 Will execute:
+curl -f -v -X POST  -H "User-Agent: CRAB" -F "key=lfavilla/sandboxes/05bf1cab3b690b9f1e43746f04f1ed2675afff85574a231e53b7553f3109c7e8.tar.gz" -F "AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb" -F "policy=eyJleHBpcmF0aW9uIjogIjIwMjMtMTEtMTRUMTc6NTA6MTdaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAiY3JhYmNhY2hlX3Byb2QifSwgeyJrZXkiOiAibGZhdmlsbGEvc2FuZGJveGVzLzA1YmYxY2FiM2I2OTBiOWYxZTQzNzQ2ZjA0ZjFlZDI2NzVhZmZmODU1NzRhMjMxZTUzYjc1NTNmMzEwOWM3ZTgudGFyLmd6In1dfQ==" -F "signature=ygjOnUHtfgfdgf0tWJ+emOULjZ0=" -F "file=@/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/inputs/eca297b4-beb2-4cc1-9722-482dd4555f02default.tgz" "https://s3.cern.ch/crabcache_prod"
+DEBUG 2023-11-14 16:50:19.200 UTC: 	 exitcode: 0
+stdout: b''
+DEBUG 2023-11-14 16:50:19.200 UTC: 	 sandbox /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/inputs/eca297b4-beb2-4cc1-9722-482dd4555f02default.tgz successully uploaded to S3
+DEBUG 2023-11-14 16:50:19.200 UTC: 	 Loading required information from the environment
+DEBUG 2023-11-14 16:50:19.200 UTC: 	 Found CMSSW_12_6_0 for slc7_amd64_gcc10 with base /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0
+DEBUG 2023-11-14 16:50:19.200 UTC: 	 Making tarball in /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/inputs/debugFiles.tgz
+DEBUG 2023-11-14 16:50:19.213 UTC: 	 Uploading archive /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/inputs/debugFiles.tgz (1 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/S3/crabcache_prod
+DEBUG 2023-11-14 16:50:19.216 UTC: 	 Encoded data for curl request: subresource=upload&objecttype=sandbox&tarballname=e0f6243d34ce4844fd5f84537bb1188dbf3dff1d4453ee958050d8aeeb5512bd.tar.gz
+DEBUG 2023-11-14 16:50:19.366 UTC: 	 Will execute:
+curl -f -v -X POST  -H "User-Agent: CRAB" -F "key=lfavilla/sandboxes/e0f6243d34ce4844fd5f84537bb1188dbf3dff1d4453ee958050d8aeeb5512bd.tar.gz" -F "AWSAccessKeyId=ab00fcc889f248c495d2875f15a3badb" -F "policy=eyJleHBpcmF0aW9uIjogIjIwMjMtMTEtMTRUMTc6NTA6MTlaIiwgImNvbmRpdGlvbnMiOiBbeyJidWNrZXQiOiAiY3JhYmNhY2hlX3Byb2QifSwgeyJrZXkiOiAibGZhdmlsbGEvc2FuZGJveGVzL2UwZjYyNDNkMzRjZTQ4NDRmZDVmODQ1MzdiYjExODhkYmYzZGZmMWQ0NDUzZWU5NTgwNTBkOGFlZWI1NTEyYmQudGFyLmd6In1dfQ==" -F "signature=TKOQv39SHSZ8p6Yl3UXzafVGhVw=" -F "file=@/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/inputs/debugFiles.tgz" "https://s3.cern.ch/crabcache_prod"
+DEBUG 2023-11-14 16:50:19.521 UTC: 	 exitcode: 0
+stdout: b''
+DEBUG 2023-11-14 16:50:19.521 UTC: 	 sandbox /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/inputs/debugFiles.tgz successully uploaded to S3
+DEBUG 2023-11-14 16:50:19.521 UTC: 	 Result uploading input files: 05bf1cab3b690b9f1e43746f04f1ed2675afff85574a231e53b7553f3109c7e8.tar.gz 
+INFO 2023-11-14 16:50:19.524 UTC: 	 Sending the request to the server at cmsweb.cern.ch
+DEBUG 2023-11-14 16:50:19.524 UTC: 	 Submitting {'dryrun': 0, 'workflow': 'crab_TprimeToTZ_1800_2018', 'saveoutput': 1, 'savelogsflag': 1, 'inputdata': '/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', 'primarydataset': '', 'nonvaliddata': 1, 'userfiles': [], 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'useparent': 0, 'ignorelocality': 0, 'splitalgo': 'FileBased', 'algoargs': 1, 'totalunits': 0, 'lfn': '/store/user/lfavilla/DM_v0', 'publication': 0, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'publishname2': 'TprimeToTZ_1800_2018', 'jobtype': 'Analysis', 'generator': 'pythia', 'addoutputfiles': [], 'maxjobruntime': 2700, 'numcores': 1, 'maxmemory': 2000, 'priority': 10, 'nonprodsw': 0, 'scriptexe': 'crab_script.sh', 'asyncdest': 'T2_IT_Pisa', 'requireaccelerator': 0, 'oneEventMode': 0, 'extrajdl': [], 'ignoreglobalblacklist': 0, 'partialdataset': 0, 'inputblocks': [], 'tfileoutfiles': [], 'edmoutfiles': ['tree_hadd.root'], 'jobarch': 'slc7_amd64_gcc10', 'jobsw': 'CMSSW_12_6_0', 'cacheurl': 'https://cmsweb.cern.ch/S3/crabcache_prod', 'cachefilename': '05bf1cab3b690b9f1e43746f04f1ed2675afff85574a231e53b7553f3109c7e8.tar.gz', 'debugfilename': 'e0f6243d34ce4844fd5f84537bb1188dbf3dff1d4453ee958050d8aeeb5512bd.tar.gz'} 
+DEBUG 2023-11-14 16:50:19.524 UTC: 	 Encoded data for curl request: dryrun=0&workflow=crab_TprimeToTZ_1800_2018&saveoutput=1&savelogsflag=1&inputdata=%2FTprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8%2FRunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1%2FNANOAODSIM&primarydataset=&nonvaliddata=1&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&useparent=0&ignorelocality=0&splitalgo=FileBased&algoargs=1&totalunits=0&lfn=%2Fstore%2Fuser%2Flfavilla%2FDM_v0&publication=0&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&publishname2=TprimeToTZ_1800_2018&jobtype=Analysis&generator=pythia&maxjobruntime=2700&numcores=1&maxmemory=2000&priority=10&nonprodsw=0&scriptexe=crab_script.sh&asyncdest=T2_IT_Pisa&requireaccelerator=0&oneEventMode=0&ignoreglobalblacklist=0&partialdataset=0&jobarch=slc7_amd64_gcc10&jobsw=CMSSW_12_6_0&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2FS3%2Fcrabcache_prod&cachefilename=05bf1cab3b690b9f1e43746f04f1ed2675afff85574a231e53b7553f3109c7e8.tar.gz&debugfilename=e0f6243d34ce4844fd5f84537bb1188dbf3dff1d4453ee958050d8aeeb5512bd.tar.gz&edmoutfiles=tree_hadd.root
+DEBUG 2023-11-14 16:50:19.690 UTC: 	 Result: {'result': [{'RequestName': '231114_165019:lfavilla_crab_TprimeToTZ_1800_2018'}]}
+INFO 2023-11-14 16:50:19.745 UTC: 	 Success: Your task has been delivered to the prod CRAB3 server.
+INFO 2023-11-14 16:50:19.745 UTC: 	 Task name: 231114_165019:lfavilla_crab_TprimeToTZ_1800_2018
+INFO 2023-11-14 16:50:19.745 UTC: 	 Project dir: ./crab_TprimeToTZ_1800_2018
+INFO 2023-11-14 16:50:19.745 UTC: 	 Please use ' crab status -d ./crab_TprimeToTZ_1800_2018 ' to check how the submission process proceeds.
+DEBUG 2023-11-14 16:50:19.746 UTC: 	 About to return
+INFO 2023-11-14 16:50:19.750 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/crab.log
+DEBUG 2023-11-15 14:35:57.886 UTC: 	 CRAB Client version: v3.231010
+DEBUG 2023-11-15 14:35:57.886 UTC: 	 Running on: Linux lxplus743.cern.ch 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Jul 24 13:59:37 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-11-15 14:35:57.886 UTC: 	 Executing command: 'status'
+DEBUG 2023-11-15 14:35:57.886 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+DEBUG 2023-11-15 14:35:59.645 UTC: 	 Checking credentials
+DEBUG 2023-11-15 14:35:59.645 UTC: 	 Found proxy file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:35:59.645 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-11-15 14:35:59.645 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:00.195 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:00.195 UTC: 	 Getting proxy life time left
+DEBUG 2023-11-15 14:36:00.195 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:00.807 UTC: 	 output : 30186
+30186
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:00.807 UTC: 	 Proxy valid for 08:23:06 hours
+DEBUG 2023-11-15 14:36:00.952 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2023-11-15 14:36:01.039 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2023-11-15 14:36:01.039 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:01.740 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:01.740 UTC: 	 Getting myproxy life time left for 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-11-15 14:36:01.740 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-11-15 14:36:02.389 UTC: 	 output : username: 70284ad9de3a40585c76dbf527363be004fcbd17
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 380:08:18  (15.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:02.389 UTC: 	 Myproxy is valid: 1368480
+DEBUG 2023-11-15 14:36:02.389 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: 70284ad9de3a40585c76dbf527363be004fcbd17  - validity: 15 days, 20:08:00
+DEBUG 2023-11-15 14:36:02.390 UTC: 	 Command use: status
+DEBUG 2023-11-15 14:36:02.390 UTC: 	 Options use: ['-d', 'crab_TprimeToTZ_1800_2018']
+DEBUG 2023-11-15 14:36:02.390 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2023-11-15 14:36:02.578 UTC: 	 CRABClient version: v3.231010
+DEBUG 2023-11-15 14:36:02.578 UTC: 	 Instance is prod
+DEBUG 2023-11-15 14:36:02.578 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2023-11-15 14:36:02.578 UTC: 	 Command api workflow
+DEBUG 2023-11-15 14:36:02.579 UTC: 	 Encoded data for curl request: subresource=search&workflow=231114_165019%3Alfavilla_crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-15 14:36:02.662 UTC: 	 Got information from server oracle database: {'desc': {'columns': ['tm_taskname', 'tm_activity', 'panda_jobset_id', 'tm_task_status', 'tm_task_command', 'tm_start_time', 'tm_start_injection', 'tm_end_injection', 'tm_task_failure', 'tm_job_sw', 'tm_job_arch', 'tm_input_dataset', 'tm_nonvalid_input_dataset', 'tm_use_parent', 'tm_site_whitelist', 'tm_site_blacklist', 'tm_split_algo', 'tm_split_args', 'tm_user_sandbox', 'tm_cache_url', 'tm_username', 'tm_user_dn', 'tm_user_vo', 'tm_user_role', 'tm_user_group', 'tm_publish_name', 'tm_publish_groupname', 'tm_asyncdest', 'tm_dbs_url', 'tm_publish_dbs_url', 'tm_publication', 'tm_outfiles', 'tm_tfile_outfiles', 'tm_edm_outfiles', 'tm_job_type', 'tm_generator', 'tm_events_per_lumi', 'tm_arguments', 'panda_resubmitted_jobs', 'tm_save_logs', 'tw_name', 'tm_user_infiles', 'tm_maxjobruntime', 'tm_numcores', 'tm_maxmemory', 'tm_priority', 'tm_output_dataset', 'tm_task_warnings', 'tm_user_webdir', 'tm_scriptexe', 'tm_scriptargs', 'tm_extrajdl', 'tm_asourl', 'tm_collector', 'tm_schedd', 'tm_dry_run', 'tm_user_files', 'tm_transfer_outputs', 'tm_output_lfn', 'tm_ignore_locality', 'tm_fail_limit', 'tm_one_event_mode', 'tm_secondary_input_dataset', 'tm_primary_dataset', 'tm_last_publication', 'tm_debug_files', 'clusterid', 'tm_asodb', 'tm_ignore_global_blacklist', 'tm_submitter_ip_addr', 'tm_totalunits', 'tm_ddm_reqid', 'tm_user_config', 'tm_transfer_container', 'tm_transfer_rule', 'tm_publish_rule']}, 'result': ['231114_165019:lfavilla_crab_TprimeToTZ_1800_2018', 'None', 'None', 'SUBMITTED', 'SUBMIT', '2023-11-14 16:50:19.666111', 'None', '2023-11-14 16:51:18.905161', 'None', 'CMSSW_12_6_0', 'slc7_amd64_gcc10', '/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', 'T', '0', '[]', '[]', 'FileBased', "{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", '05bf1cab3b690b9f1e43746f04f1ed2675afff85574a231e53b7553f3109c7e8.tar.gz', 'https://cmsweb.cern.ch/S3/crabcache_prod', 'lfavilla', '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla', 'cms', 'None', 'None', 'TprimeToTZ_1800_2018-00000000000000000000000000000000', 'F', 'T2_IT_Pisa', 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'F', '[]', '[]', "['tree_hadd.root']", 'Analysis', 'pythia', 'None', '{}', 'None', 'T', 'crab-prod-tw01', '[]', '2700', '1', '2000', '10', "['/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/lfavilla-TprimeToTZ_1800_2018-00000000000000000000000000000000/USER']", '[]', 'http://vocms0122.cern.ch/mon/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018', 'crab_script.sh', '[]', '[]', 'None', 'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', 'crab3@vocms0122.cern.ch', 'F', '[]', 'T', '/store/user/lfavilla/DM_v0', 'F', 'None', 'F', 'None', 'TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8', 'None', 'e0f6243d34ce4844fd5f84537bb1188dbf3dff1d4453ee958050d8aeeb5512bd.tar.gz', '101914022', 'None', 'F', '137.138.154.184', '0.0', 'None', '{"partialdataset": false, "requireaccelerator": false, "acceleratorparams": null, "inputblocks": null}', 'None', 'None', 'None']}
+INFO 2023-11-15 14:36:02.663 UTC: 	 CRAB project directory:		/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018
+INFO 2023-11-15 14:36:02.663 UTC: 	 Task name:			231114_165019:lfavilla_crab_TprimeToTZ_1800_2018
+INFO 2023-11-15 14:36:02.663 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0122.cern.ch - crab-prod-tw01
+INFO 2023-11-15 14:36:02.663 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2023-11-15 14:36:02.663 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/231114_165019%3Alfavilla_crab_TprimeToTZ_1800_2018
+INFO 2023-11-15 14:36:02.674 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=lfavilla&var-task=231114_165019%3Alfavilla_crab_TprimeToTZ_1800_2018&from=1699977019000&to=now
+DEBUG 2023-11-15 14:36:02.674 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 101914022)
+DEBUG 2023-11-15 14:36:02.674 UTC: 	 Webdir is located at http://vocms0122.cern.ch/mon/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-15 14:36:02.674 UTC: 	 Encoded data for curl request: subresource=webdirprx&workflow=231114_165019%3Alfavilla_crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-15 14:36:02.732 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0122/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-15 14:36:02.733 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0122/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018/status_cache.pkl
+DEBUG 2023-11-15 14:36:02.733 UTC: 	 Will execute:
+curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u159320 --key /tmp/x509up_u159320 -o /tmp/crab_status-cache-l85i8leb.pkl -w %"{http_code}" "https://cmsweb.cern.ch:8443/scheddmon/0122/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018/status_cache.pkl"
+DEBUG 2023-11-15 14:36:02.733 UTC: 	 Executing command :
+ curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u159320 --key /tmp/x509up_u159320 -o /tmp/crab_status-cache-l85i8leb.pkl -w %"{http_code}" "https://cmsweb.cern.ch:8443/scheddmon/0122/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018/status_cache.pkl"
+DEBUG 2023-11-15 14:36:02.916 UTC: 	 output : 200
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:02.916 UTC: 	 exitcode: 0
+stdout: 200
+stderr: 
+error details: 
+DEBUG 2023-11-15 14:36:02.916 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T2_CH_CERN', 'T2_CH_CERN'], 'ResidentSetSize': [670044], 'SubmitTimes': [1699980683.0], 'StartTimes': [1699980738.0], 'EndTimes': [1700046226.0], 'TotalUserCpuTimeHistory': [59819], 'TotalSysCpuTimeHistory': [7006], 'WallDurations': [0, 65488.0], 'JobIds': ['101914024.0'], 'State': 'finished', 'RecordedSite': True}, '3': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T2_CH_CERN', 'T2_CH_CERN'], 'ResidentSetSize': [657552], 'SubmitTimes': [1699980683.0], 'StartTimes': [1699980739.0], 'EndTimes': [1699983048.0], 'TotalUserCpuTimeHistory': [2054], 'TotalSysCpuTimeHistory': [217], 'WallDurations': [0, 2309.0], 'JobIds': ['101914025.0'], 'State': 'finished', 'RecordedSite': True}, '2': {'Retries': 1, 'Restarts': 0, 'SiteHistory': ['T2_CH_CERN', 'T2_CH_CERN', 'T2_US_Caltech', 'T2_US_Caltech'], 'ResidentSetSize': [660176, 1104712], 'SubmitTimes': [1699980683.0, 1700017631.0], 'StartTimes': [1699980739.0, 1700017801.0], 'EndTimes': [1700015755.0, 1700055873.0], 'TotalUserCpuTimeHistory': [32687, 27253], 'TotalSysCpuTimeHistory': [3554, 5400], 'WallDurations': [0, 35016.0, 8.0, 38072.0], 'JobIds': ['101914026.0', '101927988.0'], 'State': 'finished', 'RecordedSite': True}}
+INFO 2023-11-15 14:36:02.916 UTC: 	 Status on the scheduler:	COMPLETED
+INFO 2023-11-15 14:36:02.917 UTC: 	 
+Jobs status:                    finished     		100.0% (3/3)
+INFO 2023-11-15 14:36:02.917 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2023-11-15 14:36:02.917 UTC: 	 
+Summary of run jobs:
+ * Memory: 654MB min, 1078MB max, 792MB ave
+ * Runtime: 0:38:29 min, 18:11:28 max, 9:48:09 ave
+ * CPU eff: 86% min, 102% max, 96% ave
+ * Waste: 9:43:44 (25% of total)
+
+INFO 2023-11-15 14:36:03.413 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/crab.log
+DEBUG 2023-11-15 14:36:17.756 UTC: 	 CRAB Client version: v3.231010
+DEBUG 2023-11-15 14:36:17.756 UTC: 	 Running on: Linux lxplus743.cern.ch 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Jul 24 13:59:37 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-11-15 14:36:17.756 UTC: 	 Executing command: 'getoutput'
+DEBUG 2023-11-15 14:36:17.756 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+DEBUG 2023-11-15 14:36:17.757 UTC: 	 Using VO group '' and VO role 'NULL' as written in the request cache file for this task.
+DEBUG 2023-11-15 14:36:18.064 UTC: 	 Checking credentials
+DEBUG 2023-11-15 14:36:18.064 UTC: 	 Found proxy file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:18.064 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-11-15 14:36:18.064 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:18.743 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:18.743 UTC: 	 Getting proxy life time left
+DEBUG 2023-11-15 14:36:18.743 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:19.414 UTC: 	 output : 30167
+30167
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:19.414 UTC: 	 Proxy valid for 08:22:47 hours
+DEBUG 2023-11-15 14:36:19.559 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2023-11-15 14:36:19.623 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2023-11-15 14:36:19.623 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:20.294 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:20.294 UTC: 	 Getting myproxy life time left for 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-11-15 14:36:20.294 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-11-15 14:36:20.617 UTC: 	 output : username: 70284ad9de3a40585c76dbf527363be004fcbd17
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 380:08:00  (15.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:20.617 UTC: 	 Myproxy is valid: 1368480
+DEBUG 2023-11-15 14:36:20.617 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: 70284ad9de3a40585c76dbf527363be004fcbd17  - validity: 15 days, 20:08:00
+DEBUG 2023-11-15 14:36:20.627 UTC: 	 Command use: getoutput
+DEBUG 2023-11-15 14:36:20.627 UTC: 	 Options use: ['--xrootd', '--jobids=1', '-d', './crab_TprimeToTZ_1800_2018/']
+DEBUG 2023-11-15 14:36:20.627 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2023-11-15 14:36:20.680 UTC: 	 CRABClient version: v3.231010
+DEBUG 2023-11-15 14:36:20.680 UTC: 	 Instance is prod
+DEBUG 2023-11-15 14:36:20.680 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2023-11-15 14:36:20.680 UTC: 	 Command api workflow
+DEBUG 2023-11-15 14:36:20.680 UTC: 	 Encoded data for curl request: subresource=search&workflow=231114_165019%3Alfavilla_crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-15 14:36:20.752 UTC: 	 Server result: {'desc': {'columns': ['tm_taskname', 'tm_activity', 'panda_jobset_id', 'tm_task_status', 'tm_task_command', 'tm_start_time', 'tm_start_injection', 'tm_end_injection', 'tm_task_failure', 'tm_job_sw', 'tm_job_arch', 'tm_input_dataset', 'tm_nonvalid_input_dataset', 'tm_use_parent', 'tm_site_whitelist', 'tm_site_blacklist', 'tm_split_algo', 'tm_split_args', 'tm_user_sandbox', 'tm_cache_url', 'tm_username', 'tm_user_dn', 'tm_user_vo', 'tm_user_role', 'tm_user_group', 'tm_publish_name', 'tm_publish_groupname', 'tm_asyncdest', 'tm_dbs_url', 'tm_publish_dbs_url', 'tm_publication', 'tm_outfiles', 'tm_tfile_outfiles', 'tm_edm_outfiles', 'tm_job_type', 'tm_generator', 'tm_events_per_lumi', 'tm_arguments', 'panda_resubmitted_jobs', 'tm_save_logs', 'tw_name', 'tm_user_infiles', 'tm_maxjobruntime', 'tm_numcores', 'tm_maxmemory', 'tm_priority', 'tm_output_dataset', 'tm_task_warnings', 'tm_user_webdir', 'tm_scriptexe', 'tm_scriptargs', 'tm_extrajdl', 'tm_asourl', 'tm_collector', 'tm_schedd', 'tm_dry_run', 'tm_user_files', 'tm_transfer_outputs', 'tm_output_lfn', 'tm_ignore_locality', 'tm_fail_limit', 'tm_one_event_mode', 'tm_secondary_input_dataset', 'tm_primary_dataset', 'tm_last_publication', 'tm_debug_files', 'clusterid', 'tm_asodb', 'tm_ignore_global_blacklist', 'tm_submitter_ip_addr', 'tm_totalunits', 'tm_ddm_reqid', 'tm_user_config', 'tm_transfer_container', 'tm_transfer_rule', 'tm_publish_rule']}, 'result': ['231114_165019:lfavilla_crab_TprimeToTZ_1800_2018', 'None', 'None', 'SUBMITTED', 'SUBMIT', '2023-11-14 16:50:19.666111', 'None', '2023-11-14 16:51:18.905161', 'None', 'CMSSW_12_6_0', 'slc7_amd64_gcc10', '/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', 'T', '0', '[]', '[]', 'FileBased', "{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", '05bf1cab3b690b9f1e43746f04f1ed2675afff85574a231e53b7553f3109c7e8.tar.gz', 'https://cmsweb.cern.ch/S3/crabcache_prod', 'lfavilla', '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla', 'cms', 'None', 'None', 'TprimeToTZ_1800_2018-00000000000000000000000000000000', 'F', 'T2_IT_Pisa', 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'F', '[]', '[]', "['tree_hadd.root']", 'Analysis', 'pythia', 'None', '{}', 'None', 'T', 'crab-prod-tw01', '[]', '2700', '1', '2000', '10', "['/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/lfavilla-TprimeToTZ_1800_2018-00000000000000000000000000000000/USER']", '[]', 'http://vocms0122.cern.ch/mon/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018', 'crab_script.sh', '[]', '[]', 'None', 'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', 'crab3@vocms0122.cern.ch', 'F', '[]', 'T', '/store/user/lfavilla/DM_v0', 'F', 'None', 'F', 'None', 'TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8', 'None', 'e0f6243d34ce4844fd5f84537bb1188dbf3dff1d4453ee958050d8aeeb5512bd.tar.gz', '101914022', 'None', 'F', '137.138.154.184', '0.0', 'None', '{"partialdataset": false, "requireaccelerator": false, "acceleratorparams": null, "inputblocks": null}', 'None', 'None', 'None']}
+DEBUG 2023-11-15 14:36:20.766 UTC: 	 CRAB Client version: v3.231010
+DEBUG 2023-11-15 14:36:20.766 UTC: 	 Running on: Linux lxplus743.cern.ch 3.10.0-1160.95.1.el7.x86_64 #1 SMP Mon Jul 24 13:59:37 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2023-11-15 14:36:20.766 UTC: 	 Executing command: 'status'
+DEBUG 2023-11-15 14:36:20.766 UTC: 	 Found CRAB cache file /afs/cern.ch/user/l/lfavilla/.crab3
+DEBUG 2023-11-15 14:36:22.461 UTC: 	 Checking credentials
+DEBUG 2023-11-15 14:36:22.461 UTC: 	 Found proxy file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:22.461 UTC: 	 Making sure it has proper VOMS extension
+DEBUG 2023-11-15 14:36:22.461 UTC: 	 Executing command :
+ voms-proxy-info --vo --file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:23.240 UTC: 	 output : cms
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:23.241 UTC: 	 Getting proxy life time left
+DEBUG 2023-11-15 14:36:23.241 UTC: 	 Executing command :
+ voms-proxy-info --actimeleft --timeleft --file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:23.902 UTC: 	 output : 30163
+30163
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:23.902 UTC: 	 Proxy valid for 08:22:43 hours
+DEBUG 2023-11-15 14:36:23.903 UTC: 	 Encoded data for curl request: subresource=delegatedn
+DEBUG 2023-11-15 14:36:24.661 UTC: 	 Registering user credentials on myproxy for /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+DEBUG 2023-11-15 14:36:24.661 UTC: 	 Executing command :
+ voms-proxy-info --identity --file /tmp/x509up_u159320
+DEBUG 2023-11-15 14:36:25.645 UTC: 	 output : /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:25.645 UTC: 	 Getting myproxy life time left for 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-11-15 14:36:25.645 UTC: 	 Executing command :
+ myproxy-info -s myproxy.cern.ch -l 70284ad9de3a40585c76dbf527363be004fcbd17
+DEBUG 2023-11-15 14:36:25.990 UTC: 	 output : username: 70284ad9de3a40585c76dbf527363be004fcbd17
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod|dev)-tw(01|02|03).cern.ch|/DC=ch/DC=cern/OU=computers/CN=stefanov(m|m2).cern.ch|/DC=ch/DC=cern/OU=computers/CN=dciangot-tw.cern.ch
+  timeleft: 380:07:55  (15.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:25.990 UTC: 	 Myproxy is valid: 1368420
+DEBUG 2023-11-15 14:36:25.990 UTC: 	 Result of myproxy credential check:
+  Credential exists on myproxy: username: 70284ad9de3a40585c76dbf527363be004fcbd17  - validity: 15 days, 20:07:00
+DEBUG 2023-11-15 14:36:26.055 UTC: 	 Command use: status
+DEBUG 2023-11-15 14:36:26.055 UTC: 	 Options use: []
+DEBUG 2023-11-15 14:36:26.055 UTC: 	 Encoded data for curl request: subresource=version
+DEBUG 2023-11-15 14:36:26.132 UTC: 	 CRABClient version: v3.231010
+DEBUG 2023-11-15 14:36:26.132 UTC: 	 Instance is prod
+DEBUG 2023-11-15 14:36:26.132 UTC: 	 Server base url is cmsweb.cern.ch
+DEBUG 2023-11-15 14:36:26.132 UTC: 	 Command api workflow
+DEBUG 2023-11-15 14:36:26.132 UTC: 	 Encoded data for curl request: subresource=search&workflow=231114_165019%3Alfavilla_crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-15 14:36:26.205 UTC: 	 Got information from server oracle database: {'desc': {'columns': ['tm_taskname', 'tm_activity', 'panda_jobset_id', 'tm_task_status', 'tm_task_command', 'tm_start_time', 'tm_start_injection', 'tm_end_injection', 'tm_task_failure', 'tm_job_sw', 'tm_job_arch', 'tm_input_dataset', 'tm_nonvalid_input_dataset', 'tm_use_parent', 'tm_site_whitelist', 'tm_site_blacklist', 'tm_split_algo', 'tm_split_args', 'tm_user_sandbox', 'tm_cache_url', 'tm_username', 'tm_user_dn', 'tm_user_vo', 'tm_user_role', 'tm_user_group', 'tm_publish_name', 'tm_publish_groupname', 'tm_asyncdest', 'tm_dbs_url', 'tm_publish_dbs_url', 'tm_publication', 'tm_outfiles', 'tm_tfile_outfiles', 'tm_edm_outfiles', 'tm_job_type', 'tm_generator', 'tm_events_per_lumi', 'tm_arguments', 'panda_resubmitted_jobs', 'tm_save_logs', 'tw_name', 'tm_user_infiles', 'tm_maxjobruntime', 'tm_numcores', 'tm_maxmemory', 'tm_priority', 'tm_output_dataset', 'tm_task_warnings', 'tm_user_webdir', 'tm_scriptexe', 'tm_scriptargs', 'tm_extrajdl', 'tm_asourl', 'tm_collector', 'tm_schedd', 'tm_dry_run', 'tm_user_files', 'tm_transfer_outputs', 'tm_output_lfn', 'tm_ignore_locality', 'tm_fail_limit', 'tm_one_event_mode', 'tm_secondary_input_dataset', 'tm_primary_dataset', 'tm_last_publication', 'tm_debug_files', 'clusterid', 'tm_asodb', 'tm_ignore_global_blacklist', 'tm_submitter_ip_addr', 'tm_totalunits', 'tm_ddm_reqid', 'tm_user_config', 'tm_transfer_container', 'tm_transfer_rule', 'tm_publish_rule']}, 'result': ['231114_165019:lfavilla_crab_TprimeToTZ_1800_2018', 'None', 'None', 'SUBMITTED', 'SUBMIT', '2023-11-14 16:50:19.666111', 'None', '2023-11-14 16:51:18.905161', 'None', 'CMSSW_12_6_0', 'slc7_amd64_gcc10', '/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/RunIISummer19UL18NanoAODv2-106X_upgrade2018_realistic_v15_L1v1-v1/NANOAODSIM', 'T', '0', '[]', '[]', 'FileBased', "{'halt_job_on_file_boundaries': False, 'splitOnRun': False, 'files_per_job': 1, 'runs': [], 'lumis': []}", '05bf1cab3b690b9f1e43746f04f1ed2675afff85574a231e53b7553f3109c7e8.tar.gz', 'https://cmsweb.cern.ch/S3/crabcache_prod', 'lfavilla', '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=lfavilla/CN=867090/CN=Leonardo Favilla', 'cms', 'None', 'None', 'TprimeToTZ_1800_2018-00000000000000000000000000000000', 'F', 'T2_IT_Pisa', 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'F', '[]', '[]', "['tree_hadd.root']", 'Analysis', 'pythia', 'None', '{}', 'None', 'T', 'crab-prod-tw01', '[]', '2700', '1', '2000', '10', "['/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/lfavilla-TprimeToTZ_1800_2018-00000000000000000000000000000000/USER']", '[]', 'http://vocms0122.cern.ch/mon/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018', 'crab_script.sh', '[]', '[]', 'None', 'cmsgwms-collector-global.cern.ch:9620,cmsgwms-collector-global.fnal.gov:9620', 'crab3@vocms0122.cern.ch', 'F', '[]', 'T', '/store/user/lfavilla/DM_v0', 'F', 'None', 'F', 'None', 'TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8', 'None', 'e0f6243d34ce4844fd5f84537bb1188dbf3dff1d4453ee958050d8aeeb5512bd.tar.gz', '101914022', 'None', 'F', '137.138.154.184', '0.0', 'None', '{"partialdataset": false, "requireaccelerator": false, "acceleratorparams": null, "inputblocks": null}', 'None', 'None', 'None']}
+INFO 2023-11-15 14:36:26.206 UTC: 	 CRAB project directory:		/afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018
+INFO 2023-11-15 14:36:26.206 UTC: 	 Task name:			231114_165019:lfavilla_crab_TprimeToTZ_1800_2018
+INFO 2023-11-15 14:36:26.206 UTC: 	 Grid scheduler - Task Worker:	crab3@vocms0122.cern.ch - crab-prod-tw01
+INFO 2023-11-15 14:36:26.206 UTC: 	 Status on the CRAB server:	SUBMITTED
+INFO 2023-11-15 14:36:26.206 UTC: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/231114_165019%3Alfavilla_crab_TprimeToTZ_1800_2018
+INFO 2023-11-15 14:36:26.224 UTC: 	 Dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=lfavilla&var-task=231114_165019%3Alfavilla_crab_TprimeToTZ_1800_2018&from=1699977019000&to=now
+DEBUG 2023-11-15 14:36:26.224 UTC: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 101914022)
+DEBUG 2023-11-15 14:36:26.224 UTC: 	 Webdir is located at http://vocms0122.cern.ch/mon/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-15 14:36:26.224 UTC: 	 Encoded data for curl request: subresource=webdirprx&workflow=231114_165019%3Alfavilla_crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-15 14:36:26.386 UTC: 	 Proxied webdir is located at https://cmsweb.cern.ch:8443/scheddmon/0122/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-15 14:36:26.386 UTC: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch:8443/scheddmon/0122/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018/status_cache.pkl
+DEBUG 2023-11-15 14:36:26.386 UTC: 	 Will execute:
+curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u159320 --key /tmp/x509up_u159320 -o /tmp/crab_status-cache-tnejak8l.pkl -w %"{http_code}" "https://cmsweb.cern.ch:8443/scheddmon/0122/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018/status_cache.pkl"
+DEBUG 2023-11-15 14:36:26.386 UTC: 	 Executing command :
+ curl -sS --capath /etc/grid-security/certificates --cert /tmp/x509up_u159320 --key /tmp/x509up_u159320 -o /tmp/crab_status-cache-tnejak8l.pkl -w %"{http_code}" "https://cmsweb.cern.ch:8443/scheddmon/0122/lfavilla/231114_165019:lfavilla_crab_TprimeToTZ_1800_2018/status_cache.pkl"
+DEBUG 2023-11-15 14:36:26.474 UTC: 	 output : 200
+ error: 
+ retcode : 0
+DEBUG 2023-11-15 14:36:26.474 UTC: 	 exitcode: 0
+stdout: 200
+stderr: 
+error details: 
+DEBUG 2023-11-15 14:36:26.474 UTC: 	 Got information from status cache file: {'1': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T2_CH_CERN', 'T2_CH_CERN'], 'ResidentSetSize': [670044], 'SubmitTimes': [1699980683.0], 'StartTimes': [1699980738.0], 'EndTimes': [1700046226.0], 'TotalUserCpuTimeHistory': [59819], 'TotalSysCpuTimeHistory': [7006], 'WallDurations': [0, 65488.0], 'JobIds': ['101914024.0'], 'State': 'finished', 'RecordedSite': True}, '3': {'Retries': 0, 'Restarts': 0, 'SiteHistory': ['T2_CH_CERN', 'T2_CH_CERN'], 'ResidentSetSize': [657552], 'SubmitTimes': [1699980683.0], 'StartTimes': [1699980739.0], 'EndTimes': [1699983048.0], 'TotalUserCpuTimeHistory': [2054], 'TotalSysCpuTimeHistory': [217], 'WallDurations': [0, 2309.0], 'JobIds': ['101914025.0'], 'State': 'finished', 'RecordedSite': True}, '2': {'Retries': 1, 'Restarts': 0, 'SiteHistory': ['T2_CH_CERN', 'T2_CH_CERN', 'T2_US_Caltech', 'T2_US_Caltech'], 'ResidentSetSize': [660176, 1104712], 'SubmitTimes': [1699980683.0, 1700017631.0], 'StartTimes': [1699980739.0, 1700017801.0], 'EndTimes': [1700015755.0, 1700055873.0], 'TotalUserCpuTimeHistory': [32687, 27253], 'TotalSysCpuTimeHistory': [3554, 5400], 'WallDurations': [0, 35016.0, 8.0, 38072.0], 'JobIds': ['101914026.0', '101927988.0'], 'State': 'finished', 'RecordedSite': True}}
+INFO 2023-11-15 14:36:26.474 UTC: 	 Status on the scheduler:	COMPLETED
+INFO 2023-11-15 14:36:26.474 UTC: 	 
+Jobs status:                    finished     		100.0% (3/3)
+INFO 2023-11-15 14:36:26.474 UTC: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2023-11-15 14:36:26.474 UTC: 	 
+Summary of run jobs:
+ * Memory: 654MB min, 1078MB max, 792MB ave
+ * Runtime: 0:38:29 min, 18:11:28 max, 9:48:09 ave
+ * CPU eff: 86% min, 102% max, 96% ave
+ * Waste: 9:43:44 (25% of total)
+
+DEBUG 2023-11-15 14:36:26.475 UTC: 	 Retrieving locations for task 231114_165019:lfavilla_crab_TprimeToTZ_1800_2018
+DEBUG 2023-11-15 14:36:26.475 UTC: 	 Retrieving all file locations
+DEBUG 2023-11-15 14:36:26.475 UTC: 	 Retrieving jobs [('jobids', 1)]
+DEBUG 2023-11-15 14:36:26.475 UTC: 	 Encoded data for curl request: workflow=231114_165019%3Alfavilla_crab_TprimeToTZ_1800_2018&subresource=data2&limit=-1&jobids=1
+DEBUG 2023-11-15 14:36:26.646 UTC: 	 Server result: {'result': [{'jobid': '2', 'lfn': '/store/user/lfavilla/DM_v0/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeToTZ_1800_2018/231114_165019/0000/tree_hadd_2.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeToTZ_1800_2018/231114_165019/0000/tree_hadd_2.root', 'tmpsite': 'T2_US_Caltech', 'directstageout': 'F', 'size': 408056793, 'checksum': {'cksum': 1446637668, 'md5': 'b42534df', 'adler32': 'b42534df'}}, {'jobid': '1', 'lfn': '/store/user/lfavilla/DM_v0/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeToTZ_1800_2018/231114_165019/0000/tree_hadd_1.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeToTZ_1800_2018/231114_165019/0000/tree_hadd_1.root', 'tmpsite': 'T2_CH_CERN', 'directstageout': 'F', 'size': 749172604, 'checksum': {'cksum': 1502639920, 'md5': '78714003', 'adler32': '78714003'}}, {'jobid': '3', 'lfn': '/store/user/lfavilla/DM_v0/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeToTZ_1800_2018/231114_165019/0000/tree_hadd_3.root', 'site': 'T2_IT_Pisa', 'tmplfn': '/store/user/lfavilla/DM_v0/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeToTZ_1800_2018/231114_165019/0000/tree_hadd_3.root', 'tmpsite': 'T2_CH_CERN', 'directstageout': 'F', 'size': 28832299, 'checksum': {'cksum': 1267333522, 'md5': 'b239dc75', 'adler32': 'b239dc75'}}]}
+DEBUG 2023-11-15 14:36:26.647 UTC: 	 Getting url info
+DEBUG 2023-11-15 14:36:26.647 UTC: 	 XRootD urls are requested
+INFO 2023-11-15 14:36:26.647 UTC: 	 root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeToTZ_1800_2018/231114_165019/0000/tree_hadd_2.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeToTZ_1800_2018/231114_165019/0000/tree_hadd_1.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/TprimeBToTZ_M-1800_LH_TuneCP5_PSweights_13TeV-madgraph_pythia8/TprimeToTZ_1800_2018/231114_165019/0000/tree_hadd_3.root
+DEBUG 2023-11-15 14:36:26.648 UTC: 	 Log file is /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/crab/crab_TprimeToTZ_1800_2018/crab.log

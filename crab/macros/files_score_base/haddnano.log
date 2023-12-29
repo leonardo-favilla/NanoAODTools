@@ -1,0 +1,14 @@
+Adding fileroot://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1000to1500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1000to1500_2018/230607_105142/0000/tree_hadd_1.root
+Adding fileroot://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1000to1500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1000to1500_2018/230607_105142/0000/tree_hadd_15.root
+MergingEvents
+missing: []
+ Additional:[]
+MergingLuminosityBlocks
+MergingRuns
+missing: []
+ Additional:[]
+MergingMetaData
+MergingParameterSets
+Merginguntagged
+Mergingplots
+Cannot handle TDirectoryFile

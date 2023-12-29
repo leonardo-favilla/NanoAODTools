@@ -1,0 +1,16 @@
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_1.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_5.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_19.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_20.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_25.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_22.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_24.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_21.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_13.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_27.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_4.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_7.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_17.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_26.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_12.root
+root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1500to2000_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1500to2000_2018/231105_161434/0000/tree_hadd_23.root

@@ -1,0 +1,6 @@
+hadd Target file: loc10001500QCDNano.root
+hadd compression setting for all output: 1
+hadd Source file 1: root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1000to1500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1000to1500_2018/230607_105142/0000/tree_hadd_1.root
+hadd Source file 2: root://cms-xrd-global.cern.ch//store/user/lfavilla/DM_v0/QCD_HT1000to1500_TuneCP5_PSWeights_13TeV-madgraph-pythia8/QCD_HT1000to1500_2018/230607_105142/0000/tree_hadd_15.root
+hadd Target path: loc10001500QCDNano.root:/
+hadd Target path: loc10001500QCDNano.root:/plots

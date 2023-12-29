@@ -1,0 +1,5 @@
+# Imposta il tracciamento LFS per tutti i file con estensione .tgz
+*.tgz filter=lfs diff=lfs merge=lfs -text
+
+# Imposta il tracciamento LFS per il file specifico
+crab/macros/files_score_base/loc10001500QCDNano.root filter=lfs diff=lfs merge=lfs -text
