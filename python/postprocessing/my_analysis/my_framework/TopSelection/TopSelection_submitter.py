@@ -60,7 +60,8 @@ def sh_writer(dataset):
     f.write("cd /afs/cern.ch/user/l/lfavilla/CMSSW_12_6_0/src/PhysicsTools/NanoAODTools/python/postprocessing/my_analysis/my_framework/TopSelection\n")
     f.write("cmsenv\n")
     f.write("export XRD_NETWORKSTACK=IPv4\n")
-    f.write(f"python3 TopSelection.py -dat {dataset}\n")
+    # f.write(f"python3 TopSelection.py -dat {dataset}\n")
+    f.write(f"python3 TopSelection.py -c {dataset}\n")
 
 
 if not os.path.exists("condor/output"):
@@ -78,8 +79,18 @@ os.popen("cp /tmp/x509up_u" + str(uid) + " /afs/cern.ch/user/" + inituser + "/" 
 
 ######## LAUNCH CONDOR ########
 datasets = [
-            "TT_2018",
+            # "TT_2018",
             # "QCD_2018",
+            # "QCD_HT500to700_2018",
+            # "TT_Mtt_700to1000_2018",
+            "TT_Mtt_1000toInf_2018",
+            # "WJetsHT100to200_2018",
+            # "WJetsHT200to400_2018",
+            # "WJetsHT600to800_2018",
+            # "WJetsHT800to1200_2018",
+            # "WJetsHT1200to2500_2018",
+            # "WJetsHT2500toInf_2018",
+            # "ZJetsToNuNu_HT400To600_2018",
             # "ZJetsToNuNu_2018",
             # "WJets_2018",
             # "TprimeToTZ_700_2018",
